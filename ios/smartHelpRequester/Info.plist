@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.ssivixlab.MYCLNQ</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MyCLNQ</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.9.6</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle Id</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.84286705331-3ip4s5g8i3kul9rk3efscvtki12ruho7</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle Id</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>myclnq</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle Id</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>myclnq</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>phonepe</string>
+		<string>tez</string>
+		<string>paytm</string>
+	</array>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>18.188.106.41:3000</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>amazonaws.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>http://18.188.106.41:3000</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>https://smarthelpbucket.s3.amazonaws.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>smarthelpbucket.s3.amazonaws.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>MyCLNQ would like access to your bluetooth to share your screen</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We will use your Bluetooth to access your Bluetooth headphones.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>MyCLNQ would like to use your camera to click a photo for your profile and Video Calling feature</string>
+	<key>NSExceptionAllowsInsecureHTTPLoads</key>
+	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>MyCLNQ would like to read and understand health data from Health App.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>MyCLNQ would like to pull workout data from Health App.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>MyCLNQ use your location to make it easy for you to find near by hospitals.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>MyCLNQ use your location to make it easy for you to find near by hospitals.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>MyCLNQ use your location to make it easy for you to find near by hospitals.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>MyCLNQ use your location to make it easy for you to find near by hospitals.</string>
+	<key>NSMainNibFile</key>
+	<string>LaunchScreen</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MyCLNQ would like to your microphone (for videos)</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MyCLNQ would like to save photos in your photo gallery</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MyCLNQ would like access to your photo gallery to select a photo for your profile</string>
+	<key>NSCalendarsUsageDescription</key>
+    <string>MyCLNQ would like to access your calender</string>
+	<key>NSContactsUsageDescription</key>
+    <string>MyCLNQ would like to access your contacts</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AvenirNextLTPro-Bold.otf</string>
+		<string>AvenirNextLTPro-BoldCn.otf</string>
+		<string>AvenirNextLTPro-BoldCnIt.otf</string>
+		<string>AvenirNextLTPro-BoldIt.otf</string>
+		<string>AvenirNextLTPro-Cn.otf</string>
+		<string>AvenirNextLTPro-CnIt.otf</string>
+		<string>AvenirNextLTPro-Demi.otf</string>
+		<string>AvenirNextLTPro-DemiCn.otf</string>
+		<string>AvenirNextLTPro-DemiCnIt.otf</string>
+		<string>AvenirNextLTPro-DemiIt.otf</string>
+		<string>AvenirNextLTPro-Heavy.otf</string>
+		<string>AvenirNextLTPro-HeavyCn.otf</string>
+		<string>AvenirNextLTPro-HeavyCnIt.otf</string>
+		<string>AvenirNextLTPro-HeavyIt.otf</string>
+		<string>AvenirNextLTPro-It.otf</string>
+		<string>AvenirNextLTPro-Medium.otf</string>
+		<string>AvenirNextLTPro-MediumCn.otf</string>
+		<string>AvenirNextLTPro-MediumCnIt.otf</string>
+		<string>AvenirNextLTPro-MediumIt.otf</string>
+		<string>AvenirNextLTPro-Regular.otf</string>
+		<string>AvenirNextLTPro-UltLt.otf</string>
+		<string>AvenirNextLTPro-UltLtCn.otf</string>
+		<string>AvenirNextLTPro-UltLtCnIt.otf</string>
+		<string>AvenirNextLTPro-UltLtIt.otf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>AntDesign.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>Dosis-ExtraBold.ttf</string>
+		<string>Dosis-ExtraLight.ttf</string>
+		<string>Dosis-Light.ttf</string>
+		<string>Dosis-Medium.ttf</string>
+		<string>Dosis-SemiBold.ttf</string>
+		<string>Dosis-Bold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>b</key>
+	<true/>
+</dict>
+</plist>

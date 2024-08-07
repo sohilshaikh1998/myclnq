@@ -1,0 +1,87 @@
+export default {
+  updateAddress: "ঠিকানা আপডেট",
+  makeSureAddressAccurate:
+    "ঠিকানাটি সঠিক তা নিশ্চিত করুন। একবার অর্ডার দেওয়া হলে এটি পরিবর্তন করা যাবে না।",
+  addressTitle: "ঠিকানা শিরোনাম",
+  name: "নাম",
+  addressOne: "ঠিকানা লাইন 1",
+  addressTwo: "ঠিকানা লাইন 2",
+  addressOwnerName: "ঠিকানার মালিকের নাম",
+  flatFlorBuilding: "ফ্ল্যাট/বাড়ি নং/তলা/বিল্ডিং",
+  colonyStreet: "কলোনি/স্ট্রিট/লোকালিটি",
+  landmark: "ল্যান্ডমার্ক",
+  city: "শহর",
+  state: "স্টেট",
+  country: "দেশ",
+  pincode: "পিনকোড",
+  validPincode: "বৈধ পিনকোড লিখুন",
+  phone: "ফোন",
+  phoneNum: "ফোন নম্বর",
+  setDefault: "ডিফল্ট সেট করুন",
+  save: "সংরক্ষণ",
+  titleMissing: "ঠিকানা শিরোনাম অজ্ঞাত",
+  nameMissing: "নাম অজ্ঞাত",
+  addressOneMissing: "ঠিকানা লাইন 1 অজ্ঞাত",
+  addressTwoMissing: "ঠিকানা লাইন 2 অজ্ঞাত",
+  countryMissing: "দেশ অজ্ঞাত",
+  pincodeMissing: "পিনকোড অজ্ঞাত ",
+  phoneNumMissing: " ফোন নম্বর অজ্ঞাত",
+  pincodeInvalid: "পিনকোড অবৈধ",
+  phoneValid: "ফোন নম্বর 8 থেকে 10 অক্ষর হতে হবে",
+  searchLocation:
+    "অনুগ্রহ করে আপনার ঠিকানা যাচাই করত,  আপনার ঠিকানার অবস্থান অনুসন্ধান করুন",
+  searchLocationWithinCountry:
+    "অনুগ্রহ করে আপনার দেশের মধ্যে ঠিকানা অনুসন্ধান করুন",
+  searchYourLocation: "আপনার অবস্থান অনুসন্ধান করুন",
+  sureWantToDeleteAddress: "আপনি কি নিশ্চিত যে আপনি এই ঠিকানাটি মুছে ফেলতে চান",
+  addAddress: "অনুগ্রহ করে আপনার ঠিকানা যোগ করুন",
+  addNewAddress: " নতুন ঠিকানা যোগ করুন",
+  noInternet: "ইন্টারনেট সংযোগ নেই",
+  hello: "হ্যালো",
+  backHome: "বাড়িতে ফিরে যান",
+  logoutSuccess: "আপনি সফলভাবে লগ আউট করেছেন",
+  bookAppoint: "বুক অ্যাপয়েন্টমেন্ট",
+  reLogin: "পুনরায় লগ ইন",
+  filter: " ফিল্টারগুলি",
+  subjetedBasedOnPresentDay:
+    "বর্তমান সময়সূচীর ভিত্তিতে সমস্ত ফিল্টারগুলি কাজ সাপেক্ষে",
+  searchIn: "অনুসন্ধান করুন",
+  accepted: "গৃহীত",
+  notAccepted: "গৃহীত হয়নি",
+  both: "উভয়",
+  selectInsurance: "বীমা নির্বাচন করুন",
+  clearAll: "ক্লিয়ার অল",
+  applyFilter: "ফিল্টার প্রয়োগ করুন",
+  findNearBySpecialist: "নিকটবর্তী জিপি/বিশেষজ্ঞ/টিএমসি/থেরাপিস্ট খুঁজুন",
+
+  homeScreen: {
+    docTitle: "ডাক্তার অ্যাপয়েন্টমেন্ট",
+    docSubtitle: "কাছাকাছি জিপি এবং বিশেষজ্ঞ ক্লিনিক খুঁজুন",
+
+    videoTitle: "ভিডিও পরামর্শ",
+    videoTitleSingapore: "ভিডিও পরামর্শ / Tele-ART",
+    videoSubTitle: "ভিডিওতে ডাক্তার/থেরাপিস্টের সাথে পরামর্শ করুন",
+    videoSubTitleSingapore: "Consult Doctor/Therapist & Tele-ART over Video",
+
+    houseTitle: "হাউস কল",
+    houseSubTitle: "হোম কেয়ার কনসাল্টিং এর জন্য ডাক্তার/থেরাপিস্ট",
+
+    CGTitle: "কেয়ারগিভার",
+    CGSubTitle: " অনুরূপ নার্স/যত্নশীলের প্রয়োজনের সাথে",
+
+    MTTitle: "মেডিকেল ট্রান্সপোর্ট",
+    MTSubTitle: "অ-জরুরী চিকিৎসা পরিবহন",
+
+    MAWMTitle: "মেডিকেল এবং ওয়েলনেস মার্কেটপ্লেস",
+    MAWMSubTitle: "হেল্থকেয়ার অ্যান্ড ওয়েলনেস প্রোডাক্টস অনলাইন",
+
+    HAWATitle: "হেল্থ অ্যান্ড ওয়েলনেস নিবন্ধ",
+    HAWASubTitle: "হেল্থ অ্যান্ড ওয়েলনেস নিবন্ধ",
+
+    VSMTitle: "ভাইটাল সাইন মনিটরিং",
+    VSMSubTitle: "ভাইটাল সাইন মনিটরিং",
+
+    HTPLTitle: "সুস্থতা",
+    HTPLSubTitle: "সুস্থতা",
+  },
+};

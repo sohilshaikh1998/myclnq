@@ -1,0 +1,53 @@
+# Uncomment the next line to define a global platform for your project
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+
+platform :ios, '13.0'
+
+target 'smartHelpRequester' do
+  config = use_native_modules!
+  pod 'FirebaseSessions', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'FirebaseCoreExtension', :modular_headers => true
+  pod 'FirebaseInstallations', :modular_headers => true
+  pod 'GoogleDataTransport', :modular_headers => true
+  pod 'nanopb', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+  
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways/Permission-LocationAlways.podspec"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse/Permission-LocationWhenInUse.podspec"
+  
+# Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  #use_flipper!()
+  use_flipper!({ "Flipper-DoubleConversion" => "1.1.7" })
+  
+  $dynamic_framework = ['PayUAssetLibraryKit', 'PayUBizCoreKit', 'PayUCheckoutProBaseKit', 'PayUCheckoutProKit', 'PayUCustomBrowser', 'PayULoggerKit', 'PayUNetworkingKit', 'PayUUPICoreKit', 'Socket.IO-Client-Swift', 'Starscream','PayUParamsKit', 'PayUCrashReporter', 'PayUNetworkReachability']
+
+  pod 'react-native-cameraroll', :path => '../node_modules/@react-native-camera-roll/camera-roll'
+
+
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+
+  post_install do |installer|
+    react_native_post_install(installer)
+    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+    installer.pod_targets.each do |pod|
+      if $dynamic_framework.include?(pod.name)
+        def pod.build_type;
+        Pod::BuildType.dynamic_framework
+      end
+    end
+  end
+end
+end

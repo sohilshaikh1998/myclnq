@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-u9-dDo">
+                    <rect key="frame" x="95" y="313.66666666666669" width="185" height="185"/>
+                    <color key="backgroundColor" red="1" green="0.18128264928071125" blue="0.18733290234243438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Oce-u9-dDo" secondAttribute="height" multiplier="1:1" id="CZn-fF-hJ7"/>
+                        <constraint firstAttribute="height" constant="185" id="HXT-oz-unC"/>
+                        <constraint firstAttribute="width" constant="185" id="LPy-ls-ffy"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.27683600816128118" blue="0.31014773028794029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Oce-u9-dDo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4XD-4C-Gg0"/>
+                <constraint firstItem="Oce-u9-dDo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7Qy-tq-0P9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="16" y="151"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo" width="512" height="512"/>
+    </resources>
+</document>

@@ -1,0 +1,250 @@
+export default{
+        article: {
+            most_view : "Artikel Paling Banyak Dilihat",
+        },
+        isMandatory: "Diperlukan",
+        topTab: {
+            upcoming: "Mendatang",
+            past: "masa lalu",
+            new: "baru",
+            pending: "Tertunda",
+            history: "Sejarah"
+        },
+        mandatory: {
+            firstName: "Nama Depan Wajib diisi",
+            lastName: "Nama belakang Wajib diisi",
+            NRIC: "Silakan masukkan nomor NRIC yang valid",
+            relation: "Relasi Diperlukan",
+            gender: "Jenis Kelamin Diperlukan",
+            insuranceNumber: "Nomor Asuransi Diperlukan",
+            insuranceCompany: "Diperlukan Perusahaan Asuransi",
+            mobNumber: "Nomor Ponsel tidak valid, Silakan masukkan nomor yang valid !!!",
+            mobMatching: "Anda menggunakan nomor pendaftaran yang ada, silakan masukkan nomor baru Anda.",
+            name: "Nama Wajib diisi",
+            email: "Email wajib diisi",
+            message:"Deskripsi Diperlukan",
+            ageDifference: "Tanggal Lahir Harus lebih dari 15 tahun",
+            invalidEmail: "Id email tidak valid",
+            emailOrPhone: "Silakan masukkan email atau nomor ponsel",
+        },
+        btnTxt : {
+            cancel: "BATAL",
+            submit: "KIRIM",
+            extend:  "PERPANJANG",
+            payNow:  "BAYAR SEKARANG",
+            viewPay: "LIHAT & BAYAR",
+            paid: "Dibayar",
+            getInvoive: "Dapatkan Faktur",
+            close:  "Tutup",
+            confirm: "KONFIRMASI",
+            invoice:"INVOICE",
+            send:  "KIRIM"
+        },
+        addressModal : {
+            selectAdd: "Pilih Alamat"
+        },
+        alert : {
+            patient_alert: "Mohon tambahkan pasien sebelum memesan pengasuh.",
+            add_address: "Harap tambahkan alamat sebelum memesan pengasuh.",
+            select_adddress: "Silakan pilih alamat sebelum memesan pengasuh.",
+            alert_language:  "Anda tidak dapat memilih lebih dari 3 bahasa",
+            looking_msg: "Saya Mencari...",
+            alert_date:  "Silakan pilih tanggal mulai terlebih dahulu",
+            alert_time:  "Silahkan pilih waktu mulai dulu",
+            alert_hour: "Anda tidak dapat mengatur jam lebih dari 24 jam atau kurang dari 1",
+            alert_day: "Anda tidak dapat mengatur jumlah hari kurang dari 1",
+            alert_address: "Alamat Anda tidak tersedia, harap tambahkan alamat Anda.",
+            request_limit: "Maaf. Anda tidak dapat mengajukan permintaan dalam waktu 2 jam. Silakan pilih waktu setelah ",
+            days_limit: "Jumlah hari hilang atau kurang dari 1",
+            hour_limit: "Jam per hari hilang atau kurang dari 1",
+            select_nationality: "Pilih Kebangsaan yang Diinginkan",
+            select_patient: "Pilih Kondisi Pasien",
+            invoice_success: "Faktur telah dikirim ke email Anda",
+            try_again: "Silakan coba lagi nanti",
+            extend_success:  "Permintaan perpanjangan Anda diterima.",
+            cancel_alert: "Apakah Anda yakin ingin membatalkan.",
+            alert_notification: "Anda tidak mendapat pemberitahuan.",
+            vital_record: "Tolong tambahkan catatan untuk yang vital",
+            vital_range: "Tolong tambahkan rentang untuk vital"
+        },
+        label : {
+            male: "Laki-laki",
+            female: "Perempuan",
+            card: "KARTU",
+            experience: "Pengalaman",
+            send_experience: "EXPERIENCE",
+            send_fresher:  "SEGAR",
+            fresher: "Lebih segar",
+            enabled:"AKTIFKAN",
+            disabled: "NONAKTIF",
+            more: "+ Lebih banyak",
+            night:"Diperlukan Menginap Malam ?",
+            start_date: "Tanggal Mulai",
+            start_time: "Waktu Mulai",
+            days:  "Jumlah Hari",
+            hours: "Jam / Hari",
+            age:  "Preferensi Usia",
+            gender:  "Jenis Kelamin",
+            nationality: "Kewarganegaraan Pengasuh",
+            language: "Bahasa Berbicara",
+            type: "Jenis Pemberi Perawatan",
+            services: "Layanan",
+            select_date:  "Pilih Tanggal Mulai",
+            select_time: "Pilih Waktu Mulai",
+            select_service:  "Pilih Layanan",
+            condition:  "Kondisi Pasien",
+            patient_detail: "Rincian Pasien",
+            symptoms: "Gejala",
+            call_charge:"Call Charge",
+            gst:"GST",
+            discount:"Discount",
+            total:"Total",
+            userAddress:"Alamat Pasien",
+            payment_status: "Status Pembayaran",
+            queueNumber: "Nomor Antrian",
+            appointmentStatus: "Status Janji Temu",
+            information:  "Informasi Tambahan",
+            add_address: "Tambah Alamat",
+            cancel: "Batal",
+            please_msg: "Mohon Konfirmasi Anda",
+            requirement: "Persyaratan Pemberi Perawatan",
+            location: "Lokasi",
+            looking_for: "Mencari",
+            date: "Tanggal",
+            jobDate:  "Waktu Tanggal Pekerjaan",
+            requestDate: "Waktu Tanggal Permintaan",
+            appointmentDetails: "Rincian Janji Temu",
+            doctorDetail: "Detail Dokter",
+            clinicDetail: "Rincian Klinik",
+            startDateTime: "Tanggal Waktu",
+            cancelAppoinment: "Batalkan Janji",
+            reschduleAppoinment: "menjadwalkan ulang Janji",
+            chat: "Mengobrol dengan dokter",
+            medicalCertificate: "Sertifikat Medis",
+            viewPres: "Lihat resep obat",
+            viewNotes: "Lihat Catatan",
+            invoice: "Faktur",
+            healthPerfect: "Kesehatan Anda Sempurna !",
+            nurse: "Perawat",
+            nurse_detail: "Rincian Perawat",
+            preferences: "Preferensi",
+            experienced: "Berpengalaman",
+            male_age: "Laki-laki,Umur:",
+            female_age: "Perempuan, Umur:",
+            speaks: "Berbicara:",
+            requests: "Permintaan",
+            new: "Baru",
+            history: "Sejarah",
+            pending: "Tertunda",
+            service_charge: "Biaya Layanan",
+            additional_info: "Info Tambahan",
+            apply_coupon: "Terapkan Kupon",
+            request_detail: "Detail Pekerjaan",
+            order_id: "ID Pesanan",
+            order_total: "Total Pesanan:",
+            extend_request: "Perpanjang Permintaan",
+            send_request: "Kirim Permintaan",
+            service_provider: "Penyedia Layanan",
+            see_more: "Lihat Selengkapnya",
+            no_notification: "Tidak ada Pemberitahuan untuk ditampilkan !!!",
+            cart_count: "Jumlah keranjang",
+            notForSale: "",
+            notForSaleMessage: "Harap Hapus Produk yaitu Tidak Tersedia Untuk Dijual.",
+            REGISTER: "DAFTAR"
+        },
+        aboutUs : {
+            aboutus_1: "MyCLNQ bertindak sebagai toko serba ada untuk mengurus semua pemesanan janji temu medis Anda secara Cerdas dan Digital. "+
+                        "MyCLNQ Ini memberi Anda pandangan intelijen tentang waktu tunggu paling sedikit di berbagai klinik terdekat dan menangani Anda kebutuhan mendesak/perhatian segera dan saran untuk membuat janji dengan dokter yang paling tepat yang tersedia. "+
+                        "MyCLNQ menyediakan lingkungan yang aman dengan kemudahan mengelola profil keluarga dan orang yang Anda cintai. "+
+                        "MyCLNQ Ini dengan cerdas memberi tahu Anda di nomor antrian Anda. MyCLNQ memiliki login cerdas bebas kata sandi dengan menggunakan nomor ponsel Anda and an OTP (one time password) sent to your mobile phone to login to the application. "+
+                        "Hence there is no hassle of dan OTP (satu kali kata sandi) dikirim ke ponsel Anda untuk masuk ke aplikasi. "+
+                        "Oleh karena itu tidak ada kerumitan mengingat kata sandi untuk masuk ke aplikasi.",
+    
+            aboutus_2: "MyCLNQ juga membantu memesan transportasi medis non-darurat secara digital dan cerdas. "+
+                        "MyCLNQ Sekarang permintaan transportasi Medis Anda telah dikirim ke beberapa penyedia layanan dan peluang lebih tinggi untuk mendapatkan transportasi untuk Anda secara digital. "+
+                        "Notifikasi pintar dalam Aplikasi/SMS akan membantu pemohon mengetahui tentang Penyedia Layanan, Pengemudi dan Detail Kendaraan.",
+          
+            aboutus_3: "MyCLNQ memiliki login gratis kata sandi pintar berdasarkan nomor ponsel Anda dan mengirim OTP. Oleh karena itu, tidak perlu mengingat kata sandi. ",
+
+            aboutus_4: "MyCLNQ adalah langkah untuk membuat bangsa kita Cerdas.",
+            helpSupport: "Silakan email kami untuk bantuan dan dukungan di\n Info@ssivixlsb.com"
+        },
+        quickRequest : {
+            consent : "\n Saya memberikan persetujuan untuk memanfaatkan konsultasi melalui telemedicine dan siap untuk berbagi nama identitas asli, usia, alamat, ID email, nomor telepon atau identifikasi lainnya yang mungkin dianggap tepat. Konsultasi akan merekam dan menyimpan format enkripsi sesuai pedoman peraturan lokal",
+            
+            videoCallTCForAll: "\n\b• \tKonsultasi video kami hanya cocok untuk kondisi non-darurat. \n\n"+ 
+                    "\b• \tSemua dokter kami terdaftar di dewan medis\n\n"+
+                    "\b• \tKonsultasi video sesuai dengan pedoman peraturan lokal",
+            
+            videoCallTCForSG : "\n\b• \tJika Anda memerlukan perhatian medis yang mendesak, hubungi 995 atau kunjungi A&E terdekat. 995 \n\n"+
+                    "\b• \tAnak di bawah umur harus terlihat bersama orang tua/walinya\n\n "+
+                    "\b• \tAda keterbatasan telekonsultasi tanpa pemeriksaan fisik.\n\n"+
+                    "\b• \tSemua dokter kami terdaftar di Dewan Medis Singapura.",
+                    
+            videoCallTCForIN: "\n\b• \tJika Anda memerlukan perhatian medis yang mendesak, hubungi 102 atau kunjungi A&E terdekat."+
+                    "\n\n \b• \tAnak di bawah umur harus terlihat bersama orang tua/walinya\n\n"+
+                    "\b• \tAda keterbatasan telekonsultasi tanpa pemeriksaan fisik.\n\n"+
+                    "\b• \tSemua dokter kami terdaftar di Dewan Medis Singapura."
+        },
+        bookingDetails : {
+            tripStartInfo: "Perjalanan Anda akan dimulai dalam 45 hingga 60 Menit berikutnya",
+            cardPay: "Harap bayar tarif sebelum 15 menit dari waktu pemesanan, jika tidak, pemesanan Anda akan dibatalkan secara otomatis.",
+            tripStartInfoForCardPay: "Perjalanan Anda akan dimulai dalam 45 hingga 60 Menit berikutnya. Silakan bayar tarif dalam 15 Menit berikutnya, jika tidak, pemesanan Anda akan otomatis dibatalkan. ",
+        },
+        error_code : {
+            error_10001: "Kredensial Tidak Valid",
+            error_10002: "Bersabarlah dengan kami. Ada beberapa kesalahan teknis dan kami sedang berusaha mengatasinya. Terima kasih atas pengertian Anda.",
+            error_10003: "Silakan masukkan detail bidang yang hilang.",
+            error_10004: "Maaf, Tidak ada detail pengguna yang ditemukan. Silakan mendaftar terlebih dahulu atau klik temukan id pengguna Anda",
+            error_10005: "Maaf. Tidak ada hasil yang ditemukan.",
+            error_10006: "Maaf. Sesi telah kedaluwarsa. Silakan login kembali",
+            error_10007: "Sesi Anda kedaluwarsa karena tidak aktif selama 5 menit. Silakan masuk kembali",
+            error_10008: "Maaf OTP salah atau OTP Anda kedaluwarsa. Silakan klik kirim ulang OTP dan coba",
+            error_10009: "Maaf. Klinik tidak menerima pemesanan terlebih dahulu.",
+            error_10010: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+    
+            error_10011: "Durasi Slot Tidak Tersedia",
+            error_10012:"Waktu Shift tidak Tersedia",
+            error_10013: "Maaf. Anda tidak dapat memesan janji temu beberapa hari yang lalu. Silakan pilih tanggal sekarang atau yang akan datang.",
+            error_10014: "Ups. Anda membutuhkan waktu lebih lama dari biasanya. Sesi kedaluwarsa. Silakan login kembali",
+            error_10015: "Maaf. Klinik tidak menerima pemesanan terlebih dahulu.",
+            error_10016: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+            error_10017: "Slot ini telah dipesan. Silakan pilih slot lain",
+            error_10018: "Penunjukan Anda sudah dimulai",
+            error_10019: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+    
+            error_10019_calendar: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+            error_10020: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+            error_10020_calendar: "Ups..Sayangnya, dokter tidak tersedia sesuai slot waktu yang dipilih. Silakan ubah slot atau tanggal dan coba lagi.",
+            error_10021: "Satu profil Diri Pengguna sudah ada untuk pengguna ini",
+            error_10024: "Maaf, Maksimal 6 profil hanya diperbolehkan per Pengguna",
+            error_10025: "Maaf, Slot tidak dapat dipesan karena hanya satu janji temu yang diizinkan per pengguna dalam satu sesi",
+            error_10025_calendar: "Maaf, Kami tidak dapat mengirim permintaan janji temu karena hanya satu permintaan janji temu yang diizinkan per pengguna dalam satu sesi",
+            error_10028: "Maaf, Pengguna tidak dapat memesan lebih dari satu janji temu pada hari yang sama pada waktu yang sama",
+            error_10029: "Maaf, Anda salah memasukkan nomor NRIC. Silakan periksa dan coba lagi",
+            error_10030: "Maaf, Pengguna dengan nama yang sama sudah ada di profil Anda",
+            error_10033: "Maaf, Pengguna dengan email yang sama sudah ada",
+            error_Other: "Pemesanan Gagal karena beberapa kesalahan"
+        },
+        symptoms: {
+            allergies: 'Alergi',
+            backpain:'sakittulangbelakang',
+            blockedNose: 'Blocked Nose',
+            contraception: 'KB ( kontrasepsi)',
+            cough:'batuk',
+            diare:'diarrhoea',
+            Dizzines : 'pusing ( sakit kepala)' ,
+            eyeConditions: 'kesehatan mata',
+            fever:'demam',
+            fitnessFlu : 'kesehatan penerbangan' ,
+            fluCold:'flu',
+            healthscreening :'skrining kesehatan' , 
+            jointMuscle:'nyeri sendi /otot' , 
+            covidTest: 'test covitrt/pcr',
+            rtPCRTest: 'RT PCR Test',
+            pdtPCRTest: 'PDT PCR Test',
+            covidVaccination: 'vaksin covid'
+        }
+
+    }
+    

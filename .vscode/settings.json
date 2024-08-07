@@ -1,0 +1,9 @@
+{
+  "files.associations": {},
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.format.enable": false,
+  "java.configuration.updateBuildConfiguration": "interactive"
+}

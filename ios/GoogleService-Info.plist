@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>84286705331-3ip4s5g8i3kul9rk3efscvtki12ruho7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.84286705331-3ip4s5g8i3kul9rk3efscvtki12ruho7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAP1lEs7VI01VL3xgataeUzeX502bUHXwo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>84286705331</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ssivixlab.MYCLNQ</string>
+	<key>PROJECT_ID</key>
+	<string>myclnq-requester-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>myclnq-requester-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:84286705331:ios:010fdc8552b0d381</string>
+	<key>DATABASE_URL</key>
+	<string>https://myclnq-requester-ios.firebaseio.com</string>
+</dict>
+</plist>

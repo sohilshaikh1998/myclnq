@@ -1,0 +1,129 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Bold.otf",
+      "sha1": "4b8de823e83e48c33509268713d11bb0e8bec25a"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-BoldCn.otf",
+      "sha1": "fa3dad9c4d33a2d6579401a3f9138258347f03a9"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-BoldCnIt.otf",
+      "sha1": "c4f96bfb8b14ace5da65576cf112bdcd98cf9fec"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-BoldIt.otf",
+      "sha1": "3c756b8d206143447553e5fa9387ed933b960e57"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Cn.otf",
+      "sha1": "8878da3567a33f540ba6a710bc053278f8a101c3"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-CnIt.otf",
+      "sha1": "a631633c1b93c0a4ff557ff5a340bcd471f58d25"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Demi.otf",
+      "sha1": "c0b32adb5cbf313ae28e11e48780230708a6f907"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-DemiCn.otf",
+      "sha1": "b605317aec03f2d9257727b2e520e93e33c5c633"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-DemiCnIt.otf",
+      "sha1": "4552620aab90a87246ec4d3ccf13b402f23cf502"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-DemiIt.otf",
+      "sha1": "3c031e9f0b54e93b2e99d311224978c19a83c685"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Heavy.otf",
+      "sha1": "c8e8441036d0ccf844f84f5a001104a101f11854"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-HeavyCn.otf",
+      "sha1": "345770ae1f39c47c0f707bd77a7c2748ff8a0129"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-HeavyCnIt.otf",
+      "sha1": "663389493ed0bbd37e192fad0d824b7f7a2c6602"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-HeavyIt.otf",
+      "sha1": "00e03d3e6fc5fb2845eb8a14809d6211de16b35f"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-It.otf",
+      "sha1": "4bc751ea7e0fcee2382b53ca98c9d07884f1df9e"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Medium.otf",
+      "sha1": "3c46682396394ef0b1061d03f9d1c647d4de69fb"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-MediumCn.otf",
+      "sha1": "d45c6d346c6e7c7bfd49a71aa9be0434d23a1a1d"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-MediumCnIt.otf",
+      "sha1": "a438eded1a5ece376712909580f9b35de0d77172"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-MediumIt.otf",
+      "sha1": "90f4dcde045f034e2fc078ea64a486c214c2c1f3"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-Regular.otf",
+      "sha1": "944265a509ca5034d2a5275bb11314e672c8337f"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-UltLt.otf",
+      "sha1": "42beaa7d97128666bdee6abcb86fa4fcd4a6438e"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-UltLtCn.otf",
+      "sha1": "03511b7d231cb7dd1e09dfac7c601af133d50f62"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-UltLtCnIt.otf",
+      "sha1": "d6e2b095b2b0873ae070e82c34f0b57f1a114c80"
+    },
+    {
+      "path": "assets/fonts/AvenirNextLTPro-UltLtIt.otf",
+      "sha1": "16436ab1721710ff863bb36d98c62c5a1ba7825b"
+    },
+    {
+      "path": "assets/fonts/Dosis-Bold.ttf",
+      "sha1": "3fae80a73da8e4fae927d964bc47e99bebc63c99"
+    },
+    {
+      "path": "assets/fonts/Dosis-ExtraBold.ttf",
+      "sha1": "7034944c1abbd822d924f31d4613294e7edcfe59"
+    },
+    {
+      "path": "assets/fonts/Dosis-ExtraLight.ttf",
+      "sha1": "ac06dea30b682a73020a42eaaaa7b986ea9369d9"
+    },
+    {
+      "path": "assets/fonts/Dosis-Light.ttf",
+      "sha1": "77a04a68939bf4d980f040c58f734d0b0cd874a7"
+    },
+    {
+      "path": "assets/fonts/Dosis-Medium.ttf",
+      "sha1": "578d6da16e913f4a30862576d7558576fe1e9fa3"
+    },
+    {
+      "path": "assets/fonts/Dosis-Regular.ttf",
+      "sha1": "cdd999544bb4bf3ab342292eb1f2d59d0979d96c"
+    },
+    {
+      "path": "assets/fonts/Dosis-SemiBold.ttf",
+      "sha1": "97a1ecc96a925a93c57ca3bab64bc964bad78ea0"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "1031743870650",
+    "firebase_url": "https://myclnq-dc1de.firebaseio.com",
+    "project_id": "myclnq-dc1de",
+    "storage_bucket": "myclnq-dc1de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031743870650:android:010fdc8552b0d381",
+        "android_client_info": {
+          "package_name": "com.ssivixlab.MYCLNQ"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031743870650-8mssni8tltjvil1sn48enbgtq7ff5a5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssivixlab.MYCLNQ",
+            "certificate_hash": "22d7993a4109779ae10cc35296da54a9bd0db398"
+          }
+        },
+        {
+          "client_id": "1031743870650-ab5nbsvgt1usds2d3hpj0lkb2rknva87.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssivixlab.MYCLNQ",
+            "certificate_hash": "baf7e13eb409a3173685c84a2c50ff25e8f58731"
+          }
+        },
+        {
+          "client_id": "1031743870650-rl02n1shl1s2ced5gqiavmqcrj25p00l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssivixlab.MYCLNQ",
+            "certificate_hash": "798179af33c9e2003143ebc765233e6ce0c8585a"
+          }
+        },
+        {
+          "client_id": "1031743870650-t9onabbip6l42uksu54lq48rdhhbregn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssivixlab.MYCLNQ",
+            "certificate_hash": "7369c007aa5664e323bc021a00109b5678745978"
+          }
+        },
+        {
+          "client_id": "1031743870650-vq4g7ortb9ijq6ge1j9vafrc9ea99p2v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssivixlab.MYCLNQ",
+            "certificate_hash": "10306f2c37a190f96f38676480d0d3cf09f701e5"
+          }
+        },
+        {
+          "client_id": "1031743870650-pukdkft6de33n8canfp8to5hmhvbmmbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATSztG2KTCPvxL0jgCMWl-jfLOj2_0yqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031743870650-pukdkft6de33n8canfp8to5hmhvbmmbi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031743870650-asm7bj9bpme1sdg4angldop3go7ucar2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ssivixlab.MYCLNQ"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

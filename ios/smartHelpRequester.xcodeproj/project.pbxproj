@@ -1,0 +1,1016 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CC319FBFD5A403EBF77BD9F /* AvenirNextLTPro-DemiIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DA8197A078B4CAFB37C9872 /* AvenirNextLTPro-DemiIt.otf */; };
+		0E384D2D6D3B439FACD84882 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6FCB7F5BE29F4965B2F8B834 /* AvenirNextLTPro-UltLtCnIt.otf */; };
+		0ED9749B211A15680087C6B8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED9749A211A15670087C6B8 /* Social.framework */; };
+		0ED9749D211A156E0087C6B8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED9749C211A156E0087C6B8 /* MessageUI.framework */; };
+		0ED974CA211C9A2E0087C6B8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED974C9211C9A2E0087C6B8 /* CoreData.framework */; };
+		0ED974CC211C9A370087C6B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED974CB211C9A370087C6B8 /* SystemConfiguration.framework */; };
+		0ED974CE211C9A410087C6B8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED974CD211C9A410087C6B8 /* libz.tbd */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		1C876A4F44654FA39AC44C43 /* AvenirNextLTPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727D08AAB29E4EE6A58CCC33 /* AvenirNextLTPro-Medium.otf */; };
+		2004CC070AA2471BBA4998A8 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66F28977D17A4EDEAA308B2D /* AvenirNextLTPro-Demi.otf */; };
+		256344FF8D9D4CB58809AF80 /* AvenirNextLTPro-MediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5764EAD8EB3C427F86C439C5 /* AvenirNextLTPro-MediumIt.otf */; };
+		2AB145C51C2DFD236E0BF57E /* libPods-smartHelpRequester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6DA57DA88D7AA3B5C62FB8 /* libPods-smartHelpRequester.a */; };
+		2BD3A29CBECA4CE3B3C29DAC /* AvenirNextLTPro-DemiCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DF2768B5AE44F7E88A6B0C0 /* AvenirNextLTPro-DemiCn.otf */; };
+		3CCD06D8EA8E4FCD90B41409 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56FEA86CF20F4D57BA3B81F1 /* AvenirNextLTPro-HeavyCnIt.otf */; };
+		511CC2AE3F514D37A33089C7 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 012DA835B67E47A8AF43DD27 /* AvenirNextLTPro-UltLtCn.otf */; };
+		533E8340FB4744AD92C3943F /* AvenirNextLTPro-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 850536E2859D42ED93E433D2 /* AvenirNextLTPro-Heavy.otf */; };
+		597B8690331D4286BF17A7A1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29EE894295E34E4BA7B1A85B /* AvenirNextLTPro-MediumCnIt.otf */; };
+		70FB1F5430C242EA92963C8B /* AvenirNextLTPro-BoldCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF21AA7D293A457F8A54AF36 /* AvenirNextLTPro-BoldCnIt.otf */; };
+		7984C07D2D0544898049BA27 /* AvenirNextLTPro-CnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE31B53A6537445997F733BC /* AvenirNextLTPro-CnIt.otf */; };
+		7C562DF397F746CC95DEB45B /* AvenirNextLTPro-BoldCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 44CE4EC657FA479B9591A7DF /* AvenirNextLTPro-BoldCn.otf */; };
+		7C7F3CEC2BEA3A0900302092 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C7F3CEB2BEA3A0900302092 /* PrivacyInfo.xcprivacy */; };
+		7ED8519280A44517BA723895 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55778D314A7F4220A1F18BCB /* AvenirNextLTPro-HeavyCn.otf */; };
+		8507F2142A3832DD002C5018 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		8507F2162A3832E8002C5018 /* notification.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8507F2152A3832E7002C5018 /* notification.wav */; };
+		921BDDAE2886881C00216E8F /* QBImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921BDDAD2886881C00216E8F /* QBImagePicker.storyboard */; };
+		92687F37287865D1000EE170 /* myclnq_bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687F36287865D1000EE170 /* myclnq_bridge.swift */; };
+		9320BB6B24A9C8FC0005D616 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9320BB6A24A9C8F20005D616 /* libsqlite3.tbd */; };
+		9320BB8424A9D79F0005D616 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9320BB8224A9D7980005D616 /* libc++.tbd */; };
+		9F33948829BF4A3300460155 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F33948729BF4A3300460155 /* main.m */; };
+		9F7647AF24D7285000875650 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7647AE24D7285000875650 /* Images.xcassets */; };
+		9F7647B024D7289C00875650 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA4F8AF21395CE200F819B1 /* LaunchScreen.xib */; };
+		ABDF89E83F5E4A25910D641F /* AvenirNextLTPro-Cn.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA2EEE3274AE4B658BA64083 /* AvenirNextLTPro-Cn.otf */; };
+		AF95349524B73D4000B459EE /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 203C8274CD304AF19785DD87 /* AvenirNextLTPro-Bold.otf */; };
+		AFC8A2EA246D5EFC004A34F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFC8A2E9246D5EFC004A34F0 /* GoogleService-Info.plist */; };
+		BA5302B9CC5241069CB8E0A9 /* AvenirNextLTPro-UltLt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 838607F8FE814D8B8556EB95 /* AvenirNextLTPro-UltLt.otf */; };
+		BEEA1A55714A48E08A7ACB21 /* AvenirNextLTPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A68997A9EA7E45B0B1162C91 /* AvenirNextLTPro-BoldIt.otf */; };
+		C0EC02B8B48547D187744E31 /* RNHTMLtoPDFTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 1781992429EA4BC0AA10B793 /* RNHTMLtoPDFTests.xctest */; };
+		C2C93BE4496A4546BA7342B3 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DF712D80479400393B470FF /* AvenirNextLTPro-Regular.otf */; };
+		C4597B486C0B4BD4B8DCE657 /* AvenirNextLTPro-HeavyIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1738F2FD5E0B44E59E1DD9E9 /* AvenirNextLTPro-HeavyIt.otf */; };
+		C4E81134A46642CFA34EA6A4 /* AvenirNextLTPro-UltLtIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2304A27C3244433906F628D /* AvenirNextLTPro-UltLtIt.otf */; };
+		D73105C55CF0464590F05C44 /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = E2E51E4CA75B4B62A4024B72 /* AvenirNextLTPro-It.otf */; };
+		DC3EDB23AF70432B81F0E808 /* AvenirNextLTPro-DemiCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F868736207DB4F578000C4DD /* AvenirNextLTPro-DemiCnIt.otf */; };
+		E013241F9040458A9B78119E /* AvenirNextLTPro-MediumCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08A5A321916D49939147347B /* AvenirNextLTPro-MediumCn.otf */; };
+		F25A932429507344002DA5C3 /* LinkPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25A932329507344002DA5C3 /* LinkPresentation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		012DA835B67E47A8AF43DD27 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtCn.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		08A5A321916D49939147347B /* AvenirNextLTPro-MediumCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumCn.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumCn.otf"; sourceTree = "<group>"; };
+		0ED9749A211A15670087C6B8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0ED9749C211A156E0087C6B8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0ED974C9211C9A2E0087C6B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0ED974CB211C9A370087C6B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0ED974CD211C9A410087C6B8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0ED974CF211C9A4C0087C6B8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		13B07F961A680F5B00A75B9A /* smartHelpRequester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartHelpRequester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = smartHelpRequester/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = smartHelpRequester/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = smartHelpRequester/Info.plist; sourceTree = "<group>"; };
+		1738F2FD5E0B44E59E1DD9E9 /* AvenirNextLTPro-HeavyIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyIt.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyIt.otf"; sourceTree = "<group>"; };
+		1781992429EA4BC0AA10B793 /* RNHTMLtoPDFTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RNHTMLtoPDFTests.xctest; sourceTree = "<group>"; };
+		203C8274CD304AF19785DD87 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Bold.otf"; path = "../assets/fonts/AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		29EE894295E34E4BA7B1A85B /* AvenirNextLTPro-MediumCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumCnIt.otf"; sourceTree = "<group>"; };
+		2DF2768B5AE44F7E88A6B0C0 /* AvenirNextLTPro-DemiCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiCn.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiCn.otf"; sourceTree = "<group>"; };
+		37A8DD6082D6AD361A813D3B /* Pods-smartHelpRequester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartHelpRequester.release.xcconfig"; path = "Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester.release.xcconfig"; sourceTree = "<group>"; };
+		3F6DA57DA88D7AA3B5C62FB8 /* libPods-smartHelpRequester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-smartHelpRequester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44CE4EC657FA479B9591A7DF /* AvenirNextLTPro-BoldCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldCn.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldCn.otf"; sourceTree = "<group>"; };
+		53EE214D287C11CA00F47DDC /* smartHelpRequesterRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = smartHelpRequesterRelease.entitlements; path = smartHelpRequester/smartHelpRequesterRelease.entitlements; sourceTree = "<group>"; };
+		55778D314A7F4220A1F18BCB /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyCn.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
+		56FEA86CF20F4D57BA3B81F1 /* AvenirNextLTPro-HeavyCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-HeavyCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-HeavyCnIt.otf"; sourceTree = "<group>"; };
+		5764EAD8EB3C427F86C439C5 /* AvenirNextLTPro-MediumIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-MediumIt.otf"; path = "../assets/fonts/AvenirNextLTPro-MediumIt.otf"; sourceTree = "<group>"; };
+		5DF712D80479400393B470FF /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Regular.otf"; path = "../assets/fonts/AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
+		66F28977D17A4EDEAA308B2D /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Demi.otf"; path = "../assets/fonts/AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
+		6DA8197A078B4CAFB37C9872 /* AvenirNextLTPro-DemiIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiIt.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiIt.otf"; sourceTree = "<group>"; };
+		6FCB7F5BE29F4965B2F8B834 /* AvenirNextLTPro-UltLtCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtCnIt.otf"; sourceTree = "<group>"; };
+		727D08AAB29E4EE6A58CCC33 /* AvenirNextLTPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Medium.otf"; path = "../assets/fonts/AvenirNextLTPro-Medium.otf"; sourceTree = "<group>"; };
+		7C7F3CEB2BEA3A0900302092 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		821507EFCA47419CAC50070D /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
+		838607F8FE814D8B8556EB95 /* AvenirNextLTPro-UltLt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLt.otf"; sourceTree = "<group>"; };
+		850536E2859D42ED93E433D2 /* AvenirNextLTPro-Heavy.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Heavy.otf"; path = "../assets/fonts/AvenirNextLTPro-Heavy.otf"; sourceTree = "<group>"; };
+		8507F2152A3832E7002C5018 /* notification.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notification.wav; sourceTree = "<group>"; };
+		8518303526C519C700A34784 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "smartHelpRequester/zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8518303626C5556000A34784 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "smartHelpRequester/zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8518303726C5556700A34784 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = smartHelpRequester/id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		852AAEE227BBE7E5008E0571 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = smartHelpRequester/km.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		85610E5126CB931E00A82A27 /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = smartHelpRequester/ta.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		856843A326DD353700A651EC /* bn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bn; path = smartHelpRequester/bn.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		85A5F56926B979FD00813CD8 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = smartHelpRequester/he.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		85A5F56A26B97A2F00813CD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = smartHelpRequester/en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		85BD55C7271AB01800D6E883 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = smartHelpRequester/vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		921BDDAD2886881C00216E8F /* QBImagePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QBImagePicker.storyboard; path = "../node_modules/react-native-image-crop-picker/ios/QBImagePicker/QBImagePicker/QBImagePicker.storyboard"; sourceTree = "<group>"; };
+		92687F35287865D0000EE170 /* smartHelpRequester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "smartHelpRequester-Bridging-Header.h"; sourceTree = "<group>"; };
+		92687F36287865D1000EE170 /* myclnq_bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myclnq_bridge.swift; sourceTree = "<group>"; };
+		9320BB6A24A9C8F20005D616 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9320BB8224A9D7980005D616 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9F33948729BF4A3300460155 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F40D5092992132E00E5B2AF /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MobileRTC.xcframework; path = ZoomSDK/MobileRTC.xcframework; sourceTree = "<group>"; };
+		9F7647AE24D7285000875650 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = smartHelpRequester/Images.xcassets; sourceTree = "<group>"; };
+		A2304A27C3244433906F628D /* AvenirNextLTPro-UltLtIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-UltLtIt.otf"; path = "../assets/fonts/AvenirNextLTPro-UltLtIt.otf"; sourceTree = "<group>"; };
+		A47EA6FB1D5E4A8DB31EC473 /* libRNHTMLtoPDF.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNHTMLtoPDF.a; sourceTree = "<group>"; };
+		A68997A9EA7E45B0B1162C91 /* AvenirNextLTPro-BoldIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldIt.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldIt.otf"; sourceTree = "<group>"; };
+		AA2EEE3274AE4B658BA64083 /* AvenirNextLTPro-Cn.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-Cn.otf"; path = "../assets/fonts/AvenirNextLTPro-Cn.otf"; sourceTree = "<group>"; };
+		AA5825E99C074CBD990A9595 /* libSMXCrashlytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSMXCrashlytics.a; sourceTree = "<group>"; };
+		AE31B53A6537445997F733BC /* AvenirNextLTPro-CnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-CnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-CnIt.otf"; sourceTree = "<group>"; };
+		AF36B5472111C495008F9A94 /* smartHelpRequester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = smartHelpRequester.entitlements; path = smartHelpRequester/smartHelpRequester.entitlements; sourceTree = "<group>"; };
+		AFA4F8B021395CE200F819B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = smartHelpRequester/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AFC8A2E9246D5EFC004A34F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3D9736D0841EC3C263E5232 /* Pods-smartHelpRequester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartHelpRequester.debug.xcconfig"; path = "Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester.debug.xcconfig"; sourceTree = "<group>"; };
+		DF21AA7D293A457F8A54AF36 /* AvenirNextLTPro-BoldCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-BoldCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldCnIt.otf"; sourceTree = "<group>"; };
+		E2E51E4CA75B4B62A4024B72 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-It.otf"; path = "../assets/fonts/AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		F2439471E26E4354BFBEAA5A /* libRNGooglePlaces.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGooglePlaces.a; sourceTree = "<group>"; };
+		F25A932329507344002DA5C3 /* LinkPresentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkPresentation.framework; path = System/Library/Frameworks/LinkPresentation.framework; sourceTree = SDKROOT; };
+		F868736207DB4F578000C4DD /* AvenirNextLTPro-DemiCnIt.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNextLTPro-DemiCnIt.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiCnIt.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F25A932429507344002DA5C3 /* LinkPresentation.framework in Frameworks */,
+				0ED974CE211C9A410087C6B8 /* libz.tbd in Frameworks */,
+				9320BB6B24A9C8FC0005D616 /* libsqlite3.tbd in Frameworks */,
+				9320BB8424A9D79F0005D616 /* libc++.tbd in Frameworks */,
+				0ED974CC211C9A370087C6B8 /* SystemConfiguration.framework in Frameworks */,
+				0ED974CA211C9A2E0087C6B8 /* CoreData.framework in Frameworks */,
+				0ED9749D211A156E0087C6B8 /* MessageUI.framework in Frameworks */,
+				0ED9749B211A15680087C6B8 /* Social.framework in Frameworks */,
+				C0EC02B8B48547D187744E31 /* RNHTMLtoPDFTests.xctest in Frameworks */,
+				2AB145C51C2DFD236E0BF57E /* libPods-smartHelpRequester.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E2963C220D8E53E00C0334F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				AA5825E99C074CBD990A9595 /* libSMXCrashlytics.a */,
+				821507EFCA47419CAC50070D /* libAirMaps.a */,
+				F2439471E26E4354BFBEAA5A /* libRNGooglePlaces.a */,
+				9320BB6A24A9C8F20005D616 /* libsqlite3.tbd */,
+				9320BB8224A9D7980005D616 /* libc++.tbd */,
+				A47EA6FB1D5E4A8DB31EC473 /* libRNHTMLtoPDF.a */,
+				1781992429EA4BC0AA10B793 /* RNHTMLtoPDFTests.xctest */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* smartHelpRequester */ = {
+			isa = PBXGroup;
+			children = (
+				7C7F3CEB2BEA3A0900302092 /* PrivacyInfo.xcprivacy */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				53EE214D287C11CA00F47DDC /* smartHelpRequesterRelease.entitlements */,
+				9F7647AE24D7285000875650 /* Images.xcassets */,
+				AFC8A2E9246D5EFC004A34F0 /* GoogleService-Info.plist */,
+				AFA4F8AF21395CE200F819B1 /* LaunchScreen.xib */,
+				AF36B5472111C495008F9A94 /* smartHelpRequester.entitlements */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				9F33948729BF4A3300460155 /* main.m */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+			);
+			name = smartHelpRequester;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F40D5092992132E00E5B2AF /* MobileRTC.xcframework */,
+				F25A932329507344002DA5C3 /* LinkPresentation.framework */,
+				0ED974CF211C9A4C0087C6B8 /* libsqlite3.0.tbd */,
+				0ED974CD211C9A410087C6B8 /* libz.tbd */,
+				0ED974CB211C9A370087C6B8 /* SystemConfiguration.framework */,
+				0ED974C9211C9A2E0087C6B8 /* CoreData.framework */,
+				0ED9749C211A156E0087C6B8 /* MessageUI.framework */,
+				0ED9749A211A15670087C6B8 /* Social.framework */,
+				3F6DA57DA88D7AA3B5C62FB8 /* libPods-smartHelpRequester.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67B3181781D04A3FA97075F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				203C8274CD304AF19785DD87 /* AvenirNextLTPro-Bold.otf */,
+				44CE4EC657FA479B9591A7DF /* AvenirNextLTPro-BoldCn.otf */,
+				DF21AA7D293A457F8A54AF36 /* AvenirNextLTPro-BoldCnIt.otf */,
+				A68997A9EA7E45B0B1162C91 /* AvenirNextLTPro-BoldIt.otf */,
+				AA2EEE3274AE4B658BA64083 /* AvenirNextLTPro-Cn.otf */,
+				AE31B53A6537445997F733BC /* AvenirNextLTPro-CnIt.otf */,
+				66F28977D17A4EDEAA308B2D /* AvenirNextLTPro-Demi.otf */,
+				2DF2768B5AE44F7E88A6B0C0 /* AvenirNextLTPro-DemiCn.otf */,
+				F868736207DB4F578000C4DD /* AvenirNextLTPro-DemiCnIt.otf */,
+				6DA8197A078B4CAFB37C9872 /* AvenirNextLTPro-DemiIt.otf */,
+				850536E2859D42ED93E433D2 /* AvenirNextLTPro-Heavy.otf */,
+				55778D314A7F4220A1F18BCB /* AvenirNextLTPro-HeavyCn.otf */,
+				56FEA86CF20F4D57BA3B81F1 /* AvenirNextLTPro-HeavyCnIt.otf */,
+				1738F2FD5E0B44E59E1DD9E9 /* AvenirNextLTPro-HeavyIt.otf */,
+				E2E51E4CA75B4B62A4024B72 /* AvenirNextLTPro-It.otf */,
+				727D08AAB29E4EE6A58CCC33 /* AvenirNextLTPro-Medium.otf */,
+				08A5A321916D49939147347B /* AvenirNextLTPro-MediumCn.otf */,
+				29EE894295E34E4BA7B1A85B /* AvenirNextLTPro-MediumCnIt.otf */,
+				5764EAD8EB3C427F86C439C5 /* AvenirNextLTPro-MediumIt.otf */,
+				5DF712D80479400393B470FF /* AvenirNextLTPro-Regular.otf */,
+				838607F8FE814D8B8556EB95 /* AvenirNextLTPro-UltLt.otf */,
+				012DA835B67E47A8AF43DD27 /* AvenirNextLTPro-UltLtCn.otf */,
+				6FCB7F5BE29F4965B2F8B834 /* AvenirNextLTPro-UltLtCnIt.otf */,
+				A2304A27C3244433906F628D /* AvenirNextLTPro-UltLtIt.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				8507F2152A3832E7002C5018 /* notification.wav */,
+				921BDDAD2886881C00216E8F /* QBImagePicker.storyboard */,
+				92687F36287865D1000EE170 /* myclnq_bridge.swift */,
+				13B07FAE1A68108700A75B9A /* smartHelpRequester */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				67B3181781D04A3FA97075F8 /* Resources */,
+				0E2963C220D8E53E00C0334F /* Recovered References */,
+				92687F35287865D0000EE170 /* smartHelpRequester-Bridging-Header.h */,
+				B283C283BF39FE110B7841FA /* Pods */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* smartHelpRequester.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B283C283BF39FE110B7841FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3D9736D0841EC3C263E5232 /* Pods-smartHelpRequester.debug.xcconfig */,
+				37A8DD6082D6AD361A813D3B /* Pods-smartHelpRequester.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13B07F861A680F5B00A75B9A /* smartHelpRequester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "smartHelpRequester" */;
+			buildPhases = (
+				DBB3074FF37CC36BBC219BB3 /* [CP] Check Pods Manifest.lock */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				3E8E386C9A4786564D6D5031 /* [CP] Embed Pods Frameworks */,
+				E3BC42659E207D56994A7293 /* [CP] Copy Pods Resources */,
+				9740579065E39B3C4604D4D3 /* [CP-User] [RNFB] Core Configuration */,
+				A1A4DDC9BC27B803424C1793 /* [CP-User] [RNFB] Crashlytics Configuration */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = smartHelpRequester;
+			productName = "Hello World";
+			productReference = 13B07F961A680F5B00A75B9A /* smartHelpRequester.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 4N7QW466RB;
+						LastSwiftMigration = 1340;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "smartHelpRequester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Base,
+				he,
+				en,
+				"zh-Hans-CN",
+				id,
+				ta,
+				bn,
+				vi,
+				km,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* smartHelpRequester */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF95349524B73D4000B459EE /* AvenirNextLTPro-Bold.otf in Resources */,
+				7C562DF397F746CC95DEB45B /* AvenirNextLTPro-BoldCn.otf in Resources */,
+				70FB1F5430C242EA92963C8B /* AvenirNextLTPro-BoldCnIt.otf in Resources */,
+				BEEA1A55714A48E08A7ACB21 /* AvenirNextLTPro-BoldIt.otf in Resources */,
+				ABDF89E83F5E4A25910D641F /* AvenirNextLTPro-Cn.otf in Resources */,
+				7C7F3CEC2BEA3A0900302092 /* PrivacyInfo.xcprivacy in Resources */,
+				7984C07D2D0544898049BA27 /* AvenirNextLTPro-CnIt.otf in Resources */,
+				2004CC070AA2471BBA4998A8 /* AvenirNextLTPro-Demi.otf in Resources */,
+				2BD3A29CBECA4CE3B3C29DAC /* AvenirNextLTPro-DemiCn.otf in Resources */,
+				DC3EDB23AF70432B81F0E808 /* AvenirNextLTPro-DemiCnIt.otf in Resources */,
+				AFC8A2EA246D5EFC004A34F0 /* GoogleService-Info.plist in Resources */,
+				0CC319FBFD5A403EBF77BD9F /* AvenirNextLTPro-DemiIt.otf in Resources */,
+				533E8340FB4744AD92C3943F /* AvenirNextLTPro-Heavy.otf in Resources */,
+				7ED8519280A44517BA723895 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				3CCD06D8EA8E4FCD90B41409 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */,
+				C4597B486C0B4BD4B8DCE657 /* AvenirNextLTPro-HeavyIt.otf in Resources */,
+				D73105C55CF0464590F05C44 /* AvenirNextLTPro-It.otf in Resources */,
+				1C876A4F44654FA39AC44C43 /* AvenirNextLTPro-Medium.otf in Resources */,
+				E013241F9040458A9B78119E /* AvenirNextLTPro-MediumCn.otf in Resources */,
+				597B8690331D4286BF17A7A1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */,
+				256344FF8D9D4CB58809AF80 /* AvenirNextLTPro-MediumIt.otf in Resources */,
+				C2C93BE4496A4546BA7342B3 /* AvenirNextLTPro-Regular.otf in Resources */,
+				8507F2162A3832E8002C5018 /* notification.wav in Resources */,
+				BA5302B9CC5241069CB8E0A9 /* AvenirNextLTPro-UltLt.otf in Resources */,
+				511CC2AE3F514D37A33089C7 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
+				0E384D2D6D3B439FACD84882 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */,
+				C4E81134A46642CFA34EA6A4 /* AvenirNextLTPro-UltLtIt.otf in Resources */,
+				921BDDAE2886881C00216E8F /* QBImagePicker.storyboard in Resources */,
+				9F7647AF24D7285000875650 /* Images.xcassets in Resources */,
+				8507F2142A3832DD002C5018 /* main.jsbundle in Resources */,
+				9F7647B024D7289C00875650 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		3E8E386C9A4786564D6D5031 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-Analytics/PayUAnalytics.framework/PayUAnalytics",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-AssetLibrary/PayUAssetLibraryKit.framework/PayUAssetLibraryKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-CardScanner/PayUCardScannerKit.framework/PayUCardScannerKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-CheckoutPro/PayUCheckoutProKit.framework/PayUCheckoutProKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-CheckoutProBase/PayUCheckoutProBaseKit.framework/PayUCheckoutProBaseKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-CommonUI/PayUCommonUI.framework/PayUCommonUI",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-CrashReporter/PayUCrashReporter.framework/PayUCrashReporter",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-Custom-Browser/PayUCustomBrowser.framework/PayUCustomBrowser",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-Logger/PayULoggerKit.framework/PayULoggerKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-NativeOtpAssist/PayUNativeOtpAssist.framework/PayUNativeOtpAssist",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-NetworkReachability/PayUNetworkReachability.framework/PayUNetworkReachability",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-Networking/PayUNetworkingKit.framework/PayUNetworkingKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-PG-SDK/PayUBizCoreKit.framework/PayUBizCoreKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-PayUParams/PayUParamsKit.framework/PayUParamsKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/PayUIndia-UPICore/PayUUPICoreKit.framework/PayUUPICoreKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ZoomSDK/MobileRTC.framework/MobileRTC",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUAssetLibraryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCardScannerKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCheckoutProKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCheckoutProBaseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCommonUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCrashReporter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUCustomBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayULoggerKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUNativeOtpAssist.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUNetworkReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUNetworkingKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUBizCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUParamsKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUUPICoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9740579065E39B3C4604D4D3 /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\n\n##########################################################################\n##########################################################################\n#\n#  NOTE THAT IF YOU CHANGE THIS FILE YOU MUST RUN pod install AFTERWARDS\n#\n#  This file is installed as an Xcode build script in the project file\n#  by cocoapods, and you will not see your changes until you pod install\n#\n##########################################################################\n##########################################################################\n\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_analytics_storage\n  _ANALYTICS_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_analytics_storage\")\n  if [[ $_ANALYTICS_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_storage\n  _ANALYTICS_AD_STORAGE=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_storage\")\n  if [[ $_ANALYTICS_AD_STORAGE ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_STORAGE\")\")\n  fi\n\n  # config.analytics_default_allow_ad_user_data\n  _ANALYTICS_AD_USER_DATA=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_user_data\")\n  if [[ $_ANALYTICS_AD_USER_DATA ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AD_USER_DATA\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+		};
+		A1A4DDC9BC27B803424C1793 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
+		};
+		DBB3074FF37CC36BBC219BB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-smartHelpRequester-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3BC42659E207D56994A7293 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth/AppAuthCore_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal/FirebaseCoreInternal_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth/GTMAppAuth_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher_Core_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport_Privacy.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift/Promises_Privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/RNImageCropPicker/QBImagePicker.bundle",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Stripe/Stripe.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripeCore/StripeCore.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripeFinancialConnections/StripeFinancialConnections.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentSheet/StripePaymentSheet.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/StripePayments.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripePayments/Stripe3DS2.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripePaymentsUI/StripePaymentsUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StripeUICore/StripeUICore.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TOCropViewController/TOCropViewControllerBundle.bundle",
+				"${PODS_ROOT}/ZoomSDK/lib/MobileRTCResources.bundle",
+				"${PODS_ROOT}/../../node_modules/molpay-mobile-xdk-reactnative-beta/ios/MOLPayXDK.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/react-native-biz-sdk/PayUResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppAuthCore_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseCoreInternal_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseInstallations_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMAppAuth_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMSessionFetcher_Core_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleDataTransport_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleUtilities_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FBLPromises_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Promises_Privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QBImagePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripeCore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripeFinancialConnections.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripePaymentSheet.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripePayments.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe3DS2.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripePaymentsUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StripeUICore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TOCropViewControllerBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MobileRTCResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MOLPayXDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PayUResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-smartHelpRequester/Pods-smartHelpRequester-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				9F33948829BF4A3300460155 /* main.m in Sources */,
+				92687F37287865D1000EE170 /* myclnq_bridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AFA4F8AF21395CE200F819B1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFA4F8B021395CE200F819B1 /* Base */,
+				85A5F56926B979FD00813CD8 /* he */,
+				85A5F56A26B97A2F00813CD8 /* en */,
+				8518303526C519C700A34784 /* zh-Hans-CN */,
+				8518303626C5556000A34784 /* zh-Hans-CN */,
+				8518303726C5556700A34784 /* id */,
+				85610E5126CB931E00A82A27 /* ta */,
+				856843A326DD353700A651EC /* bn */,
+				85BD55C7271AB01800D6E883 /* vi */,
+				852AAEE227BBE7E5008E0571 /* km */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D9736D0841EC3C263E5232 /* Pods-smartHelpRequester.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = smartHelpRequester/smartHelpRequester.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4N7QW466RB;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/../../node_modules/react-native-webrtc/ios\"",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"$(PROJECT_DIR)/ZoomSDK",
+					"$(PROJECT_DIR)/ZoomSdk",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-fabric/ios/SMXCrashlytics",
+					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-google-places/ios",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf-custom/ios/RNHTMLtoPDF/**",
+				);
+				INFOPLIST_FILE = smartHelpRequester/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyCLNQ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BVLinearGradient\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBReactNativeSpec\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMessaging\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Google-Maps-iOS-Utils\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCTTypeSafety\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNCAsyncStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNCPushNotificationIOS\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNDateTimePicker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNDeviceInfo\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBAnalytics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBApp\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBMessaging\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNLocalize\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNReanimated\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNScreens\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNShare\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNVectorIcons\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-CoreModules\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeFabric\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeIncallManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-date-picker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-fcm\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-geolocation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-google-maps\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-image-picker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-maps\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-netinfo\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-simple-toast\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-viewpager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-webrtc\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-webview\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/rn-fetch-blob\"",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"\"$(SRCROOT)/smartHelpRequester\"",
+					"\"$(SRCROOT)/smartHelpRequester\"",
+				);
+				MARKETING_VERSION = "";
+				"MARKETING_VERSION[sdk=iphoneos*]" = 2.14.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssivixlab.MYCLNQ;
+				PRODUCT_NAME = smartHelpRequester;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "smartHelpRequester-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37A8DD6082D6AD361A813D3B /* Pods-smartHelpRequester.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = smartHelpRequester/smartHelpRequesterRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 4N7QW466RB;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/../../node_modules/react-native-webrtc/ios\"",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"$(PROJECT_DIR)/ZoomSDK",
+					"$(PROJECT_DIR)/ZoomSdk",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-fabric/ios/SMXCrashlytics",
+					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-google-places/ios",
+					"$(SRCROOT)/../node_modules/react-native-html-to-pdf-custom/ios/RNHTMLtoPDF/**",
+				);
+				INFOPLIST_FILE = smartHelpRequester/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyCLNQ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BVLinearGradient\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBReactNativeSpec\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMessaging\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Google-Maps-iOS-Utils\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RCTTypeSafety\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNCAsyncStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNCPushNotificationIOS\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNDateTimePicker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNDeviceInfo\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBAnalytics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBApp\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNFBMessaging\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNLocalize\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNReanimated\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNScreens\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNShare\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNVectorIcons\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-CoreModules\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeFabric\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeIncallManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-date-picker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-fcm\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-geolocation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-google-maps\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-image-picker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-maps\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-netinfo\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-simple-toast\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-viewpager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-webrtc\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-webview\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/rn-fetch-blob\"",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"\"$(SRCROOT)/smartHelpRequester\"",
+					"\"$(SRCROOT)/smartHelpRequester\"",
+				);
+				MARKETING_VERSION = "";
+				"MARKETING_VERSION[sdk=iphoneos*]" = 2.14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssivixlab.MYCLNQ;
+				PRODUCT_NAME = smartHelpRequester;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "smartHelpRequester-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "smartHelpRequester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "smartHelpRequester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

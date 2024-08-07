@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#ff4848</color>
+    <color name="one_payu_colorPrimary">#ff4848</color>
+    <color name="one_payu_colorPrimaryDark">#ff4848</color>
+    <color name="one_payu_baseTextColor">#ffffff</color> //Text color of header text and button text
+</resources>
