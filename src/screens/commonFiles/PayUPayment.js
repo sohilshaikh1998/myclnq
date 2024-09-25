@@ -82,6 +82,9 @@ class PayUPayment extends React.Component {
 
             }
         }
+        else if(this.props.module === AppStrings.key.membership){
+            Actions.MembershipOrderSummary({fromPaymentScreen: true, isPaymentSuccess: true, amount: this.props.paymentDetails.amount});
+        }
     }
 
     paymentFailed(){
@@ -97,6 +100,9 @@ class PayUPayment extends React.Component {
             }, 500);
         } else if (this.props.module === AppStrings.key.caregiver) {
             Actions.caregiverTab({ isCaregiverBookingUpdated: true });
+        }
+        else if(this.props.module === AppStrings.key.membership){
+            Actions.MembershipOrderSummary({fromPaymentScreen: true, isPaymentSuccess: false, amount: this.props.paymentDetails.amount});
         } else {
             Actions.MyCareWagonDash({ isWagonBookingUpdated: true });
         }
@@ -134,12 +140,12 @@ class PayUPayment extends React.Component {
 
     payment(){
         let payUData = this.props.paymentDetails;
-        
+        //Anurag's changes here replaced key with txnId and productName with txn id
         var payUPaymentParams = {
-            key: payUData.isSandbox ? 'gtKFFx' : payUData.key,
+            key: payUData.isSandbox ? 'gtKFFx' : payUData.txnId,
             transactionId: payUData.txnId,
             amount: payUData.amount,
-            productInfo: payUData.productName,
+            productInfo: payUData.txnId,
             firstName: payUData.firstName,
             email: payUData.email,
             phone: payUData.phone,

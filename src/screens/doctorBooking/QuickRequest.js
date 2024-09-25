@@ -38,7 +38,7 @@ import careGiverHomeScreenStyle from '../caregiver/caregiverHome/caregiverHomeSc
 import moment from 'moment';
 import images from '../../utils/images';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-date-picker';
+//import DatePicker from 'react-native-date-picker';
 import { getTimeZone } from 'react-native-localize';
 import { moderateScale, verticalScale } from '../../utils/Scaling';
 import ElevatedView from 'react-native-elevated-view';
@@ -660,22 +660,21 @@ export default class QuickRequest extends Component {
                   }}
                 />
               </View>
-            ) : (
-              <DatePicker
-                date={this.state.selectedDate}
-                mode={'date'}
-                style={{
-                  backgroundColor: AppColors.whiteColor,
-                  width: width - 30,
-                }}
-                minuteInterval={30}
-                minimumDate={AppUtils.currentDateTime()}
-                maximumDate={new Date(maxDate)}
-                onDateChange={(date) => {
-                  this.setState({ selectedDate: date });
-                }}
-              />
-            )}
+            ) : // <DatePicker
+            //   date={this.state.selectedDate}
+            //   mode={'date'}
+            //   style={{
+            //     backgroundColor: AppColors.whiteColor,
+            //     width: width - 30,
+            //   }}
+            //   minuteInterval={30}
+            //   minimumDate={AppUtils.currentDateTime()}
+            //   maximumDate={new Date(maxDate)}
+            //   onDateChange={(date) => {
+            //     this.setState({ selectedDate: date });
+            //   }}
+            // />
+            null}
             <TouchableHighlight
               onPress={() => {
                 this.setState({ showCalender: false });
@@ -1094,8 +1093,8 @@ export default class QuickRequest extends Component {
     }
   }
 
-  handleChange =  (value) => {
-    this.setState({ userId: value, showInput: true,userIdNum:'' });
+  handleChange = (value) => {
+    this.setState({ userId: value, showInput: true, userIdNum: '' });
   };
 
   render() {
@@ -3855,7 +3854,7 @@ const styles = StyleSheet.create({
     //  width : wp * .9,
     borderWidth: 1,
     borderColor: AppColors.grey,
-    marginLeft: wp(0.5), 
-    marginRight: wp(0.5)
+    marginLeft: wp(0.5),
+    marginRight: wp(0.5),
   },
 });

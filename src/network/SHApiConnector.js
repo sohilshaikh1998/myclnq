@@ -1501,4 +1501,53 @@ export class SHApiConnector {
     }
     return await api.get('api/v1/hr/dc');
   }
+  static async getAllMembershipPlan (){
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.get('api/v1/membershipPlan/getAll');
+  }
+  static async purchaseMembershipPlan (body){
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.post('/api/v1/membershipPlan/purchase', body);
+  }
+  static async getUserMembershipPlan (){
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.get('api/v1/membershipPlan/forUser');
+  }
+  static async getWalletDetails () {
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.get('api/v1/wallet/balance')
+  }
+  static async getAllWallet () {
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.get('api/v1/wallet/getAll');
+  }
+  static async postSteps (body){
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.post('api/v1/activityTracker/save', body);
+  }
+  static async getHistory(body){
+    const sessionInfo = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.SESSION_INFO));
+    if (sessionInfo) {
+      api.setHeader('authToken', sessionInfo.session);
+    }
+    return await api.post('api/v1/membershipPlan/challenge/ByUserAndPlan', body)
+  }
 }

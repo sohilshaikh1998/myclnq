@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d396d344-6a15-42e8-8bc8-031698c24b08" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Untitled" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/assets/index.android.bundle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMBOActionView.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMBOActionView.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMBrowserViewController_iPad.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMBrowserViewController_iPad.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMCallPhoneViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMCallPhoneViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMCountryCodesViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMCountryCodesViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMGestureViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMGestureViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMThumbnailVideoCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZMThumbnailVideoCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZPAttendeeViewCell.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZPAttendeeViewCell.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZPParticipantViewController.nib" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ZPParticipantViewController.nib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/de.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/de.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/emojisForMeeting.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/emojisForMeeting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/en.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/en.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/es.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/es.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/fr.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/fr.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/it.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/it.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ja.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ja.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ko.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ko.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/localization.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/localization.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/meeting_raisehand_chime.pcm" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/meeting_raisehand_chime.pcm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/pl.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/pl.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/pt-PT.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/pt-PT.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ru.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/ru.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/tr.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/tr.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/vi.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/vi.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zdcRes.bundle/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zdcRes.bundle/Assets.car" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zdcRes.bundle/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zdcRes.bundle/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zh-Hans.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zh-Hans.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zh-Hant.lproj/Localizable.strings" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/MobileRTCResources.bundle/zh-Hant.lproj/Localizable.strings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/smartHelpRequester.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/smartHelpRequester.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ios/smartHelpRequester/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/smartHelpRequester/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/screens/article/ArticleStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/screens/article/ArticleStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/screens/commonFiles/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/screens/commonFiles/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/shared/AppStrings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/shared/AppStrings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/shared/IntroScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/shared/IntroScreen.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2dOVLDsMQSnGdXtzJQAsv7Gm0TD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mdinzamamulhaque/Desktop/myclnq-requester-latest/android/app&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d396d344-6a15-42e8-8bc8-031698c24b08" name="Changes" comment="" />
+      <created>1709879054933</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709879054933</updated>
+    </task>
+    <servers />
+  </component>
+</project>

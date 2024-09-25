@@ -7,6 +7,7 @@ import androidx.multidex.MultiDexApplication;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import kjd.reactnative.bluetooth.RNBluetoothClassicPackage;
 import com.reactnativerestart.RestartPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
@@ -17,12 +18,17 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.scottyab.rootbeer.RootBeer;
+import com.airbnb.android.react.lottie.LottiePackage;
 
 import java.util.List;
 
 import cl.json.ShareApplication;
+import com.reactnativecommunity.art.ARTPackage;
+import com.crrepa.ble.CRPBleClient;  // Import CRPBleClient
+import com.ssivixlab.MYCLNQ.CRPBluetoothPackage;
 
 public class MainApplication extends MultiDexApplication implements ReactApplication, ShareApplication {
+private static CRPBleClient bleClient;
 
     @Override
     public String getFileProviderAuthority() {
@@ -45,6 +51,12 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
             @SuppressWarnings("UnnecessaryLocalVariable")
             List<ReactPackage> packages = new PackageList(this).getPackages();
             new ReactNativePushNotificationPackage();
+
+            
+            packages.add(new ARTPackage());
+            packages.add(new CRPBluetoothPackage());
+            packages.add(new RNBluetoothClassicPackage());
+            packages.add(new LottiePackage());
             return packages;
         }
 
@@ -65,6 +77,11 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
         isRooted();
         SoLoader.init(this, false);
         SoLoader.loadLibrary("zoom");
+        bleClient = CRPBleClient.create(this); 
+    }
+
+      public static CRPBleClient getBleClient() {
+        return bleClient;  // Add this method
     }
 
     private boolean isRooted() {

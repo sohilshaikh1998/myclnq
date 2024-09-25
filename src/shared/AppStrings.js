@@ -380,7 +380,8 @@ export class AppStrings {
   static apiURL = {
     // baseURL: 'http://localhost:3000', //Localhost
     // baseURL: 'https://testapi.e-healthmyclnq.com', // TEST Domain
-    baseURL: 'https://stagingapi.myclnqhealth.com', // STAGING Domain
+    // baseURL: 'http://54.251.192.85:3000', // STAGING Domain
+    baseURL: "https://stagingapi.myclnqhealth.com", 
     baseWS :"wss://stagingapi.myclnqhealth.com", // Staging
     // baseURL: 'https://myclnqapi.ssivixlab.com', //PRODUCTION
     //baseURL: 'https://backend.bokehmall.com',
@@ -405,6 +406,7 @@ export class AppStrings {
     medicine: 'medicine',
     ePrescription: 'ePrescription',
     transport: 'transport',
+    membership: 'membership',
   };
 
   static storeLink =

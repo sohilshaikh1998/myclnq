@@ -20,7 +20,7 @@ import {
   I18nManager,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-date-picker';
+//import DatePicker from 'react-native-date-picker';
 import Geocoder from 'react-native-geocoding';
 import MapView, { Marker } from 'react-native-maps';
 import styles from '../../styles/myCareWagonStyles';
@@ -351,7 +351,7 @@ class MyCareWagonHome extends Component {
       <KeyboardAvoidingView
         keyboardVerticalOffset={Platform.OS === 'ios' ? (AppStyles.isX ? 180 : 0) : 70}
         style={styles.container}
-        behavior={Platform.OS==="ios" && "padding" }
+        behavior={Platform.OS === 'ios' && 'padding'}
         enabled
       >
         <View style={styles.container}>
@@ -426,7 +426,7 @@ class MyCareWagonHome extends Component {
                       {
                         borderBottomWidth: 0,
                         flexDirection: 'column',
-                        marginTop:wp(2)
+                        marginTop: wp(2),
                       },
                     ]}
                   >
@@ -443,21 +443,21 @@ class MyCareWagonHome extends Component {
                     </Text>
                     <RadioGroup
                       ref={(ref) => (this.vehicleType = ref)}
-                      style={{ flexDirection: 'column'}}
+                      style={{ flexDirection: 'column' }}
                       color={AppColors.primaryGray}
                       size={AppUtils.screenHeight > 580 ? 15 : 10}
                       selectedIndex={0}
                       activeColor={AppColors.primaryColor}
                       onSelect={(index, value) => this.checkForWheelChairFleet(value)}
-                    > 
-                      <RadioButton value={'AMBULANCE'} >
-                        <Text numberOfLines={2} style={{ color: AppColors.blackColor  }}>
+                    >
+                      <RadioButton value={'AMBULANCE'}>
+                        <Text numberOfLines={2} style={{ color: AppColors.blackColor }}>
                           {strings('common.transport.medicalTransport')}
                         </Text>
                       </RadioButton>
 
                       <RadioButton value={'OTHER_VEHICLE'}>
-                        <Text numberOfLines={2} style={{ color: AppColors.blackColor}}>
+                        <Text numberOfLines={2} style={{ color: AppColors.blackColor }}>
                           {strings('common.transport.otherVehicle')}
                         </Text>
                       </RadioButton>
@@ -520,7 +520,7 @@ class MyCareWagonHome extends Component {
                     </RadioGroup>
                   </View>
                   <View style={[styles.tray1PickerViewStyle, styles.tripPickerViewStyle, { borderBottomWidth: 0, marginLeft: wp(5) }]}>
-                    <Text allowFontScaling={false} style={{ fontSize: 12, color: AppColors.textGray,textAlign: isRTL ? 'left' : 'auto', }}>
+                    <Text allowFontScaling={false} style={{ fontSize: 12, color: AppColors.textGray, textAlign: isRTL ? 'left' : 'auto' }}>
                       {strings('common.transport.tripType')}
                     </Text>
                     <RadioGroup
@@ -581,7 +581,7 @@ class MyCareWagonHome extends Component {
                       >
                         {strings('doctor.text.totalAmount')}
                       </Text>
-                      <Text allowFontScaling={false} style={[styles.totalAmount, { color: AppColors.whiteColor,marginRight: isRTL ? wp(28) : 0, }]}>
+                      <Text allowFontScaling={false} style={[styles.totalAmount, { color: AppColors.whiteColor, marginRight: isRTL ? wp(28) : 0 }]}>
                         {this.state.tripAmount}
                       </Text>
                     </View>
@@ -837,22 +837,21 @@ class MyCareWagonHome extends Component {
                   }}
                 />
               </View>
-            ) : (
-              <DatePicker
-                date={this.state.selectedDate}
-                mode="datetime"
-                style={{
-                  backgroundColor: AppColors.whiteColor,
-                  width: width - 30,
-                }}
-                minimumDate={_dt}
-                minuteInterval={1}
-                maximumDate={new Date(_dt.getTime() + 7 * 24 * 3600 * 1000)}
-                onDateChange={(date) => {
-                  this.setState({ selectedDate: date });
-                }}
-              />
-            )}
+            ) : // <DatePicker
+            //   date={this.state.selectedDate}
+            //   mode="datetime"
+            //   style={{
+            //     backgroundColor: AppColors.whiteColor,
+            //     width: width - 30,
+            //   }}
+            //   minimumDate={_dt}
+            //   minuteInterval={1}
+            //   maximumDate={new Date(_dt.getTime() + 7 * 24 * 3600 * 1000)}
+            //   onDateChange={(date) => {
+            //     this.setState({ selectedDate: date });
+            //   }}
+            // />
+            null}
             <TouchableHighlight onPress={() => this.closeCalender()} underlayColor="transparent">
               <View
                 style={{
@@ -905,15 +904,13 @@ class MyCareWagonHome extends Component {
     return (
       <View>
         <GooglePlacesAutocomplete
-                  suppressDefaultStyles={false}
-
+          suppressDefaultStyles={false}
           placeholder={strings('common.transport.pickUpFrom')}
           minLength={3}
           autoFocus={false}
           returnKeyType={'search'}
           fetchDetails={true}
           predefinedPlacesAlwaysVisible={true}
-
           renderDescription={(row) => row.description}
           ref={(c) => (this.googlePlacesPickUpAutocomplete = c)}
           listViewDisplayed={self.state.listViewDisplayForPickUp}
@@ -959,7 +956,7 @@ class MyCareWagonHome extends Component {
             list: { position: 'absolute' },
             textInputContainer: styles.pack1,
             description: styles.description,
-            textInput: [styles.textInput,{textAlign: isRTL ? 'right' : 'auto',}],
+            textInput: [styles.textInput, { textAlign: isRTL ? 'right' : 'auto' }],
             predefinedPlacesDescription: styles.predefinedPlacesDescription,
           }}
           debounce={500}
@@ -1073,7 +1070,7 @@ class MyCareWagonHome extends Component {
             list: { position: 'absolute' },
             listView: { height: hp(25) },
             description: styles.description,
-            textInput: [styles.textInput,{textAlign: isRTL ? 'right' : 'auto',}],
+            textInput: [styles.textInput, { textAlign: isRTL ? 'right' : 'auto' }],
             predefinedPlacesDescription: styles.predefinedPlacesDescription,
           }}
           nearbyPlacesAPI="GooglePlacesSearch"

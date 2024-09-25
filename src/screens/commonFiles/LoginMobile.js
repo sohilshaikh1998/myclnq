@@ -68,36 +68,22 @@ class LoginMobile extends React.Component {
     };
   }
 
-
   componentDidMount() {
-  
     if (Platform.OS === 'android') {
-     
       BackHandler.addEventListener('hardwareBackPress', this.exitAlert);
     }
-
-
-
-
 
     // this.getLocation();
   }
 
-
-
   componentWillUnmount() {
-  
     BackHandler.removeEventListener('hardwareBackPress', this.exitAlert);
   }
 
-  exitAlert = () =>{
-
-
+  exitAlert = () => {
     Actions.LoginOptions();
-    return true; 
-
-   
-  }
+    return true;
+  };
 
   async getLocation() {
     if (Platform.OS === 'ios') {
@@ -131,11 +117,10 @@ class LoginMobile extends React.Component {
             cca2: 'IN',
           });
           return;
-        }
-        else if(address_components[i].long_name ==='Indonesia'){
+        } else if (address_components[i].long_name === 'Indonesia') {
           this.setState({
             countryCode: '62',
-            cca2: 'ID'
+            cca2: 'ID',
           });
           return;
         }
@@ -148,13 +133,12 @@ class LoginMobile extends React.Component {
     var numberLength = this.state.mobileNumber.length;
     if (Validator.isBlank(this.state.mobileNumber)) {
       alert(strings('string.mandatory.emailOrPhone'), true);
-    } else if (this.state.numberLimit == 12 && numberLength < 8 ) {
+    } else if (this.state.numberLimit == 12 && numberLength < 8) {
       alert(strings('string.mandatory.mobNumber'));
     } else if (this.state.numberLimit == 13 && numberLength < 8) {
       alert(strings('string.mandatory.mobNumber'));
     } else if (this.state.numberLimit != 12 && numberLength < this.state.numberLimit) {
-      this.state.countryCode == '62' ? this.loginPassword():
-      alert(strings('string.mandatory.mobNumber'));
+      this.state.countryCode == '62' ? this.loginPassword() : alert(strings('string.mandatory.mobNumber'));
     } else if (!this.state.password || this.state.password.trim() == '') {
       alert(strings('common.common.invalidPwd'));
     } else {
@@ -173,8 +157,6 @@ class LoginMobile extends React.Component {
       this.loginPassword();
     }
   }
-
-
 
   async loginPassword() {
     let userDetail = {
@@ -212,7 +194,6 @@ class LoginMobile extends React.Component {
     function delay(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
-
 
     try {
       this.setState({ isLoading: true });
@@ -383,7 +364,7 @@ class LoginMobile extends React.Component {
               {strings('common.common.loginRegister')} {AppUtils.isProduction() ? ' ' : 'Staging Build'}
             </Text>
           </View>
-   
+
           {this.state.showCountryPicker ? (
             <View>
               <Text
@@ -393,7 +374,7 @@ class LoginMobile extends React.Component {
                   fontFamily: AppStyles.fontFamilyRegular,
                   marginTop: hp(5),
                   marginLeft: wp(5),
-                  marginRight:isRTL? wp(5) : null,
+                  marginRight: isRTL ? wp(5) : null,
                 }}
               >
                 {strings('common.common.selectCountry')}
@@ -631,11 +612,13 @@ class LoginMobile extends React.Component {
               style={{ marginTop: verticalScale(30), borderRadius: wp(2) }}
               btnTextColor={AppColors.whiteColor}
               btnPressBackground={AppColors.primaryColor}
-              onBtnClick={() => (this.state.showCountryPicker ? this.validateNumber() : this.validateEmail())}
+              onBtnClick={() => {
+                Actions.MainScreen();
+                return;
+                this.state.showCountryPicker ? this.validateNumber() : this.validateEmail();
+              }}
             />
           </View>
-        
-
         </View>
         <ProgressLoader
           testID={'progressLoaderLogin'}

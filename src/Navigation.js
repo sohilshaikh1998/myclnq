@@ -141,6 +141,19 @@ import LoginOptions from './screens/commonFiles/LoginOptions';
 import LoginPageHeader from './navigationHeader/LoginPageHeader';
 import XenditInstantVc from './screens/commonFiles/XenditInstantVc';
 import ForegroundNotifications from './utils/foregroundNotifications';
+import SearchDevHome from './screens/searchDevice/SearchDevHome';
+import SelectionActivity from './screens/activity/SelectionActivity';
+import BodyBeatDash from './screens/activity/BodyBeatDash';
+import History from './screens/activity/History';
+import Awards from './screens/activity/Awards';
+import SelectionActivityHeader from './navigationHeader/SelectionActivityHeader';
+import { GlobalProvider } from './GlobalContext';
+import Wallet from './screens/walletScreens/Wallet';
+import TransactionScreen from './screens/walletScreens/TransactionScreen';
+import TransactionDetailScreen from './screens/walletScreens/TransactionDetailScreen';
+import MembershipScreen from './screens/walletScreens/MembershipScreen';
+import MembershipOrderSummary from './screens/walletScreens/MembershipOrderSummary';
+import MembershipTransactionHistory from './screens/walletScreens/MembershipTransactionHistory';
 
 const getSceneStyle = () => ({
   showOpacity: 0,
@@ -391,1188 +404,1296 @@ class Navigation extends Component {
   render() {
     return (
       <MenuProvider>
-        <ForegroundNotifications/>
+        <ForegroundNotifications />
         <StripeProvider publishableKey={AppUtils.isProduction() ? process.env.stripeProdKey : process.env.stripeTestKey}>
           <View style={{ flex: 1 }}>
             <StatusBar barStyle="dark-content" />
-            <Router
-              uriPrefix={'myclnq://'}
-              createReducer={reducerCreate}
-              backAndroidHandler={Actions.pop}
-              getScreenStyle={getSceneStyle}
-              onStateChange={stateHandler}
-            >
-              <Stack hideNavBar>
-                <Stack key="IntroScreen" hideNavBar>
-                  <Scene key="IntroScreen" component={IntroScreen} initial />
-                </Stack>
+            <GlobalProvider>
+              <Router
+                uriPrefix={'myclnq://'}
+                createReducer={reducerCreate}
+                backAndroidHandler={Actions.pop}
+                getScreenStyle={getSceneStyle}
+                onStateChange={stateHandler}
+              >
+                <Stack hideNavBar>
+                  <Stack key="IntroScreen" hideNavBar>
+                    <Scene key="IntroScreen" component={IntroScreen} initial />
+                  </Stack>
 
-                <Stack key="HelpTour" hideNavBar>
-                  <Scene key="HelpTour" component={HelpTour}></Scene>
-                </Stack>
+                  <Stack key="HelpTour" hideNavBar>
+                    <Scene key="HelpTour" component={HelpTour}></Scene>
+                  </Stack>
 
-                <Stack key="LoginOptions" hideNavBar>
-                  <Scene key="LoginOptions" component={LoginOptions}></Scene>
-                </Stack>
+                  <Stack key="LoginOptions" hideNavBar>
+                    <Scene key="LoginOptions" component={LoginOptions}></Scene>
+                  </Stack>
 
-                <Stack key="LoginMobile">
-                  <Scene
-                    key="LoginMobile"
-                    navBar={LoginPageHeader}
-                    // title={strings('common.titles.signUp')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={LoginMobile}
-                  />
-                  
-                </Stack>
+                  <Stack key="LoginMobile">
+                    <Scene
+                      key="LoginMobile"
+                      navBar={LoginPageHeader}
+                      // title={strings('common.titles.signUp')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={LoginMobile}
+                    />
+                  </Stack>
 
-                <Stack key="EntryScreen" hideNavBar>
-                  <Scene key="EntryScreen" gestureEnabled={false} panHandlers={null} component={EntryScreen} initial={true} />
-                </Stack>
+                  <Stack key="EntryScreen" hideNavBar>
+                    <Scene key="EntryScreen" gestureEnabled={false} panHandlers={null} component={EntryScreen} initial={true} />
+                  </Stack>
 
-                <Stack key="MainScreen" hideNavBar>
-                  <Scene key="MainScreen" gestureEnabled={false} panHandlers={null} component={MainScreen} />
-                </Stack>
+                  <Stack key="MainScreen" hideNavBar>
+                    <Scene key="MainScreen" gestureEnabled={false} panHandlers={null} component={MainScreen} />
+                  </Stack>
 
-                <Stack key="VitalOrderSummary" hideNavBar>
-                  <Scene
-                    key="VitalOrderSummary"
-                    component={VitalOrderSummary}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    navBar={orderSummaryHeader}
-                  ></Scene>
-                </Stack>
+                  <Stack key="SearchDevice">
+                    <Scene
+                      key="SearchDevice"
+                      title={strings('common.titles.searchDev')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={SearchDevHome}
+                      navBar={HeaderwithBack}
+                    />
+                  </Stack>
+                  {/* //------- */}
+                  <Stack key="Wallet" hideNavBar>
+                    <Scene key="Wallet" gestureEnabled={false} panHandlers={null} component={Wallet} />
+                  </Stack>
 
-                <Stack key="ShareVital" hideNavBar>
-                  <Scene key="ShareVital" component={ShareVital} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
+                  <Stack key="TransactionScreen" hideNavBar>
+                    <Scene key="TransactionScreen" gestureEnabled={false} panHandlers={null} component={TransactionScreen} />
+                  </Stack>
 
-                <Stack key="AppointmentRequested" hideNavBar>
-                  <Scene key="AppointmentRequested" component={AppointmentRequested} gestureEnabled={false} panHandlers={null} />
-                </Stack>
+                  <Stack key="TransactionDetailScreen" hideNavBar>
+                    <Scene key="TransactionDetailScreen" gestureEnabled={false} panHandlers={null} component={TransactionDetailScreen} />
+                  </Stack>
 
-                <Stack key="CountdownTimer" hideNavBar>
-                  <Scene key="CountdownTimer" component={CountdownTimer} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
+                  <Stack key="MembershipScreen" hideNavBar>
+                    <Scene key="MembershipScreen" gestureEnabled={false} panHandlers={null} component={MembershipScreen} />
+                  </Stack>
 
-                <Stack key="DoctorAssigned" hideNavBar>
-                  <Scene key="DoctorAssigned" component={DoctorAssigned} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
+                  <Stack key="MembershipOrderSummary" hideNavBar>
+                    <Scene key="MembershipOrderSummary" gestureEnabled={false} panHandlers={null} component={MembershipOrderSummary} />
+                  </Stack>
 
-                <Stack key="CancelBooking" hideNavBar>
-                  <Scene key="CancelBooking" component={CancelBooking} gestureEnabled={false} panHandlers={null} />
-                </Stack>
+                  <Stack key="MembershipTransactionHistory" hideNavBar>
+                    <Scene key="MembershipTransactionHistory" gestureEnabled={false} panHandlers={null} component={MembershipTransactionHistory} />
+                  </Stack>
+                  {/* //------- */}
 
-                <Stack key="PayUPayment" hideNavBar>
-                  <Scene key="PayUPayment" component={PayUPayment} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
+                  <Stack key="VitalOrderSummary" hideNavBar>
+                    <Scene
+                      key="VitalOrderSummary"
+                      component={VitalOrderSummary}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      navBar={orderSummaryHeader}
+                    ></Scene>
+                  </Stack>
 
-                <Stack key="StripePayment" hideNavBar>
-                  <Scene key="StripePayment" component={StripePayment} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
+                  <Stack key="SelectionActivity">
+                    <Scene
+                      key="SelectionActivity"
+                      title={strings('common.titles.selectionOfActivity')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={SelectionActivity}
+                      // navBar={HeaderwithBack}
+                      navBar={SelectionActivityHeader}
+                    />
+                  </Stack>
 
-                <Stack key="XenditPayment" hideNavBar>
-                  <Scene key="XenditPayment" component={XenditPayment} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
-               
-                <Stack key="XenditInstantVc" hideNavBar>
-                  <Scene key="XenditInstantVc" component={XenditInstantVc} gestureEnabled={false} panHandlers={null}>
+                  <Stack key="BodyBeatDash">
+                    <Scene
+                      key="BodyBeatDash"
+                      title={strings('common.titles.bodyBeat')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={BodyBeatDash}
+                      navBar={HeaderwithBack}
+                    />
+                  </Stack>
+
+                  <Stack key="History">
+                    <Scene
+                      key="History"
+                      title={strings('common.titles.history')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={History}
+                      navBar={HeaderwithBack}
+                    />
+                  </Stack>
+
+                  <Stack key="Awards">
+                    <Scene
+                      key="Awards"
+                      title={strings('common.titles.awards')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={Awards}
+                      navBar={HeaderwithBack}
+                    />
+                  </Stack>
+
+                  {/* temp smartwatch stack */}
+
+                  <Stack key="VitalOrderSummary" hideNavBar>
+                    <Scene
+                      key="VitalOrderSummary"
+                      component={VitalOrderSummary}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      navBar={orderSummaryHeader}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="ShareVital" hideNavBar>
+                    <Scene key="ShareVital" component={ShareVital} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="AppointmentRequested" hideNavBar>
+                    <Scene key="AppointmentRequested" component={AppointmentRequested} gestureEnabled={false} panHandlers={null} />
+                  </Stack>
+
+                  <Stack key="CountdownTimer" hideNavBar>
+                    <Scene key="CountdownTimer" component={CountdownTimer} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="DoctorAssigned" hideNavBar>
+                    <Scene key="DoctorAssigned" component={DoctorAssigned} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="CancelBooking" hideNavBar>
+                    <Scene key="CancelBooking" component={CancelBooking} gestureEnabled={false} panHandlers={null} />
+                  </Stack>
+
+                  <Stack key="PayUPayment" hideNavBar>
+                    <Scene key="PayUPayment" component={PayUPayment} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="StripePayment" hideNavBar>
+                    <Scene key="StripePayment" component={StripePayment} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="XenditPayment" hideNavBar>
+                    <Scene key="XenditPayment" component={XenditPayment} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="XenditInstantVc" hideNavBar>
+                    <Scene key="XenditInstantVc" component={XenditInstantVc} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="ManageSubscription" hideNavBar>
+                    <Scene key="ManageSubscription" component={ManageSubscription} gestureEnabled={false} panHandlers={null}></Scene>
+                  </Stack>
+
+                  <Stack key="VitalCategory" hideNavBar>
+                    <Scene
+                      key="VitalCategory"
+                      component={VitalCategory}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      navBar={orderSummaryHeader}
+                    ></Scene>
+                  </Stack>
+
+                  {Platform.OS === 'ios' ? (
+                    <Tabs
+                      key="HomeScreenDash"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      navBarNoBorder={true}
+                      panHandlers={null}
+                      gestureEnabled={false}
+                      lazy={true}
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="HomeScreen"
+                        navBar={TabHeader}
+                        component={HomeScreen}
+                        sceneKey="HomeScreen"
+                        title={strings('common.titles.nearbyClinics')}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.HomeScreenDash()}
+                        icon={TabIcon}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
+                      <Scene
+                        key="MyAppointments"
+                        component={MyAppointments}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isAppointmentUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="MyAppointments"
+                        title={strings('common.titles.myAppointments')}
+                        icon={TabIcon}
+                        hideNavBar
+                      />
+
+                      <Scene
+                        key="Profile"
+                        navBar={ProfileHeader}
+                        hideNavBar={true}
+                        component={Profile}
+                        gestureEnabled={false}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isProfileUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="Profile"
+                        title={strings('common.titles.myProfile')}
+                        icon={TabIcon}
+                      />
+
+                      <Scene
+                        key="Notifications"
+                        navBar={CommonHeader}
+                        component={Notifications}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isNotifictionUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="Notifications"
+                        title={strings('common.titles.notifications')}
+                        icon={TabIcon}
+                      />
+                    </Tabs>
+                  ) : (
+                    <Tabs
+                      key="HomeScreenDash"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      panHandlers={null}
+                      gestureEnabled={false}
+                      lazy={true}
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="HomeScreen"
+                        navBar={TabHeader}
+                        component={HomeScreen}
+                        sceneKey="HomeScreen"
+                        title={strings('common.titles.nearbyClinics')}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isNotifictionUpdated={false}
+                        icon={TabIcon}
+                        backBehavior="none"
+                        tabBarOnPress={() => Actions.HomeScreenDash()}
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
+                      <Scene
+                        key="MyAppointments"
+                        component={MyAppointments}
+                        isProfileUpdated={false}
+                        isHomeScreenUpdated={false}
+                        isAppointmentUpdated={false}
+                        isNotifictionUpdated={false}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isAppointmentUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="MyAppointments"
+                        title={strings('common.titles.myAppointments')}
+                        icon={TabIcon}
+                        hideNavBar
+                      />
+
+                      <Scene
+                        key="Profile"
+                        navBar={ProfileHeader}
+                        component={Profile}
+                        hideNavBar={true}
+                        isNotifictionUpdated={false}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isProfileUpdated: true })}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        panHandlers={null}
+                        sceneKey="Profile"
+                        title={strings('common.titles.myProfile')}
+                        icon={TabIcon}
+                      />
+
+                      <Scene
+                        key="Notifications"
+                        navBar={CommonHeader}
+                        component={Notifications}
+                        backBehavior="none"
+                        isNotifictionUpdated={false}
+                        gestureEnabled={false}
+                        panHandlers={null}
+                        tabBarOnPress={() => Actions.HomeScreenDash({ isNotifictionUpdated: true })}
+                        isProfileUpdated={false}
+                        isAppointmentUpdated={false}
+                        isHomeScreenUpdated={false}
+                        sceneKey="Notifications"
+                        title={strings('common.titles.notifications')}
+                        icon={TabIcon}
+                      />
+                    </Tabs>
+                  )}
+
+                  <Stack key="LoginIn" hideNavBar>
+                    <Scene key="LoginIn" component={LoginIn} />
+                  </Stack>
+
+                  <Stack key="UpdateRegistrationNumber">
+                    <Scene
+                      key="UpdateRegistrationNumber"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      title={strings('common.titles.updateNumber')}
+                      navBar={headerWithoutShadow}
+                      component={UpdateRegistrationNumber}
+                    />
+                  </Stack>
+
+                  <Stack key="UpdateNumberOTP">
+                    <Scene
+                      key="UpdateNumberOTP"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      title={strings('common.titles.mobileVerify')}
+                      navBar={headerWithoutShadow}
+                      component={UpdateNumberOTP}
+                    />
+                  </Stack>
+
+                  <Stack key="MedicalRecords">
+                    <Scene
+                      key="MedicalRecords"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      title={strings('common.titles.healthRecords')}
+                      navBar={headerWithoutShadow}
+                      component={MedicalRecords}
+                    />
+                  </Stack>
+
+                  <Stack key="ForgetPassword">
+                    <Scene
+                      key="ForgetPassword"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      title={''}
+                      navBar={headerWithoutShadow}
+                      component={ForgetPassword}
+                    />
+                  </Stack>
+
+                  <Stack key="SetPassword">
+                    <Scene
+                      title={''}
+                      key="SetPassword"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      navBar={headerWithoutShadow}
+                      component={SetPassword}
+                    />
+                  </Stack>
+
+                  <Stack key="SmsotpScreen">
+                    <Scene
+                      navBar={headerWithoutShadow}
+                      title={''}
+                      key="SmsotpScreen"
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={SmsotpScreen}
+                    />
+                  </Stack>
+
+                  <Stack key="Registration" hideNavBar>
+                    <Scene key="Registration" path="/Registration" component={Registration} />
+                  </Stack>
+
+                  <Stack key="ClinicDetails" hideNavBar>
+                    <Scene key="ClinicDetails" component={ClinicDetails} />
+                  </Stack>
+
+                  <Stack key="BookingSuggestions" hideNavBar>
+                    <Scene key="BookingSuggestions" component={BookingSuggestions} />
+                  </Stack>
+
+                  <Stack key="PrivacyPolicy">
+                    <Scene key="PrivacyPolicy" component={PrivacyPolicy} title={strings('common.titles.privacyPolicy')} navBar={HeaderwithBack} />
+                  </Stack>
+                  <Stack key="TrackView">
+                    <Scene key="TrackView" component={TrackView} title={strings('common.titles.trackOrder')} navBar={HeaderwithBack} />
+                  </Stack>
+                  <Stack key="ArticleWebView">
+                    <Scene hideNavBar key="ArticleWebView" component={ArticleWebView} title={strings('common.titles.article')} />
+                  </Stack>
+
+                  <Stack key="TermsAndConditions">
+                    <Scene
+                      key="TermsAndConditions"
+                      component={TermsAndConditions}
+                      title={strings('common.titles.termsConditions')}
+                      navBar={SettingsHeader}
+                    />
+                  </Stack>
+
+                  <Stack key="ClinicListing">
+                    <Scene key="ClinicListing" component={ClinicListing} title={strings('common.titles.clinicListing')} navBar={CommonHeader} />
+                  </Stack>
+
+                  <Stack key="Feedback">
+                    <Scene key="Feedback" component={Feedback} title={strings('common.titles.feedback')} navBar={SettingsHeader} />
+                  </Stack>
+
+                  <Stack key="DeleteFeedback">
+                    <Scene key="DeleteFeedback" component={DeleteFeedback} title={strings('common.titles.feedbackForm')} navBar={SettingsHeader} />
+                  </Stack>
+
+                  <Stack key="MySubscriptions">
+                    <Scene key="MySubscriptions" component={MySubscriptions} title={strings('common.titles.mySubscriptions')} hideNavBar={true} />
+                  </Stack>
+
+                  <Stack key="CorporatePlan">
+                    <Scene key="CorporatePlan" component={CorporatePlan} title={strings('common.titles.corporatePlan')} hideNavBar={true} />
+                  </Stack>
+
+                  <Stack key="DigitalCard">
+                    <Scene key="DigitalCard" component={DigitalCard} title={strings('common.titles.digitalIdCard')} hideNavBar={true} />
+                  </Stack>
+
+                  <Stack key="HelpAndSupport">
+                    <Scene
+                      key="HelpAndSupport"
+                      component={HelpAndSupport}
+                      title={strings('common.titles.helpSupport')}
+                      navBar={SettingsHeader}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="CheckInternet">
+                    <Scene key="CheckInternet" component={CheckInternet} />
+                  </Stack>
+
+                  <Stack key="QuickRequest">
+                    <Scene
+                      key="QuickRequest"
+                      title={strings('common.titles.remoteConsult')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={QuickRequest}
+                      navBar={HeaderwithBack}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="InstantConsult">
+                    <Scene
+                      key="InstantConsult"
+                      title={strings('common.titles.consultDoctor')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={InstantConsult}
+                      navBar={HeaderwithBack}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="Summary">
+                    <Scene
+                      key="Summary"
+                      title={strings('common.titles.summary')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={Summary}
+                      navBar={HeaderwithBack}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="DoctorBusy" hideNavBar>
+                    <Scene
+                      key="DoctorBusy"
+                      title={strings('common.titles.doctorBusy')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={DoctorBusy}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="UserSignUp">
+                    <Scene navBar={HeaderwithBack} title={strings('common.titles.signUp')} key="UserSignUp" component={UserSignUp}></Scene>
+                  </Stack>
+
+                  <Stack key="AbhaRegistration">
+                    <Scene
+                      navBar={HeaderwithBack}
+                      title={strings('common.titles.abhaNumber')}
+                      key="AbhaRegistration"
+                      component={AbhaRegistration}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key="Settings">
+                    <Scene key="Settings" component={Settings} navBar={PrimarySettingsHeader}></Scene>
+                  </Stack>
+
+                  <Stack key="EditProfile">
+                    <Scene key="EditProfile" navBar={headerWithoutShadow} component={EditProfile}></Scene>
+                  </Stack>
+
+                  <Stack key="VitalProfile">
+                    <Scene
+                      key="VitalProfile"
+                      sceneKey="VitalProfile"
+                      component={Profile}
+                      title={strings('common.titles.myProfile')}
+                      backBehavior="none"
+                      panHandlers={null}
+                      hideNavBar={true}
+                    />
+                  </Stack>
+
+                  <Stack key="AddRecords" hideNavBar>
+                    <Scene key="AddRecords" component={AddRecords}></Scene>
+                  </Stack>
+                  <Stack key="EditVital" hideNavBar>
+                    <Scene key="EditVital" component={EditVital}></Scene>
+                  </Stack>
+                  <Stack key="DoctorMapping" hideNavBar>
+                    <Scene key="DoctorMapping" component={DoctorMapping}></Scene>
+                  </Stack>
+
+                  <Stack key="DeleteRecords" hideNavBar>
+                    <Scene key="DeleteRecords" component={DeleteRecords}></Scene>
+                  </Stack>
+
+                  <Stack key="SetVitalRange" hideNavBar>
+                    <Scene key="SetVitalRange" component={SetVitalRange}></Scene>
+                  </Stack>
+
+                  <Stack key="About">
+                    <Scene key="About" component={About} title={strings('common.titles.about')} navBar={SettingsHeader}></Scene>
+                  </Stack>
+
+                  <Stack key="ChatScreen" hideNavBar>
+                    <Scene key="ChatScreen" component={ChatScreen}></Scene>
+                  </Stack>
+
+                  <Stack key="PickUpDetailsScreen" hideNavBar>
+                    <Scene
+                      key={'PickUpDetailsScreen'}
+                      title={strings('common.titles.pickUpDetails')}
+                      component={PickUpDetailsScreen}
+                      navBar={MyCareWagonHeader}
+                    ></Scene>
+                  </Stack>
+
+                  <Stack key={'SearchingVehicle'} hideNavBar>
+                    <Scene key={'SearchingVehicle'} component={SearchingVehicle}></Scene>
+                  </Stack>
+
+                  <Stack key={'WagonBookingDetails'} hideNavBar>
+                    <Scene key={'WagonBookingDetails'} component={WagonBookingDetails}></Scene>
+                  </Stack>
+
+                  <Stack key={'OnlinePayment'} hideNavBar>
+                    <Scene key={'OnlinePayment'} gestureEnabled={false} component={OnlinePayment}></Scene>
+                  </Stack>
+
+                  <Stack key={'SearchProduct'}>
+                    <Scene
+                      key={'SearchProduct'}
+                      title={strings('common.titles.searchProduct')}
+                      navBar={EquipmentCommonHeader}
+                      component={searchProduct}
+                    ></Scene>
+                  </Stack>
+                  <Stack key={'WishList'}>
+                    <Scene
+                      key="WishList"
+                      component={wishList}
+                      navBar={EquipmentCommonHeader}
+                      title={strings('common.titles.wishList')}
+                      sceneKey="WishList"
+                    />
+                  </Stack>
+
+                  <Stack key={'ReviewList'}>
+                    <Scene
+                      key="ReviewList"
+                      component={reviewList}
+                      navBar={EquipmentCommonHeader}
+                      title={strings('common.titles.reviewList')}
+                      sceneKey="ReviewList"
+                    />
+                  </Stack>
+                  <Stack key={'ReviewProduct'}>
+                    <Scene
+                      key="ReviewProduct"
+                      component={reviewProduct}
+                      navBar={EquipmentCommonHeader}
+                      title={strings('common.titles.reviewProduct')}
+                      sceneKey="ReviewProduct"
+                    />
+                  </Stack>
+
+                  <Stack key={'MedicalCart'}>
+                    <Scene
+                      key={'MedicalCart'}
+                      title={strings('common.titles.shoppingCart')}
+                      navBar={EquipmentCommonHeader}
+                      component={medicalCart}
+                    ></Scene>
+                  </Stack>
+
+                  {Platform.OS === 'ios' ? (
+                    <Tabs
+                      key="MyCareWagonDash"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      lazy={true}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      navBarNoBorder={true}
+                      panHandlers={null}
+                      gestureEnabled={false}
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="MyCareWagonHome"
+                        navBar={MyCareWagonHeader}
+                        component={MyCareWagonHome}
+                        sceneKey="MyCareWagonHome"
+                        title={strings('common.titles.bookWagon')}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.MyCareWagonDash()}
+                        icon={WagonTab}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
+
+                      <Scene
+                        key="MyBooking"
+                        component={MyWagonBooking}
+                        navBar={MyCareWagonHeader}
+                        title={strings('common.titles.myBookings')}
+                        sceneKey="MyBooking"
+                        icon={WagonTab}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonBookingUpdated: true })}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        panHandlers={null}
+                      />
+
+                      <Scene
+                        key="WagonProfile"
+                        navBar={MyCareWagonHeader}
+                        hideNavBar={true}
+                        component={Profile}
+                        backBehavior="none"
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonProfileUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="WagonProfile"
+                        title={strings('common.titles.myProfile')}
+                        icon={WagonTab}
+                      />
+
+                      <Scene
+                        key="MyCareWagonNotification"
+                        navBar={MyCareWagonHeader}
+                        component={MyCareWagonNotification}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonNotifictionUpdated: true })}
+                        panHandlers={null}
+                        sceneKey="MyCareWagonNotification"
+                        title={strings('common.titles.notifications')}
+                        icon={WagonTab}
+                      />
+                    </Tabs>
+                  ) : (
+                    <Tabs
+                      key="MyCareWagonDash"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      lazy={true}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      navBarNoBorder={true}
+                      panHandlers={null}
+                      gestureEnabled={false}
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="MyCareWagonHome"
+                        navBar={MyCareWagonHeader}
+                        component={MyCareWagonHome}
+                        sceneKey="MyCareWagonHome"
+                        title={strings('common.titles.bookWagon')}
+                        tabBarOnPress={() => Actions.MyCareWagonDash()}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        icon={WagonTab}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
+
+                      <Scene
+                        key="MyBooking"
+                        component={MyWagonBooking}
+                        navBar={MyCareWagonHeader}
+                        title={strings('common.titles.myBookings')}
+                        sceneKey="MyBooking"
+                        icon={WagonTab}
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonBookingUpdated: true })}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        panHandlers={null}
+                      />
+
+                      <Scene
+                        key="WagonProfile"
+                        navBar={MyCareWagonHeader}
+                        hideNavBar={true}
+                        component={Profile}
+                        backBehavior="none"
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonProfileUpdated: true })}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        panHandlers={null}
+                        sceneKey="WagonProfile"
+                        title={strings('common.titles.myProfile')}
+                        icon={WagonTab}
+                      />
+
+                      <Scene
+                        key="MyCareWagonNotification"
+                        navBar={MyCareWagonHeader}
+                        component={MyCareWagonNotification}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonNotifictionUpdated: true })}
+                        isWagonProfileUpdated={false}
+                        isWagonBookingUpdated={false}
+                        isWagonHomeScreenUpdated={false}
+                        isWagonNotifictionUpdated={false}
+                        panHandlers={null}
+                        sceneKey="MyCareWagonNotification"
+                        title={strings('common.titles.notifications')}
+                        icon={WagonTab}
+                      />
+                    </Tabs>
+                  )}
+
+                  <Drawer
+                    key="drawer"
+                    onExit={() => {
+                      MedicalEquipmentDrawer.drawerClosed();
+                    }}
+                    onEnter={() => {}}
+                    contentComponent={MedicalEquipmentDrawer}
+                    drawerPosition={'left'}
+                    drawerWidth={wp(70)}
+                    gestureEnabled={true}
+                    panHandlers={true}
+                    tapToClose={true}
+                    type={ActionConst.RESET}
+                    swipeEnabled={true}
+                    openDrawerOffSet={0.2}
+                    panCloseMask={0.2}
+                    negotiatePan
+                  >
+                    <Scene hideNavBar panHandlers={null}>
+                      {Platform.OS === 'ios' ? (
+                        <Tabs
+                          key="MedicalEquipment"
+                          tabs={true}
+                          tabBarPosition={'bottom'}
+                          tabBarStyle={styles.tabView}
+                          lazy={true}
+                          showLabel={false}
+                          swipeEnabled={false}
+                          navBarNoBorder={true}
+                          panHandlers={null}
+                          gestureEnabled={false}
+                          type={ActionConst.RESET}
+                        >
+                          <Scene
+                            key="MedicalEquipmentHome"
+                            navBar={MedicalHomeHeader}
+                            component={medicalHomeScreen}
+                            sceneKey="MedicalEquipmentHome"
+                            title={strings('common.titles.shopNow')}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            tabBarOnPress={() => Actions.MedicalEquipment()}
+                            icon={MedicalEquipmentsTab}
+                            backBehavior="none"
+                            gestureEnabled={false}
+                            panHandlers={null}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentBooking"
+                            component={orderList}
+                            navBar={MyCareWagonHeader}
+                            title={strings('common.titles.myOrders')}
+                            hideNavBar={true}
+                            sceneKey="MedicalEquipmentBooking"
+                            icon={MedicalEquipmentsTab}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentBookingUpdated: true })}
+                            gestureEnabled={false}
+                            backBehavior="none"
+                            panHandlers={null}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentProfile"
+                            navBar={MyCareWagonHeader}
+                            hideNavBar={true}
+                            component={Profile}
+                            backBehavior="none"
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentProfileUpdated: true })}
+                            panHandlers={null}
+                            sceneKey="MedicalEquipmentProfile"
+                            title={strings('common.titles.myProfile')}
+                            icon={MedicalEquipmentsTab}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentNotification"
+                            navBar={MyCareWagonHeader}
+                            component={medicalEquipmentNotification}
+                            backBehavior="none"
+                            gestureEnabled={false}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentNotifictionUpdated: true })}
+                            panHandlers={null}
+                            sceneKey="MedicalEquipmentNotification"
+                            title={strings('common.titles.notifications')}
+                            icon={MedicalEquipmentsTab}
+                          />
+                        </Tabs>
+                      ) : (
+                        <Tabs
+                          key="MedicalEquipment"
+                          tabs={true}
+                          tabBarPosition={'bottom'}
+                          tabBarStyle={styles.tabView}
+                          lazy={true}
+                          showLabel={false}
+                          swipeEnabled={false}
+                          navBarNoBorder={true}
+                          panHandlers={null}
+                          gestureEnabled={false}
+                          type={ActionConst.RESET}
+                        >
+                          <Scene
+                            key="MedicalEquipmentHome"
+                            navBar={MedicalHomeHeader}
+                            component={medicalHomeScreen}
+                            sceneKey="MedicalEquipmentHome"
+                            title={strings('common.titles.shopNow')}
+                            tabBarOnPress={() => Actions.MedicalEquipment()}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            icon={MedicalEquipmentsTab}
+                            backBehavior="none"
+                            gestureEnabled={false}
+                            panHandlers={null}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentBooking"
+                            component={orderList}
+                            title={strings('common.titles.allOrders')}
+                            sceneKey="MedicalEquipmentBooking"
+                            icon={MedicalEquipmentsTab}
+                            navBar={MyCareWagonHeader}
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentBookingUpdated: true })}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            gestureEnabled={false}
+                            backBehavior="none"
+                            panHandlers={null}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentProfile"
+                            navBar={MyCareWagonHeader}
+                            component={Profile}
+                            backBehavior="none"
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentProfileUpdated: true })}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            hideNavBar={true}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            panHandlers={null}
+                            sceneKey="MedicalEquipmentProfile"
+                            title={strings('common.titles.myProfile')}
+                            icon={MedicalEquipmentsTab}
+                          />
+
+                          <Scene
+                            key="MedicalEquipmentNotification"
+                            navBar={MyCareWagonHeader}
+                            component={medicalEquipmentNotification}
+                            backBehavior="none"
+                            gestureEnabled={false}
+                            tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentNotifictionUpdated: true })}
+                            isMedicalEquipmentProfileUpdated={false}
+                            isMedicalEquipmentBookingUpdated={false}
+                            isMedicalEquipmentHomeScreenUpdated={false}
+                            isMedicalEquipmentNotifictionUpdated={false}
+                            panHandlers={null}
+                            sceneKey="MedicalEquipmentNotification"
+                            title={strings('common.titles.notifications')}
+                            icon={MedicalEquipmentsTab}
+                          />
+                        </Tabs>
+                      )}
                     </Scene>
-                </Stack>
-
-                <Stack key="ManageSubscription" hideNavBar>
-                  <Scene key="ManageSubscription" component={ManageSubscription} gestureEnabled={false} panHandlers={null}></Scene>
-                </Stack>
-
-                <Stack key="VitalCategory" hideNavBar>
-                  <Scene key="VitalCategory" component={VitalCategory} gestureEnabled={false} panHandlers={null} navBar={orderSummaryHeader}></Scene>
-                </Stack>
-
-                {Platform.OS === 'ios' ? (
-                  <Tabs
-                    key="HomeScreenDash"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    navBarNoBorder={true}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    lazy={true}
+                  </Drawer>
+                  <Drawer
+                    key="VitalDrawer"
+                    onExit={() => {
+                      VitalHomeDrawer.drawerClosed();
+                    }}
+                    onEnter={() => {}}
+                    contentComponent={VitalHomeDrawer}
+                    drawerPosition={'left'}
+                    drawerWidth={wp(70)}
+                    gestureEnabled={true}
+                    panHandlers={true}
+                    tapToClose={true}
                     type={ActionConst.RESET}
+                    swipeEnabled={true}
+                    openDrawerOffSet={0.2}
+                    panCloseMask={0.2}
+                    negotiatePan
                   >
                     <Scene
-                      key="HomeScreen"
-                      navBar={TabHeader}
-                      component={HomeScreen}
-                      sceneKey="HomeScreen"
-                      title={strings('common.titles.nearbyClinics')}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.HomeScreenDash()}
-                      icon={TabIcon}
+                      key="VitalHome"
+                      navBar={VitalHomeHeader}
+                      component={VitalHomeScreen}
+                      sceneKey="VitalHome"
+                      title={strings('common.titles.vitalSignsMonitoring')}
+                      icon={MedicalEquipmentsTab}
                       backBehavior="none"
                       gestureEnabled={false}
                       panHandlers={null}
                     />
-                    <Scene
-                      key="MyAppointments"
-                      component={MyAppointments}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isAppointmentUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="MyAppointments"
-                      title={strings('common.titles.myAppointments')}
-                      icon={TabIcon}
-                      hideNavBar
-                    />
+                  </Drawer>
 
+                  <Stack key="ProductDetails">
                     <Scene
-                      key="Profile"
-                      navBar={ProfileHeader}
-                      hideNavBar={true}
-                      component={Profile}
-                      gestureEnabled={false}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isProfileUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="Profile"
-                      title={strings('common.titles.myProfile')}
-                      icon={TabIcon}
-                    />
-
-                    <Scene
-                      key="Notifications"
-                      navBar={CommonHeader}
-                      component={Notifications}
-                      backBehavior="none"
-                      gestureEnabled={false}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isNotifictionUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="Notifications"
-                      title={strings('common.titles.notifications')}
-                      icon={TabIcon}
-                    />
-                  </Tabs>
-                ) : (
-                  <Tabs
-                    key="HomeScreenDash"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    lazy={true}
-                    type={ActionConst.RESET}
-                  >
-                    <Scene
-                      key="HomeScreen"
-                      navBar={TabHeader}
-                      component={HomeScreen}
-                      sceneKey="HomeScreen"
-                      title={strings('common.titles.nearbyClinics')}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isNotifictionUpdated={false}
-                      icon={TabIcon}
-                      backBehavior="none"
-                      tabBarOnPress={() => Actions.HomeScreenDash()}
+                      key={'ProductDetails'}
+                      title={''}
                       gestureEnabled={false}
                       panHandlers={null}
+                      component={productDetails}
+                      navBar={productDetailsHeader}
                     />
-                    <Scene
-                      key="MyAppointments"
-                      component={MyAppointments}
-                      isProfileUpdated={false}
-                      isHomeScreenUpdated={false}
-                      isAppointmentUpdated={false}
-                      isNotifictionUpdated={false}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isAppointmentUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="MyAppointments"
-                      title={strings('common.titles.myAppointments')}
-                      icon={TabIcon}
-                      hideNavBar
-                    />
+                  </Stack>
 
+                  <Stack key="OrderSummary">
                     <Scene
-                      key="Profile"
-                      navBar={ProfileHeader}
-                      component={Profile}
-                      hideNavBar={true}
-                      isNotifictionUpdated={false}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isProfileUpdated: true })}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      panHandlers={null}
-                      sceneKey="Profile"
-                      title={strings('common.titles.myProfile')}
-                      icon={TabIcon}
-                    />
-
-                    <Scene
-                      key="Notifications"
-                      navBar={CommonHeader}
-                      component={Notifications}
-                      backBehavior="none"
-                      isNotifictionUpdated={false}
+                      key={'OrderSummary'}
+                      title={strings('common.titles.orderSummary')}
                       gestureEnabled={false}
                       panHandlers={null}
-                      tabBarOnPress={() => Actions.HomeScreenDash({ isNotifictionUpdated: true })}
-                      isProfileUpdated={false}
-                      isAppointmentUpdated={false}
-                      isHomeScreenUpdated={false}
-                      sceneKey="Notifications"
-                      title={strings('common.titles.notifications')}
-                      icon={TabIcon}
+                      component={orderSummary}
+                      navBar={orderSummaryHeader}
                     />
-                  </Tabs>
-                )}
-
-                <Stack key="LoginIn" hideNavBar>
-                  <Scene key="LoginIn" component={LoginIn} />
-                </Stack>
-
-             
-
-                <Stack key="UpdateRegistrationNumber">
-                  <Scene
-                    key="UpdateRegistrationNumber"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    title={strings('common.titles.updateNumber')}
-                    navBar={headerWithoutShadow}
-                    component={UpdateRegistrationNumber}
-                  />
-                </Stack>
-
-                <Stack key="UpdateNumberOTP">
-                  <Scene
-                    key="UpdateNumberOTP"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    title={strings('common.titles.mobileVerify')}
-                    navBar={headerWithoutShadow}
-                    component={UpdateNumberOTP}
-                  />
-                </Stack>
-
-                <Stack key="MedicalRecords">
-                  <Scene
-                    key="MedicalRecords"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    title={strings('common.titles.healthRecords')}
-                    navBar={headerWithoutShadow}
-                    component={MedicalRecords}
-                  />
-                </Stack>
-
-                <Stack key="ForgetPassword">
-                  <Scene
-                    key="ForgetPassword"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    title={''}
-                    navBar={headerWithoutShadow}
-                    component={ForgetPassword}
-                  />
-                </Stack>
-
-                <Stack key="SetPassword">
-                  <Scene
-                    title={''}
-                    key="SetPassword"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    navBar={headerWithoutShadow}
-                    component={SetPassword}
-                  />
-                </Stack>
-
-                <Stack key="SmsotpScreen">
-                  <Scene
-                    navBar={headerWithoutShadow}
-                    title={''}
-                    key="SmsotpScreen"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={SmsotpScreen}
-                  />
-                </Stack>
-
-                <Stack key="Registration" hideNavBar>
-                  <Scene key="Registration" path="/Registration" component={Registration} />
-                </Stack>
-
-                <Stack key="ClinicDetails" hideNavBar>
-                  <Scene key="ClinicDetails" component={ClinicDetails} />
-                </Stack>
-
-                <Stack key="BookingSuggestions" hideNavBar>
-                  <Scene key="BookingSuggestions" component={BookingSuggestions} />
-                </Stack>
-
-                <Stack key="PrivacyPolicy">
-                  <Scene key="PrivacyPolicy" component={PrivacyPolicy} title={strings('common.titles.privacyPolicy')} navBar={HeaderwithBack} />
-                </Stack>
-                <Stack key="TrackView">
-                  <Scene key="TrackView" component={TrackView} title={strings('common.titles.trackOrder')} navBar={HeaderwithBack} />
-                </Stack>
-                <Stack key="ArticleWebView">
-                  <Scene hideNavBar key="ArticleWebView" component={ArticleWebView} title={strings('common.titles.article')} />
-                </Stack>
-
-                <Stack key="TermsAndConditions">
-                  <Scene
-                    key="TermsAndConditions"
-                    component={TermsAndConditions}
-                    title={strings('common.titles.termsConditions')}
-                    navBar={SettingsHeader}
-                  />
-                </Stack>
-
-                <Stack key="ClinicListing">
-                  <Scene key="ClinicListing" component={ClinicListing} title={strings('common.titles.clinicListing')} navBar={CommonHeader} />
-                </Stack>
-
-                <Stack key="Feedback">
-                  <Scene key="Feedback" component={Feedback} title={strings('common.titles.feedback')} navBar={SettingsHeader} />
-                </Stack>
-
-                <Stack key="DeleteFeedback">
-                  <Scene key="DeleteFeedback" component={DeleteFeedback} title={strings('common.titles.feedbackForm')} navBar={SettingsHeader} />
-                </Stack>
-
-                <Stack key="MySubscriptions">
-                  <Scene key="MySubscriptions" component={MySubscriptions} title={strings('common.titles.mySubscriptions')} hideNavBar={true} />
-                </Stack>
-
-                <Stack key="CorporatePlan">
-                  <Scene key="CorporatePlan" component={CorporatePlan} title={strings('common.titles.corporatePlan')} hideNavBar={true} />
-                </Stack>
-
-                <Stack key="DigitalCard">
-                  <Scene key="DigitalCard" component={DigitalCard} title={strings('common.titles.digitalIdCard')} hideNavBar={true} />
-                </Stack>
-
-                <Stack key="HelpAndSupport">
-                  <Scene key="HelpAndSupport" component={HelpAndSupport} title={strings('common.titles.helpSupport')} navBar={SettingsHeader}></Scene>
-                </Stack>
-
-                <Stack key="CheckInternet">
-                  <Scene key="CheckInternet" component={CheckInternet} />
-                </Stack>
-
-                <Stack key="QuickRequest">
-                  <Scene
-                    key="QuickRequest"
-                    title={strings('common.titles.remoteConsult')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={QuickRequest}
-                    navBar={HeaderwithBack}
-                  ></Scene>
-                </Stack>
-
-                <Stack key="InstantConsult">
-                  <Scene
-                    key="InstantConsult"
-                    title={strings('common.titles.consultDoctor')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={InstantConsult}
-                    navBar={HeaderwithBack}
-                  ></Scene>
-                </Stack>
-
-                <Stack key="Summary">
-                  <Scene
-                    key="Summary"
-                    title={strings('common.titles.summary')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={Summary}
-                    navBar={HeaderwithBack}
-                  ></Scene>
-                </Stack>
-
-                <Stack key="DoctorBusy" hideNavBar>
-                  <Scene
-                    key="DoctorBusy"
-                    title={strings('common.titles.doctorBusy')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={DoctorBusy}
-                  ></Scene>
-                </Stack>
-
-                <Stack key="UserSignUp">
-                  <Scene navBar={HeaderwithBack} title={strings('common.titles.signUp')} key="UserSignUp" component={UserSignUp}></Scene>
-                </Stack>
-
-                <Stack key="AbhaRegistration">
-                  <Scene
-                    navBar={HeaderwithBack}
-                    title={strings('common.titles.abhaNumber')}
-                    key="AbhaRegistration"
-                    component={AbhaRegistration}
-                  ></Scene>
-                </Stack>
-
-                <Stack key="Settings">
-                  <Scene key="Settings" component={Settings} navBar={PrimarySettingsHeader}></Scene>
-                </Stack>
-
-                <Stack key="EditProfile">
-                  <Scene key="EditProfile" navBar={headerWithoutShadow} component={EditProfile}></Scene>
-                </Stack>
-
-                <Stack key="VitalProfile">
-                  <Scene
-                    key="VitalProfile"
-                    sceneKey="VitalProfile"
-                    component={Profile}
-                    title={strings('common.titles.myProfile')}
-                    backBehavior="none"
-                    panHandlers={null}
-                    hideNavBar={true}
-                  />
-                </Stack>
-
-                <Stack key="AddRecords" hideNavBar>
-                  <Scene key="AddRecords" component={AddRecords}></Scene>
-                </Stack>
-                <Stack key="EditVital" hideNavBar>
-                  <Scene key="EditVital" component={EditVital}></Scene>
-                </Stack>
-                <Stack key="DoctorMapping" hideNavBar>
-                  <Scene key="DoctorMapping" component={DoctorMapping}></Scene>
-                </Stack>
-
-                <Stack key="DeleteRecords" hideNavBar>
-                  <Scene key="DeleteRecords" component={DeleteRecords}></Scene>
-                </Stack>
-
-                <Stack key="SetVitalRange" hideNavBar>
-                  <Scene key="SetVitalRange" component={SetVitalRange}></Scene>
-                </Stack>
-
-                <Stack key="About">
-                  <Scene key="About" component={About} title={strings('common.titles.about')} navBar={SettingsHeader}></Scene>
-                </Stack>
-
-                <Stack key="ChatScreen" hideNavBar>
-                  <Scene key="ChatScreen" component={ChatScreen}></Scene>
-                </Stack>
-
-                <Stack key="PickUpDetailsScreen" hideNavBar>
-                  <Scene
-                    key={'PickUpDetailsScreen'}
-                    title={strings('common.titles.pickUpDetails')}
-                    component={PickUpDetailsScreen}
-                    navBar={MyCareWagonHeader}
-                  ></Scene>
-                </Stack>
-
-                <Stack key={'SearchingVehicle'} hideNavBar>
-                  <Scene key={'SearchingVehicle'} component={SearchingVehicle}></Scene>
-                </Stack>
-
-                <Stack key={'WagonBookingDetails'} hideNavBar>
-                  <Scene key={'WagonBookingDetails'} component={WagonBookingDetails}></Scene>
-                </Stack>
-
-                <Stack key={'OnlinePayment'} hideNavBar>
-                  <Scene key={'OnlinePayment'} gestureEnabled={false} component={OnlinePayment}></Scene>
-                </Stack>
-
-                <Stack key={'SearchProduct'}>
-                  <Scene
-                    key={'SearchProduct'}
-                    title={strings('common.titles.searchProduct')}
-                    navBar={EquipmentCommonHeader}
-                    component={searchProduct}
-                  ></Scene>
-                </Stack>
-                <Stack key={'WishList'}>
-                  <Scene
-                    key="WishList"
-                    component={wishList}
-                    navBar={EquipmentCommonHeader}
-                    title={strings('common.titles.wishList')}
-                    sceneKey="WishList"
-                  />
-                </Stack>
-
-                <Stack key={'ReviewList'}>
-                  <Scene
-                    key="ReviewList"
-                    component={reviewList}
-                    navBar={EquipmentCommonHeader}
-                    title={strings('common.titles.reviewList')}
-                    sceneKey="ReviewList"
-                  />
-                </Stack>
-                <Stack key={'ReviewProduct'}>
-                  <Scene
-                    key="ReviewProduct"
-                    component={reviewProduct}
-                    navBar={EquipmentCommonHeader}
-                    title={strings('common.titles.reviewProduct')}
-                    sceneKey="ReviewProduct"
-                  />
-                </Stack>
-
-                <Stack key={'MedicalCart'}>
-                  <Scene
-                    key={'MedicalCart'}
-                    title={strings('common.titles.shoppingCart')}
-                    navBar={EquipmentCommonHeader}
-                    component={medicalCart}
-                  ></Scene>
-                </Stack>
-
-                {Platform.OS === 'ios' ? (
-                  <Tabs
-                    key="MyCareWagonDash"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    lazy={true}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    navBarNoBorder={true}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    type={ActionConst.RESET}
-                  >
+                  </Stack>
+                  <Stack key="confirmBooking">
                     <Scene
-                      key="MyCareWagonHome"
-                      navBar={MyCareWagonHeader}
-                      component={MyCareWagonHome}
-                      sceneKey="MyCareWagonHome"
-                      title={strings('common.titles.bookWagon')}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.MyCareWagonDash()}
-                      icon={WagonTab}
-                      backBehavior="none"
+                      key={'confirmBooking'}
+                      title={strings('common.titles.confirmBooking')}
                       gestureEnabled={false}
                       panHandlers={null}
+                      component={confirmBooking}
+                      navBar={orderSummaryHeader}
                     />
-
+                  </Stack>
+                  <Stack key="appointmentDetails">
                     <Scene
-                      key="MyBooking"
-                      component={MyWagonBooking}
-                      navBar={MyCareWagonHeader}
-                      title={strings('common.titles.myBookings')}
-                      sceneKey="MyBooking"
-                      icon={WagonTab}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonBookingUpdated: true })}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      panHandlers={null}
-                    />
-
-                    <Scene
-                      key="WagonProfile"
-                      navBar={MyCareWagonHeader}
-                      hideNavBar={true}
-                      component={Profile}
-                      backBehavior="none"
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonProfileUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="WagonProfile"
-                      title={strings('common.titles.myProfile')}
-                      icon={WagonTab}
-                    />
-
-                    <Scene
-                      key="MyCareWagonNotification"
-                      navBar={MyCareWagonHeader}
-                      component={MyCareWagonNotification}
-                      backBehavior="none"
-                      gestureEnabled={false}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonNotifictionUpdated: true })}
-                      panHandlers={null}
-                      sceneKey="MyCareWagonNotification"
-                      title={strings('common.titles.notifications')}
-                      icon={WagonTab}
-                    />
-                  </Tabs>
-                ) : (
-                  <Tabs
-                    key="MyCareWagonDash"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    lazy={true}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    navBarNoBorder={true}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    type={ActionConst.RESET}
-                  >
-                    <Scene
-                      key="MyCareWagonHome"
-                      navBar={MyCareWagonHeader}
-                      component={MyCareWagonHome}
-                      sceneKey="MyCareWagonHome"
-                      title={strings('common.titles.bookWagon')}
-                      tabBarOnPress={() => Actions.MyCareWagonDash()}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      icon={WagonTab}
-                      backBehavior="none"
+                      key={'appointmentDetails'}
+                      title={strings('common.titles.appointmentDetails')}
                       gestureEnabled={false}
                       panHandlers={null}
+                      component={appointmentDetails}
+                      navBar={orderSummaryHeader}
                     />
+                  </Stack>
 
+                  <Stack key="EPrescription">
                     <Scene
-                      key="MyBooking"
-                      component={MyWagonBooking}
-                      navBar={MyCareWagonHeader}
-                      title={strings('common.titles.myBookings')}
-                      sceneKey="MyBooking"
-                      icon={WagonTab}
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonBookingUpdated: true })}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
+                      key={'EPrescription'}
+                      title={strings('common.titles.ePrescription')}
                       gestureEnabled={false}
-                      backBehavior="none"
                       panHandlers={null}
+                      component={EPrescription}
+                      navBar={orderSummaryHeader}
                     />
+                  </Stack>
 
+                  <Stack key="MyOrderSummary" hideNavBar>
                     <Scene
-                      key="WagonProfile"
-                      navBar={MyCareWagonHeader}
-                      hideNavBar={true}
-                      component={Profile}
-                      backBehavior="none"
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonProfileUpdated: true })}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
-                      panHandlers={null}
-                      sceneKey="WagonProfile"
-                      title={strings('common.titles.myProfile')}
-                      icon={WagonTab}
-                    />
-
-                    <Scene
-                      key="MyCareWagonNotification"
-                      navBar={MyCareWagonHeader}
-                      component={MyCareWagonNotification}
-                      backBehavior="none"
+                      key={'MyOrderSummary'}
+                      title={strings('common.titles.reviewOrder')}
                       gestureEnabled={false}
-                      tabBarOnPress={() => Actions.MyCareWagonDash({ isWagonNotifictionUpdated: true })}
-                      isWagonProfileUpdated={false}
-                      isWagonBookingUpdated={false}
-                      isWagonHomeScreenUpdated={false}
-                      isWagonNotifictionUpdated={false}
                       panHandlers={null}
-                      sceneKey="MyCareWagonNotification"
-                      title={strings('common.titles.notifications')}
-                      icon={WagonTab}
+                      component={myOrderSummary}
                     />
-                  </Tabs>
-                )}
+                  </Stack>
+                  <Stack key="Article" hideNavBar>
+                    <Scene key={'Article'} title={strings('common.titles.article')} gestureEnabled={false} panHandlers={null} component={Article} />
+                  </Stack>
 
-                <Drawer
-                  key="drawer"
-                  onExit={() => {
-                    MedicalEquipmentDrawer.drawerClosed();
-                  }}
-                  onEnter={() => {}}
-                  contentComponent={MedicalEquipmentDrawer}
-                  drawerPosition={'left'}
-                  drawerWidth={wp(70)}
-                  gestureEnabled={true}
-                  panHandlers={true}
-                  tapToClose={true}
-                  type={ActionConst.RESET}
-                  swipeEnabled={true}
-                  openDrawerOffSet={0.2}
-                  panCloseMask={0.2}
-                  negotiatePan
-                >
-                  <Scene hideNavBar panHandlers={null}>
-                    {Platform.OS === 'ios' ? (
-                      <Tabs
-                        key="MedicalEquipment"
-                        tabs={true}
-                        tabBarPosition={'bottom'}
-                        tabBarStyle={styles.tabView}
-                        lazy={true}
-                        showLabel={false}
-                        swipeEnabled={false}
-                        navBarNoBorder={true}
-                        panHandlers={null}
+                  <Stack key="SelectPayment">
+                    <Scene
+                      key={'SelectPayment'}
+                      title={strings('common.titles.selectPayment')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={selectPayment}
+                      navBar={EquipmentCommonHeader}
+                    />
+                  </Stack>
+                  <Stack key="ModalPopUp" hideNavBar>
+                    <Scene
+                      key={'ModalPopUp'}
+                      title={strings('common.titles.modal')}
+                      gestureEnabled={false}
+                      panHandlers={null}
+                      component={ModalPopUp}
+                    />
+                  </Stack>
+
+                  {Platform.OS === 'ios' ? (
+                    <Tabs
+                      key="caregiverTab"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      lazy={true}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      navBarNoBorder={true}
+                      panHandlers={null}
+                      gestureEnabled={false}
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="CaregiverHome"
+                        sceneKey="CaregiverHome"
+                        component={caregiverHomeScreen}
+                        navBar={caregiverHeader}
+                        icon={CaregiverTab}
+                        title="Select Caregiver"
+                        tabBarOnPress={() => Actions.caregiverTab()}
+                        backBehavior="none"
                         gestureEnabled={false}
-                        type={ActionConst.RESET}
-                      >
-                        <Scene
-                          key="MedicalEquipmentHome"
-                          navBar={MedicalHomeHeader}
-                          component={medicalHomeScreen}
-                          sceneKey="MedicalEquipmentHome"
-                          title={strings('common.titles.shopNow')}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          tabBarOnPress={() => Actions.MedicalEquipment()}
-                          icon={MedicalEquipmentsTab}
-                          backBehavior="none"
-                          gestureEnabled={false}
-                          panHandlers={null}
-                        />
-
-                        <Scene
-                          key="MedicalEquipmentBooking"
-                          component={orderList}
-                          navBar={MyCareWagonHeader}
-                          title={strings('common.titles.myOrders')}
-                          hideNavBar={true}
-                          sceneKey="MedicalEquipmentBooking"
-                          icon={MedicalEquipmentsTab}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentBookingUpdated: true })}
-                          gestureEnabled={false}
-                          backBehavior="none"
-                          panHandlers={null}
-                        />
-
-                        <Scene
-                          key="MedicalEquipmentProfile"
-                          navBar={MyCareWagonHeader}
-                          hideNavBar={true}
-                          component={Profile}
-                          backBehavior="none"
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentProfileUpdated: true })}
-                          panHandlers={null}
-                          sceneKey="MedicalEquipmentProfile"
-                          title={strings('common.titles.myProfile')}
-                          icon={MedicalEquipmentsTab}
-                        />
-
-                        <Scene
-                          key="MedicalEquipmentNotification"
-                          navBar={MyCareWagonHeader}
-                          component={medicalEquipmentNotification}
-                          backBehavior="none"
-                          gestureEnabled={false}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentNotifictionUpdated: true })}
-                          panHandlers={null}
-                          sceneKey="MedicalEquipmentNotification"
-                          title={strings('common.titles.notifications')}
-                          icon={MedicalEquipmentsTab}
-                        />
-                      </Tabs>
-                    ) : (
-                      <Tabs
-                        key="MedicalEquipment"
-                        tabs={true}
-                        tabBarPosition={'bottom'}
-                        tabBarStyle={styles.tabView}
-                        lazy={true}
-                        showLabel={false}
-                        swipeEnabled={false}
-                        navBarNoBorder={true}
                         panHandlers={null}
+                      />
+
+                      <Scene
+                        key="CaregiverRequest"
+                        sceneKey="CaregiverRequest"
+                        component={caregiverBookingRequestScreen}
+                        navBar={caregiverHeader}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.selectCaregiver')}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverBookingUpdated: true })}
                         gestureEnabled={false}
-                        type={ActionConst.RESET}
-                      >
-                        <Scene
-                          key="MedicalEquipmentHome"
-                          navBar={MedicalHomeHeader}
-                          component={medicalHomeScreen}
-                          sceneKey="MedicalEquipmentHome"
-                          title={strings('common.titles.shopNow')}
-                          tabBarOnPress={() => Actions.MedicalEquipment()}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          icon={MedicalEquipmentsTab}
-                          backBehavior="none"
-                          gestureEnabled={false}
-                          panHandlers={null}
-                        />
+                        backBehavior="none"
+                        panHandlers={null}
+                      />
 
-                        <Scene
-                          key="MedicalEquipmentBooking"
-                          component={orderList}
-                          title={strings('common.titles.allOrders')}
-                          sceneKey="MedicalEquipmentBooking"
-                          icon={MedicalEquipmentsTab}
-                          navBar={MyCareWagonHeader}
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentBookingUpdated: true })}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          gestureEnabled={false}
-                          backBehavior="none"
-                          panHandlers={null}
-                        />
+                      <Scene
+                        key="CaregiverProfile"
+                        sceneKey="CaregiverProfile"
+                        component={Profile}
+                        navBar={MyCareWagonHeader}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.myProfile')}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverProfileUpdated: true })}
+                        backBehavior="none"
+                        panHandlers={null}
+                        hideNavBar={true}
+                      />
 
-                        <Scene
-                          key="MedicalEquipmentProfile"
-                          navBar={MyCareWagonHeader}
-                          component={Profile}
-                          backBehavior="none"
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentProfileUpdated: true })}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          hideNavBar={true}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          panHandlers={null}
-                          sceneKey="MedicalEquipmentProfile"
-                          title={strings('common.titles.myProfile')}
-                          icon={MedicalEquipmentsTab}
-                        />
-
-                        <Scene
-                          key="MedicalEquipmentNotification"
-                          navBar={MyCareWagonHeader}
-                          component={medicalEquipmentNotification}
-                          backBehavior="none"
-                          gestureEnabled={false}
-                          tabBarOnPress={() => Actions.MedicalEquipment({ isMedicalEquipmentNotifictionUpdated: true })}
-                          isMedicalEquipmentProfileUpdated={false}
-                          isMedicalEquipmentBookingUpdated={false}
-                          isMedicalEquipmentHomeScreenUpdated={false}
-                          isMedicalEquipmentNotifictionUpdated={false}
-                          panHandlers={null}
-                          sceneKey="MedicalEquipmentNotification"
-                          title={strings('common.titles.notifications')}
-                          icon={MedicalEquipmentsTab}
-                        />
-                      </Tabs>
-                    )}
-                  </Scene>
-                </Drawer>
-                <Drawer
-                  key="VitalDrawer"
-                  onExit={() => {
-                    VitalHomeDrawer.drawerClosed();
-                  }}
-                  onEnter={() => {}}
-                  contentComponent={VitalHomeDrawer}
-                  drawerPosition={'left'}
-                  drawerWidth={wp(70)}
-                  gestureEnabled={true}
-                  panHandlers={true}
-                  tapToClose={true}
-                  type={ActionConst.RESET}
-                  swipeEnabled={true}
-                  openDrawerOffSet={0.2}
-                  panCloseMask={0.2}
-                  negotiatePan
-                >
-                  <Scene
-                    key="VitalHome"
-                    navBar={VitalHomeHeader}
-                    component={VitalHomeScreen}
-                    sceneKey="VitalHome"
-                    title={strings('common.titles.vitalSignsMonitoring')}
-                    icon={MedicalEquipmentsTab}
-                    backBehavior="none"
-                    gestureEnabled={false}
-                    panHandlers={null}
-                  />
-                </Drawer>
-
-                <Stack key="ProductDetails">
-                  <Scene
-                    key={'ProductDetails'}
-                    title={''}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={productDetails}
-                    navBar={productDetailsHeader}
-                  />
-                </Stack>
-
-                <Stack key="OrderSummary">
-                  <Scene
-                    key={'OrderSummary'}
-                    title={strings('common.titles.orderSummary')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={orderSummary}
-                    navBar={orderSummaryHeader}
-                  />
-                </Stack>
-                <Stack key="confirmBooking">
-                  <Scene
-                    key={'confirmBooking'}
-                    title={strings('common.titles.confirmBooking')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={confirmBooking}
-                    navBar={orderSummaryHeader}
-                  />
-                </Stack>
-                <Stack key="appointmentDetails">
-                  <Scene
-                    key={'appointmentDetails'}
-                    title={strings('common.titles.appointmentDetails')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={appointmentDetails}
-                    navBar={orderSummaryHeader}
-                  />
-                </Stack>
-
-                <Stack key="EPrescription">
-                  <Scene
-                    key={'EPrescription'}
-                    title={strings('common.titles.ePrescription')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={EPrescription}
-                    navBar={orderSummaryHeader}
-                  />
-                </Stack>
-
-                <Stack key="MyOrderSummary" hideNavBar>
-                  <Scene
-                    key={'MyOrderSummary'}
-                    title={strings('common.titles.reviewOrder')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={myOrderSummary}
-                  />
-                </Stack>
-                <Stack key="Article" hideNavBar>
-                  <Scene key={'Article'} title={strings('common.titles.article')} gestureEnabled={false} panHandlers={null} component={Article} />
-                </Stack>
-
-                <Stack key="SelectPayment">
-                  <Scene
-                    key={'SelectPayment'}
-                    title={strings('common.titles.selectPayment')}
-                    gestureEnabled={false}
-                    panHandlers={null}
-                    component={selectPayment}
-                    navBar={EquipmentCommonHeader}
-                  />
-                </Stack>
-                <Stack key="ModalPopUp" hideNavBar>
-                  <Scene key={'ModalPopUp'} title={strings('common.titles.modal')} gestureEnabled={false} panHandlers={null} component={ModalPopUp} />
-                </Stack>
-
-                {Platform.OS === 'ios' ? (
-                  <Tabs
-                    key="caregiverTab"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    lazy={true}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    navBarNoBorder={true}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    type={ActionConst.RESET}
-                  >
-                    <Scene
-                      key="CaregiverHome"
-                      sceneKey="CaregiverHome"
-                      component={caregiverHomeScreen}
-                      navBar={caregiverHeader}
-                      icon={CaregiverTab}
-                      title="Select Caregiver"
-                      tabBarOnPress={() => Actions.caregiverTab()}
-                      backBehavior="none"
+                      <Scene
+                        key="CaregiverNotification"
+                        sceneKey="CaregiverNotification"
+                        component={caregiverNotificationScreen}
+                        navBar={MyCareWagonHeader}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.notifications')}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverNotifictionUpdated: true })}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
+                    </Tabs>
+                  ) : (
+                    <Tabs
+                      key="caregiverTab"
+                      tabs={true}
+                      tabBarPosition={'bottom'}
+                      tabBarStyle={styles.tabView}
+                      lazy={true}
+                      showLabel={false}
+                      swipeEnabled={false}
+                      navBarNoBorder={true}
+                      panHandlers={null}
                       gestureEnabled={false}
-                      panHandlers={null}
-                    />
+                      type={ActionConst.RESET}
+                    >
+                      <Scene
+                        key="CaregiverHome"
+                        sceneKey="CaregiverHome"
+                        component={caregiverHomeScreen}
+                        navBar={caregiverHeader}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.searchCaregiver')}
+                        tabBarOnPress={() => Actions.caregiverTab()}
+                        isCaregiverProfileUpdated={false}
+                        isCaregiverBookingUpdated={false}
+                        isCaregiverHomeScreenUpdated={false}
+                        isCaregiverNotifictionUpdated={false}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        panHandlers={null}
+                      />
 
-                    <Scene
-                      key="CaregiverRequest"
-                      sceneKey="CaregiverRequest"
-                      component={caregiverBookingRequestScreen}
-                      navBar={caregiverHeader}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.selectCaregiver')}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverBookingUpdated: true })}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      panHandlers={null}
-                    />
+                      <Scene
+                        key="CaregiverRequest"
+                        sceneKey="CaregiverRequest"
+                        component={caregiverBookingRequestScreen}
+                        navBar={caregiverHeader}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.serviceRequests')}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverBookingUpdated: true })}
+                        isCaregiverProfileUpdated={false}
+                        isCaregiverBookingUpdated={false}
+                        isCaregiverHomeScreenUpdated={false}
+                        isCaregiverNotifictionUpdated={false}
+                        gestureEnabled={false}
+                        backBehavior="none"
+                        panHandlers={null}
+                      />
 
-                    <Scene
-                      key="CaregiverProfile"
-                      sceneKey="CaregiverProfile"
-                      component={Profile}
-                      navBar={MyCareWagonHeader}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.myProfile')}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverProfileUpdated: true })}
-                      backBehavior="none"
-                      panHandlers={null}
-                      hideNavBar={true}
-                    />
+                      <Scene
+                        key="CaregiverProfile"
+                        sceneKey="CaregiverProfile"
+                        component={Profile}
+                        navBar={MyCareWagonHeader}
+                        hideNavBar={true}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverProfileUpdated: true })}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.myProfile')}
+                        backBehavior="none"
+                        isCaregiverProfileUpdated={false}
+                        isCaregiverBookingUpdated={false}
+                        isCaregiverHomeScreenUpdated={false}
+                        isCaregiverNotifictionUpdated={false}
+                        panHandlers={null}
+                      />
 
-                    <Scene
-                      key="CaregiverNotification"
-                      sceneKey="CaregiverNotification"
-                      component={caregiverNotificationScreen}
-                      navBar={MyCareWagonHeader}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.notifications')}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverNotifictionUpdated: true })}
-                      backBehavior="none"
-                      gestureEnabled={false}
-                      panHandlers={null}
-                    />
-                  </Tabs>
-                ) : (
-                  <Tabs
-                    key="caregiverTab"
-                    tabs={true}
-                    tabBarPosition={'bottom'}
-                    tabBarStyle={styles.tabView}
-                    lazy={true}
-                    showLabel={false}
-                    swipeEnabled={false}
-                    navBarNoBorder={true}
-                    panHandlers={null}
-                    gestureEnabled={false}
-                    type={ActionConst.RESET}
-                  >
-                    <Scene
-                      key="CaregiverHome"
-                      sceneKey="CaregiverHome"
-                      component={caregiverHomeScreen}
-                      navBar={caregiverHeader}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.searchCaregiver')}
-                      tabBarOnPress={() => Actions.caregiverTab()}
-                      isCaregiverProfileUpdated={false}
-                      isCaregiverBookingUpdated={false}
-                      isCaregiverHomeScreenUpdated={false}
-                      isCaregiverNotifictionUpdated={false}
-                      backBehavior="none"
-                      gestureEnabled={false}
-                      panHandlers={null}
-                    />
-
-                    <Scene
-                      key="CaregiverRequest"
-                      sceneKey="CaregiverRequest"
-                      component={caregiverBookingRequestScreen}
-                      navBar={caregiverHeader}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.serviceRequests')}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverBookingUpdated: true })}
-                      isCaregiverProfileUpdated={false}
-                      isCaregiverBookingUpdated={false}
-                      isCaregiverHomeScreenUpdated={false}
-                      isCaregiverNotifictionUpdated={false}
-                      gestureEnabled={false}
-                      backBehavior="none"
-                      panHandlers={null}
-                    />
-
-                    <Scene
-                      key="CaregiverProfile"
-                      sceneKey="CaregiverProfile"
-                      component={Profile}
-                      navBar={MyCareWagonHeader}
-                      hideNavBar={true}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverProfileUpdated: true })}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.myProfile')}
-                      backBehavior="none"
-                      isCaregiverProfileUpdated={false}
-                      isCaregiverBookingUpdated={false}
-                      isCaregiverHomeScreenUpdated={false}
-                      isCaregiverNotifictionUpdated={false}
-                      panHandlers={null}
-                    />
-
-                    <Scene
-                      key="CaregiverNotification"
-                      sceneKey="CaregiverNotification"
-                      component={caregiverNotificationScreen}
-                      navBar={MyCareWagonHeader}
-                      tabBarOnPress={() => Actions.caregiverTab({ isCaregiverNotifictionUpdated: true })}
-                      icon={CaregiverTab}
-                      title={strings('common.titles.notifications')}
-                      backBehavior="none"
-                      gestureEnabled={false}
-                      isCaregiverProfileUpdated={false}
-                      isCaregiverBookingUpdated={false}
-                      isCaregiverHomeScreenUpdated={false}
-                      isCaregiverNotifictionUpdated={false}
-                      panHandlers={null}
-                    />
-                  </Tabs>
-                )}
-              </Stack>
-            </Router>
+                      <Scene
+                        key="CaregiverNotification"
+                        sceneKey="CaregiverNotification"
+                        component={caregiverNotificationScreen}
+                        navBar={MyCareWagonHeader}
+                        tabBarOnPress={() => Actions.caregiverTab({ isCaregiverNotifictionUpdated: true })}
+                        icon={CaregiverTab}
+                        title={strings('common.titles.notifications')}
+                        backBehavior="none"
+                        gestureEnabled={false}
+                        isCaregiverProfileUpdated={false}
+                        isCaregiverBookingUpdated={false}
+                        isCaregiverHomeScreenUpdated={false}
+                        isCaregiverNotifictionUpdated={false}
+                        panHandlers={null}
+                      />
+                    </Tabs>
+                  )}
+                </Stack>
+              </Router>
+            </GlobalProvider>
             <FlashMessage position="top" />
           </View>
         </StripeProvider>

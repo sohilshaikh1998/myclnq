@@ -34,7 +34,7 @@ import ElevatedView from 'react-native-elevated-view';
 import { AppStyles } from '../../../shared/AppStyles';
 import { AppUtils } from '../../../utils/AppUtils';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-date-picker';
+//import DatePicker from 'react-native-date-picker';
 import Toast from 'react-native-simple-toast';
 const { width, height } = Dimensions.get('window');
 import { strings } from '../../../locales/i18n';
@@ -933,7 +933,7 @@ class caregiverBookingRequestScreen extends Component {
       this.setState({ isLoading: false });
       Alert.alert('', strings('common.caregiver.youCannotPayTryLater'));
       AppUtils.console('PAY_NOW_CAREGIVER', e);
-    } finally{
+    } finally {
       this.setState({ isLoading: false });
     }
   }
@@ -1022,18 +1022,26 @@ class caregiverBookingRequestScreen extends Component {
 
             <View style={caregiverBookingRequestStyle.rowView}>
               <View style={caregiverBookingRequestStyle.block1}>
-                <Text numberOfLines={1} allowFontScaling={false} style={[caregiverBookingRequestStyle.subService, { textAlign: isRTL ? 'left' : 'auto', }]}>
+                <Text
+                  numberOfLines={1}
+                  allowFontScaling={false}
+                  style={[caregiverBookingRequestStyle.subService, { textAlign: isRTL ? 'left' : 'auto' }]}
+                >
                   {strings('string.label.patient_detail')}
                 </Text>
-                <Text numberOfLines={1} allowFontScaling={false} style={[caregiverBookingRequestStyle.serviceTxt, {fontSize:12, textAlign: isRTL ? 'left' : 'auto',}]}>
+                <Text
+                  numberOfLines={1}
+                  allowFontScaling={false}
+                  style={[caregiverBookingRequestStyle.serviceTxt, { fontSize: 12, textAlign: isRTL ? 'left' : 'auto' }]}
+                >
                   {item.item.patientDetail.name}, {item.item.patientDetail.age}{' '}
                 </Text>
               </View>
               <View style={caregiverBookingRequestStyle.block3}>
-                <Text allowFontScaling={false} numberOfLines={1} style={[caregiverBookingRequestStyle.serviceTxt, {fontSize:12}]}>
+                <Text allowFontScaling={false} numberOfLines={1} style={[caregiverBookingRequestStyle.serviceTxt, { fontSize: 12 }]}>
                   {startDate} - {endDate}
                 </Text>
-                <Text numberOfLines={1} allowFontScaling={false} style={[caregiverBookingRequestStyle.timeStyle,{fontSize:12,}]}>
+                <Text numberOfLines={1} allowFontScaling={false} style={[caregiverBookingRequestStyle.timeStyle, { fontSize: 12 }]}>
                   {startTime} - {endTime}
                 </Text>
               </View>
@@ -1057,7 +1065,10 @@ class caregiverBookingRequestScreen extends Component {
                 <Text
                   numberOfLines={1}
                   allowFontScaling={false}
-                  style={[caregiverBookingRequestStyle.subService, { color: AppColors.primaryColor, width: wp(70),textAlign: isRTL ? 'left' : 'auto', marginLeft: isRTL ? wp(2) : null }]}
+                  style={[
+                    caregiverBookingRequestStyle.subService,
+                    { color: AppColors.primaryColor, width: wp(70), textAlign: isRTL ? 'left' : 'auto', marginLeft: isRTL ? wp(2) : null },
+                  ]}
                 >
                   {item.item.currencySymbol}
                   {item.item.referralId && item.item.paymentStatus === 'successful' ? item.item.paidAmount : item.item.charge}
@@ -1864,7 +1875,9 @@ class caregiverBookingRequestScreen extends Component {
     return (
       <View style={caregiverBookingRequestStyle.placeHolderView}>
         <Image source={images.cancelIcon} style={caregiverBookingRequestStyle.placeHolderImage} />
-        <Text style={caregiverBookingRequestStyle.placeHolderTxt}>{strings("string.caregiver.no")} {txt}</Text>
+        <Text style={caregiverBookingRequestStyle.placeHolderTxt}>
+          {strings('string.caregiver.no')} {txt}
+        </Text>
       </View>
     );
   }
@@ -1892,7 +1905,7 @@ class caregiverBookingRequestScreen extends Component {
               onEndReached={() => this.upcomingFooterLoading()}
             />
           ) : this.state.isLoading ? null : (
-            this.placeHolder(strings("string.caregiver.upcomingRequest"))
+            this.placeHolder(strings('string.caregiver.upcomingRequest'))
           )
         ) : this.state.isPast ? (
           pastRequest.length > 0 ? (
@@ -1909,7 +1922,7 @@ class caregiverBookingRequestScreen extends Component {
               onEndReached={() => this.pastFooterLoading()}
             />
           ) : this.state.isLoading ? null : (
-            this.placeHolder(strings("string.caregiver.pastRequest"))
+            this.placeHolder(strings('string.caregiver.pastRequest'))
           )
         ) : request.length > 0 ? (
           <FlatList
@@ -1925,7 +1938,7 @@ class caregiverBookingRequestScreen extends Component {
             onEndReached={() => this.requestFooterLoading()}
           />
         ) : this.state.isLoading ? null : (
-          this.placeHolder(strings("string.caregiver.request"))
+          this.placeHolder(strings('string.caregiver.request'))
         )}
 
         {/*
@@ -2157,50 +2170,49 @@ class caregiverBookingRequestScreen extends Component {
                     : this.setState({ selectedEndTime: date, eTime: false });
                 }}
               />
-            ) : (
-              <DatePicker
-                date={
-                  new Date(
-                    this.state.isDate
-                      ? this.state.isSelectedStartDate
-                        ? this.state.selectedStartDate
-                        : this.state.selectedEndDate
-                      : this.state.isSelectedStartTime
-                      ? this.state.selectedStartTime
-                      : this.state.selectedEndTime
-                  )
-                }
-                mode={this.state.isDate ? 'date' : 'time'}
-                style={{
-                  backgroundColor: AppColors.whiteColor,
-                  width: width - 30,
-                }}
-                minuteInterval={30}
-                minimumDate={_dt}
-                onDateChange={(date) => {
-                  this.state.isDate
-                    ? this.state.isSelectedStartDate
-                      ? this.setState({
-                          selectedStartDate: date,
-                          sDate: false,
-                          selectEndDate: true,
-                          selectStartTime: true,
-                        })
-                      : this.setState({
-                          selectedEndDate: date,
-                          eDate: false,
-                          selectStartTime: true,
-                        })
-                    : this.state.isSelectedStartTime
-                    ? this.setState({
-                        selectedStartTime: date,
-                        sTime: false,
-                        selectedEndTime: true,
-                      })
-                    : this.setState({ selectedEndTime: date, eTime: false });
-                }}
-              />
-            )}
+            ) : // <DatePicker
+            //   date={
+            //     new Date(
+            //       this.state.isDate
+            //         ? this.state.isSelectedStartDate
+            //           ? this.state.selectedStartDate
+            //           : this.state.selectedEndDate
+            //         : this.state.isSelectedStartTime
+            //         ? this.state.selectedStartTime
+            //         : this.state.selectedEndTime
+            //     )
+            //   }
+            //   mode={this.state.isDate ? 'date' : 'time'}
+            //   style={{
+            //     backgroundColor: AppColors.whiteColor,
+            //     width: width - 30,
+            //   }}
+            //   minuteInterval={30}
+            //   minimumDate={_dt}
+            //   onDateChange={(date) => {
+            //     this.state.isDate
+            //       ? this.state.isSelectedStartDate
+            //         ? this.setState({
+            //             selectedStartDate: date,
+            //             sDate: false,
+            //             selectEndDate: true,
+            //             selectStartTime: true,
+            //           })
+            //         : this.setState({
+            //             selectedEndDate: date,
+            //             eDate: false,
+            //             selectStartTime: true,
+            //           })
+            //       : this.state.isSelectedStartTime
+            //       ? this.setState({
+            //           selectedStartTime: date,
+            //           sTime: false,
+            //           selectedEndTime: true,
+            //         })
+            //       : this.setState({ selectedEndTime: date, eTime: false });
+            //   }}
+            // />
+            null}
             <TouchableHighlight
               onPress={() => {
                 this.closeDateTimeSelector();

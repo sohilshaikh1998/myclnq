@@ -133,10 +133,10 @@ class UserSignUp extends React.Component {
     };
   }
 
-  handleChange =  (value) => {
-    this.setState({ userId: value, showInput: true,userIdNum:'' });
+  handleChange = (value) => {
+    this.setState({ userId: value, showInput: true, userIdNum: '' });
   };
-  componentDidMount() {
+  async componentDidMount() {
     if (Platform.OS === 'android') {
       BackHandler.addEventListener('hardwareBackPress', () => {
         // Actions.LoginMobile();
@@ -161,6 +161,26 @@ class UserSignUp extends React.Component {
         clinicProfile: this.props.userDetail?.googleUserData?.user?.photo,
       });
     }
+
+    try {
+      const getIdTypesResponse = await SHApiConnector.getIdList();
+      const idTypes = getIdTypesResponse?.data?.data?.idTypes;
+
+      if (idTypes) {
+        const uniqueIdTypes = idTypes.filter(
+          (item, index, self) => index === self.findIndex((t) => t.identificationType === item.identificationType)
+        );
+
+        const dataIdentificationType = uniqueIdTypes.map((item) => {
+          return { value: item.identificationType.toUpperCase() };
+        });
+
+        this.setState({ userIdTypes: dataIdentificationType, selectedId: idTypes });
+      }
+    } catch (error) {
+      console.error('Error fetching ID types:', error);
+    }
+
     BackHandler.addEventListener('hardwareBackPress', () => {
       this.exitAlert();
       return true;
@@ -478,7 +498,11 @@ class UserSignUp extends React.Component {
 
   async registerUser() {
     let self = this;
-    const tempId = this.state.selectedId.find((item) => item.identificationType === this.state.userId);
+    let tempId = ''
+    if (this.state.selectedId) {
+      tempId = this.state.selectedId.find((item) => item.identificationType.toUpperCase() == this.state.userId);
+    }
+ 
     let userDetails = {
       countryCode: self.state.countryCode,
       phoneNumber: self.state.mobileNumber.trim(),
@@ -744,22 +768,6 @@ class UserSignUp extends React.Component {
       isCountryListVisible: false,
       mobileNumber: '',
     });
-    try {
-      const data = {
-        country: value.name,
-      };
-      const getIdTypesResponse = await SHApiConnector.getIdList(data);
-      const idTypes = getIdTypesResponse?.data?.data?.idTypes;
-      if (idTypes) {
-        const dataIdentificationType = idTypes.map((item) => {
-          return { value: item.identificationType.toUpperCase() };
-        });
-
-        this.setState({ userIdTypes: dataIdentificationType, selectedId: idTypes });
-      }
-    } catch (error) {
-      console.error('Error fetching ID types:', error);
-    }
   };
 
   render() {
@@ -1071,9 +1079,10 @@ class UserSignUp extends React.Component {
             />
             {this.state.userIdTypes.length > 0 && (
               <View style={styles.idContainer}>
-                <View style={{ marginLeft: wp(0.5), marginRight: wp(0.5) }}>
+                <View style={{ marginLeft: wp(0.25), marginRight: wp(0.25) }}>
                   <Text style={styles.labelStyle}>User Identification</Text>
                   <TouchableOpacity
+                      onPress={() => this.refs.identificationtypeDropdown.onPress()}
                     style={{
                       marginTop: hp(2),
                       height: hp(6),
@@ -1082,7 +1091,7 @@ class UserSignUp extends React.Component {
                       borderWidth: hp(0.2),
                       borderColor: AppColors.backgroundGray,
                       borderRadius: hp(1),
-                      width: wp(90),
+                      width: wp(93),
                       flexDirection: 'row',
                       alignItems: 'center',
                     }}
@@ -1093,7 +1102,7 @@ class UserSignUp extends React.Component {
                       textColor={AppColors.blackColor}
                       itemColor={AppColors.blackColor}
                       fontFamily={AppStyles.fontFamilyRegular}
-                      // dropdownPosition={-5}
+                      dropdownPosition={-3.3}
                       dropdownOffset={{ top: hp(2), left: wp(1.8) }}
                       itemTextStyle={{ fontFamily: AppStyles.fontFamilyRegular }}
                       rippleCentered={false}
@@ -1127,7 +1136,7 @@ class UserSignUp extends React.Component {
                     ref="referral"
                     autoCapitalize={'none'}
                     placeholder={'ID Number'}
-                    style={styles.inputStyle}
+                    style={styles.idInput}
                     placeholderTextColor={AppColors.textGray}
                     value={this.state.userIdNum}
                     maxLength={50}
@@ -1349,7 +1358,7 @@ class UserSignUp extends React.Component {
           btnText={
             this.state.isNewUser
               ? this.props.userDetail?.googleUserData || this.props.userDetail?.appleUserData
-                ? 'hi'
+                ? strings('common.common.updateProfile')
                 : strings('common.common.register')
               : strings('common.common.addInfo')
           }
@@ -1382,12 +1391,22 @@ const styles = StyleSheet.create({
     textAlign: isRTL ? 'right' : 'left',
   },
   idContainer: {
-    //  height:'auto',
-    //  width : wp * .9,
-    borderWidth: 1,
-    borderColor: AppColors.grey,
-    marginLeft: wp(0.5), 
-    marginRight: wp(0.5)
+    // borderWidth: 0.5,
+    // borderColor: AppColors.grey,
+    marginLeft: wp(0.5),
+    marginRight: wp(0.5),
+  },
+  idInput:{
+    marginLeft:10,
+    fontFamily: AppStyles.fontFamilyMedium,
+    fontSize: 15,
+    color: AppColors.blackColor,
+    height: verticalScale(50),
+    borderBottomWidth: 1,
+    borderBottomColor: AppColors.backgroundGray,
+    marginTop: verticalScale(10),
+    textAlign: isRTL ? 'right' : 'left',
+
   },
   inputStyle: {
     fontFamily: AppStyles.fontFamilyMedium,
@@ -1398,6 +1417,7 @@ const styles = StyleSheet.create({
     borderBottomColor: AppColors.backgroundGray,
     marginTop: verticalScale(10),
     textAlign: isRTL ? 'right' : 'left',
+
   },
   ninputStyle: {
     fontFamily: AppStyles.fontFamilyMedium,
@@ -1418,6 +1438,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomColor: AppColors.backgroundGray,
     margin: moderateScale(1),
+    // marginLeft:10,
+    // backgroundColor:'red'
   },
   dobStyle1: {
     flexDirection: 'row',
@@ -1432,11 +1454,12 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(15),
     color: AppColors.blackColor,
     marginTop: verticalScale(20),
+
   },
   date: {
     borderBottomWidth: 0,
     width: moderateScale(150),
-    marginLeft: moderateScale(100),
+    marginLeft: moderateScale(125),
     color: AppColors.textGray,
     fontFamily: AppStyles.fontFamilyMedium,
     fontSize: moderateScale(15),
@@ -1457,6 +1480,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: AppColors.backgroundGray,
     alignItems: 'center',
+    marginLeft:10
   },
   selectGender: {
     width: moderateScale(60),

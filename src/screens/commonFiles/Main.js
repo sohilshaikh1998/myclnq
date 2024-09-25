@@ -20,6 +20,8 @@ import {
   ScrollView,
   I18nManager,
 } from 'react-native';
+import { check, PERMISSIONS, request, RESULTS } from 'react-native-permissions';
+import GoogleFit, { Scopes } from 'react-native-google-fit';
 import RNRestart from 'react-native-restart';
 import AsyncStorage from '@react-native-community/async-storage';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
@@ -61,6 +63,12 @@ const { width, height } = Dimensions.get('window');
 import auth from '@react-native-firebase/auth';
 import { revokeAccessToken } from '../../../src/network/vitalApi';
 import { CountryInfo } from '../../shared/AllCountryCode';
+import { moderateScale } from '../../utils/Scaling';
+import CustomRingProgress from '../../components/CustomRingProgress';
+import { GlobalContext } from '../../GlobalContext';
+import { googleFitCode } from '../../components/getStepsCount';
+// import { err } from 'react-native-svg/lib/typescript/xml';
+
 const isRTL = I18nManager.isRTL;
 var dt = new Date();
 dt.setDate(dt.getDate());
@@ -73,12 +81,15 @@ var yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
 let tomrwDate = String(new Date().getDate() + 1).padStart(2, '0');
 let tomorrow = yyyy + '-' + mm + '-' + tomrwDate;
+let timeToRefreshPedometer = 20000;
 
 class Main extends React.Component {
+  static contextType = GlobalContext;
   constructor(props) {
     super(props);
     Geocoder.init(AppStrings.MAP_API_KEY);
     AppUtils.analyticsTracker('MyCLNQ Home Screen');
+
     this.state = {
       dateToday: _dt,
       maxDate: _dt,
@@ -145,16 +156,78 @@ class Main extends React.Component {
       webViewHeight: null,
       userCountryCode: '',
       carouselUrl: 'https://myclnq.co/components/carousel/index.html',
+      selectedActivities: [],
+      asyncScreenTime: 0,
+      selectedSubscription: null,
+      walletResponse: null,
+      membershipPlans: null,
+      userActivePlan: null,
+      totalSteps: 1,
+      isSmartWatchConnected: false,
     };
   }
 
+  async loadPedometer() {
+    this.setState({ isLoading: !true });
+    const selectedDeviceIdFromAsync = await AsyncStorage.getItem('deviceId');
+    if (!selectedDeviceIdFromAsync) {
+      this.setState({ isSmartWatchConnected: false });
+      await googleFitCode();
+      var stepRes = (await AsyncStorage.getItem('stepCount')) || 1;
+      console.log('pppppp', JSON.stringify(stepRes));
+      this.setState({ totalSteps: stepRes, isLoading: false });
+    } else {
+      this.setState({ isSmartWatchConnected: true, isLoading: false });
+    }
+  }
+
   async componentDidMount() {
+    this.loadPedometer();
+    setTimeout(() => {
+      timeToRefreshPedometer = 120000;
+    }, 60000);
+
+    setInterval(() => {
+      this.loadPedometer();
+    }, timeToRefreshPedometer); //reloading after 2 min. to get latest values
+
+    this.focusSubscription = this.props.navigation.addListener('willFocus', async () => {
+      this.loadPedometer();
+      setTimeout(() => {
+        timeToRefreshPedometer = 120000;
+      }, 60000);
+    });
+
+    await SHApiConnector.getWalletDetails().then((res) => {
+      this.setState({ walletResponse: res?.data });
+    });
+
+    await SHApiConnector.getAllMembershipPlan()
+      .then(async (res) => {
+        if (res?.data?.status) {
+          this.setState({ membershipPlans: res?.data?.data });
+          await SHApiConnector.getUserMembershipPlan().then(async (plan) => {
+            let activePlann = [];
+            await plan?.data?.map((i) => {
+              if (i?.paymentStatus == 'success') {
+                activePlann.push(i);
+              }
+            });
+            res?.data?.data?.map((i) => {
+              if (activePlann[0]?.planId == i?._id && activePlann[0]?.paymentStatus == 'success') {
+                this.setState({ userActivePlan: activePlann[0]?.planId });
+              }
+            });
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     await this.checkUserLoggedIn().catch((error) => {
       console.log(error, 'errorInFN');
     });
-
-
-
 
     if (Platform.OS === 'android') {
       BackHandler.addEventListener('hardwareBackPress', () => {
@@ -162,6 +235,14 @@ class Main extends React.Component {
         return true;
       });
     }
+
+    const selectedActivities = JSON.parse(await AsyncStorage.getItem('selectedActivities'));
+    const deviceIdBT = await AsyncStorage.getItem('deviceId');
+
+    this.setState({
+      selectedActivities: [...selectedActivities],
+      deviceIdBT: deviceIdBT,
+    });
 
     const userCountryCodeInLocal = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.LOGGED_IN_USER)).countryCode;
 
@@ -179,14 +260,10 @@ class Main extends React.Component {
       showLangModal: false,
       category: AppArray.getMainCategory(userCountryCodeInLocal),
       carouselUrl: this.state.carouselUrl + '?lang=',
-      
     });
-
-  
 
     // const item = this.state.languageList.filter((item) => console.log('Ssdxfewsfdvdfxd_!23', I18n.locale, item.value.indexOf(I18n.locale)));
   }
- 
 
   async checkUserLoggedIn() {
     const isLoggedIn = JSON.parse(await AsyncStorage.getItem(AppStrings.contracts.IS_LOGGED_IN));
@@ -252,7 +329,7 @@ class Main extends React.Component {
         });
       }
     } else {
-      Actions.LoginOptions();
+      // Actions.LoginOptions();
     }
   }
 
@@ -1960,11 +2037,11 @@ class Main extends React.Component {
           flexDirection: 'column',
         }}
       >
-        <View style={[styles.clnqLogo]}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginRight: 10 }}>
           <View
             style={{
               flexDirection: 'column',
-              paddingLeft: wp(7),
+              paddingLeft: wp(5),
               width: wp(70),
               alignItems: 'flex-start',
             }}
@@ -1972,30 +2049,190 @@ class Main extends React.Component {
             <Text
               style={{
                 fontSize: wp(4.5),
-                color: AppColors.newSubTitle,
                 fontFamily: AppStyles.fontFamilyMedium,
+                color: AppColors.newTitle,
                 marginTop: hp(1),
               }}
             >
-              {strings('common.common.hey')} {this.state.userName},
+              {strings('common.common.hey')} {this.state.userName}
             </Text>
             <Text
               style={{
                 fontFamily: AppStyles.fontFamilyDemi,
                 fontSize: 15,
                 marginTop: hp(0.5),
-                color: AppColors.newTitle,
+                color: AppColors.newSubTitle,
               }}
             >
-              {strings('common.common.whatAreYouLooking')} {AppUtils.isProduction() ? '' : '\nStaging Build'}
+              {strings('common.common.whatAreYouLooking')}
+              {AppUtils.isProduction() ? '' : '\nStaging Build'}
             </Text>
           </View>
-          <Image
-            resizeMode={'contain'}
-            style={{ height: wp(25), width: wp(30), justifyContent: 'flex-end' }}
-            source={require('../../../assets/images/myclnq-homescreen.png')}
-          />
+
+          <View style={{ flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-end', marginRight: moderateScale(20) }}>
+            <TouchableOpacity onPress={Actions.SearchDevice} style={{ alignItems: 'center' }}>
+              <Image
+                style={{
+                  height: moderateScale(36),
+                  width: moderateScale(36),
+                  resizeMode: 'contain',
+                }}
+                source={images.earnCashback}
+              />
+              <Text style={{ textAlign: 'center', fontWeight: '700', fontSize: 9, color: AppColors.textDarkGray }}>Earn{'\n'}Cashback</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{ marginLeft: moderateScale(10), alignItems: 'center' }}>
+              <Image
+                style={{
+                  height: moderateScale(36),
+                  width: moderateScale(36),
+                  resizeMode: 'contain',
+                }}
+                source={images.rewardSteps}
+              />
+              <Text style={{ textAlign: 'center', fontWeight: '700', fontSize: 9, color: AppColors.textDarkGray }}>10K{'\n'}Steps</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+
+        {this.todayStatus()}
+
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={{ height: wp(60), width: Dimensions.get('screen').width - 40 }}>
+            <Image style={{ resizeMode: 'contain', height: wp(55), width: '100%' }} source={require('../../../assets/images/offerImage.png')} />
+          </View>
+          <View style={{ height: wp(60), width: Dimensions.get('screen').width - 40 }}>
+            <Image style={{ resizeMode: 'contain', height: wp(55), width: '100%' }} source={require('../../../assets/images/offerImage.png')} />
+          </View>
+          <View style={{ height: wp(60), width: Dimensions.get('screen').width - 40 }}>
+            <Image style={{ resizeMode: 'contain', height: wp(55), width: '100%' }} source={require('../../../assets/images/offerImage.png')} />
+          </View>
+        </ScrollView>
+
+        <View>
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginHorizontal: 20 }}>
+            <Text style={{ fontSize: 16, lineHeight: 21, fontFamily: AppStyles.fontFamilyBold, color: 'black' }}>Membership Plans</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text
+                onPress={() => Actions.MembershipScreen({ plans: this.state.membershipPlans })}
+                style={{ fontSize: 12, lineHeight: 16, fontFamily: AppStyles.fontFamilyRegular }}
+              >
+                View more
+              </Text>
+              <AntDesign name="arrowright" size={10} />
+            </View>
+          </View>
+
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            {this?.state?.membershipPlans?.map((i) => (
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => {
+                  this.setState({ selectedSubscription: i.planName });
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: 12,
+                    height: wp(60),
+                    width: Dimensions.get('screen').width / 2,
+                    padding: 20,
+                    borderRadius: 12,
+                    margin: 10,
+                    borderWidth: this.state.selectedSubscription == i.planName ? 1 : 0,
+                    borderColor: this.state.selectedSubscription == i.planName ? '#FE4948' : null,
+                  }}
+                >
+                  <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+                    <View
+                      style={{
+                        backgroundColor: '#ffeaeb',
+                        width: wp(10),
+                        height: wp(10),
+                        borderRadius: 8,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Image style={{ resizeMode: 'contain', width: wp(7), height: wp(7) }} source={require('../../../assets/images/cash.png')} />
+                    </View>
+
+                    {i?._id == this.state?.userActivePlan ? (
+                      <TouchableOpacity onPress={() => Actions.MembershipTransactionHistory()}>
+                        <View
+                          style={{
+                            height: 25,
+                            width: 90,
+                            borderBottomLeftRadius: 10,
+                            borderBottomRightRadius: 10,
+                            backgroundColor: '#FE4948',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginRight: 20,
+                            marginTop: -20,
+                          }}
+                        >
+                          <Image
+                            style={{ resizeMode: 'contain', width: wp(5), height: wp(5) }}
+                            source={require('../../../assets/images/activePlanImg.png')}
+                          />
+                          <Text style={{ color: 'white', fontWeight: '600', fontSize: 10, lineHeight: 13, marginLeft: 5 }}>Active Plan</Text>
+                        </View>
+                      </TouchableOpacity>
+                    ) : null}
+                  </View>
+                  <Text style={{ color: '#FE4948', fontSize: 14, fontFamily: AppStyles.fontFamilyBold, marginTop: 5 }} numberOfLines={1}>
+                    {i.planName}
+                  </Text>
+                  <Text style={{ fontSize: 16, fontFamily: AppStyles.fontFamilyRegular, marginTop: 5 }}>
+                    ₹ <Text style={{ color: 'black', fontFamily: AppStyles.fontFamilyBold }}>{i?.amount}</Text>
+                    <Text style={{ fontSize: 12, fontFamily: AppStyles.fontFamilyRegular, marginTop: 0 }}>
+                      {i?.duration == 6 ? '/Half Yearly' : '/ yearly'}
+                    </Text>
+                  </Text>
+                  <Text numberOfLines={2} style={{ fontSize: 12, fontFamily: AppStyles.fontFamilyRegular, marginTop: 5 }}>
+                    {i.description}
+                  </Text>
+                  <Text style={{ fontSize: 10, fontFamily: AppStyles.fontFamilyMedium, marginTop: 5 }}>Read more</Text>
+
+                  <View style={{}}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        this.setState({ selectedSubscription: i.planName });
+                        Actions.MembershipOrderSummary({ plan: i });
+                      }}
+                      activeOpacity={1}
+                      style={{
+                        backgroundColor: this.state.selectedSubscription == i.planName ? '#FE4948' : '#ffeaeb',
+                        borderRadius: 12,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        alignSelf: 'center',
+                        marginTop: 20,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          color: this.state.selectedSubscription == i.planName ? 'white' : '#FE4948',
+                          fontSize: 14,
+                          lineHeight: 16,
+                          fontFamily: AppStyles.fontFamilyMedium,
+                          marginVertical: 5,
+                          marginHorizontal: 15,
+                        }}
+                      >
+                        Choose Plan
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+
         {/* {this.state.userCountryCode == '65' ||
         this.state.userCountryCode == '91' ||
         this.state.userCountryCode == '+91' ||
@@ -2006,8 +2243,208 @@ class Main extends React.Component {
         ) : (
           <View />
         )} */}
-        {  this.instantOnlineConsultation()}
+
+        {this.instantOnlineConsultation()}
       </View>
+    );
+  }
+
+  calculateProgress = (value, goalValue) => {
+    const numValue = Number(goalValue);
+
+    if (isNaN(numValue) || numValue === 0) {
+      console.log('Invalid input or division by zero');
+      return 0;
+    }
+
+    const actualValue = value / numValue;
+
+    return actualValue;
+  };
+
+  convertMinutes(minutes) {
+    // Check if the input is less than 60
+    if (minutes < 60) {
+      return `${minutes}`;
+    }
+
+    // Calculate hours and remaining minutes
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    // Format the output string
+    let result = `${hours} H:`;
+    if (remainingMinutes > 0) {
+      result += `${remainingMinutes} M`;
+    }
+
+    return result;
+  }
+
+  todayStatus() {
+    const { globalData } = this.context;
+
+    let stepValue, stepValueClimb, sleepValueHrsMin;
+    if (!this.state.isSmartWatchConnected) {
+      //Anurag's Code//
+      stepValue = this.calculateProgress(this.state.totalSteps, 7000);
+      stepValueClimb = this.state.selectedActivities.includes(2)
+        ? this.calculateProgress(parseInt(this.state.totalSteps / 1500), 1500)
+        : this.state.selectedActivities.includes(3)
+        ? this.calculateProgress(globalData.sleepGlobal, 600)
+        : this.calculateProgress(globalData.screenTime, 600);
+      sleepValueHrsMin = this.convertMinutes(globalData.sleepGlobal);
+    } else {
+      //SOHIL_CODE
+
+      stepValue = this.calculateProgress(globalData.stepGlobal, 7000);
+      stepValueClimb = this.state.selectedActivities.includes(2)
+        ? this.calculateProgress(globalData.stepClimbGlobal, 1000)
+        : this.state.selectedActivities.includes(3)
+        ? this.calculateProgress(globalData.sleepGlobal, 600)
+        : this.calculateProgress(globalData.screenTime, 600);
+      sleepValueHrsMin = this.convertMinutes(globalData.sleepGlobal);
+    }
+
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          Actions.BodyBeatDash();
+        }}
+        activeOpacity={0.7}
+      >
+        <ElevatedView
+          elevation={3}
+          style={{
+            width: wp(92),
+            height: moderateScale(220),
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginVertical: 10,
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+            alignSelf: 'center',
+            backgroundColor: AppColors.whiteColor,
+          }}
+        >
+          <View style={{ alignItems: 'center', justifyContent: 'center' }} key={stepValueClimb}>
+            <CustomRingProgress
+              radius={100}
+              strokeWidth={25}
+              progress={Number(stepValue)}
+              percentage={Math.round(Number(stepValue) * 100)}
+              trackColor={AppColors.primaryColor}
+            />
+            <View style={{ position: 'absolute' }}>
+              <CustomRingProgress
+                radius={70}
+                strokeWidth={25}
+                progress={Number(stepValueClimb)}
+                percentage={Math.round(Number(stepValueClimb) * 100)}
+                trackColor={AppColors.redTrackColor}
+              />
+            </View>
+            <View style={{ alignItems: 'center', marginTop: moderateScale(56), position: 'absolute' }}>
+              <Image
+                style={{
+                  height: moderateScale(17),
+                  width: moderateScale(18),
+                  resizeMode: 'contain',
+                }}
+                source={images.stepLeg}
+              />
+              <Text style={{ textAlign: 'center', textTransform: 'uppercase', fontWeight: '700', fontSize: 10, color: AppColors.blackColor5 }}>
+                TODAY
+              </Text>
+              <Text style={{ textAlign: 'center', fontWeight: '800', fontSize: 14, color: AppColors.blackColor4 }}>
+                {this.state.isSmartWatchConnected ? globalData.stepGlobal : this.state.totalSteps}
+              </Text>
+              <Text style={{ textAlign: 'center', fontWeight: '600', fontSize: 12, color: AppColors.checkTickRed }}>Goal: 7000{'\n'}steps</Text>
+            </View>
+          </View>
+
+          {/* right */}
+          <View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Image
+                style={{
+                  height: moderateScale(32),
+                  width: moderateScale(32),
+                  resizeMode: 'contain',
+                }}
+                source={images.stepsDash}
+              />
+              <View style={{ marginLeft: moderateScale(8) }}>
+                <Text style={{ fontSize: 12, fontWeight: '700', color: AppColors.textDarkGray }}>
+                  {!this.state.isSmartWatchConnected
+                    ? this.state.totalSteps
+                    : this.state.selectedActivities.includes(1)
+                    ? globalData.stepGlobal
+                    : '1'}
+                </Text>
+                <Text style={{ fontSize: 11, fontWeight: '400', color: AppColors.textLightGray }}>Steps</Text>
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: moderateScale(10) }}>
+              <Image
+                style={{
+                  height: moderateScale(32),
+                  width: moderateScale(32),
+                  resizeMode: 'contain',
+                }}
+                source={images.climbDash}
+              />
+              <View style={{ marginLeft: moderateScale(8) }}>
+                <Text style={{ fontSize: 12, fontWeight: '700', color: AppColors.textDarkGray }}>
+                  {!this.state.isSmartWatchConnected
+                    ? parseInt(this.state.totalSteps / 1500)
+                    : this.state.selectedActivities.includes(2)
+                    ? globalData.stepClimbGlobal
+                    : '0'}
+                </Text>
+                <Text style={{ fontSize: 11, fontWeight: '400', color: AppColors.textLightGray }}>Climbing</Text>
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: moderateScale(10) }}>
+              <Image
+                style={{
+                  height: moderateScale(32),
+                  width: moderateScale(32),
+                  resizeMode: 'contain',
+                }}
+                source={images.sleepDash}
+              />
+              <View style={{ marginLeft: moderateScale(8) }}>
+                <Text style={{ fontSize: 12, fontWeight: '700', color: AppColors.textDarkGray }}>
+                  {this.state.selectedActivities.includes(3) ? sleepValueHrsMin : '0 Hrs'}
+                </Text>
+                <Text style={{ fontSize: 11, fontWeight: '400', color: AppColors.textLightGray }}>Sleep</Text>
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: moderateScale(10) }}>
+              <Image
+                style={{
+                  height: moderateScale(32),
+                  width: moderateScale(32),
+                  resizeMode: 'contain',
+                }}
+                source={images.screenDash}
+              />
+              <View style={{ marginLeft: moderateScale(8) }}>
+                <Text style={{ fontSize: 12, fontWeight: '700', color: AppColors.textDarkGray }}>
+                  {this.state.selectedActivities.includes(4) ? this.state.asyncScreenTime : '0 Hrs'}
+                </Text>
+                <Text style={{ fontSize: 11, fontWeight: '400', color: AppColors.textLightGray }}>Screen</Text>
+              </View>
+            </View>
+          </View>
+        </ElevatedView>
+      </TouchableOpacity>
     );
   }
 
@@ -2054,6 +2491,7 @@ class Main extends React.Component {
             >
               {strings('common.waitingRoom.doctorSpeak')}
             </Text>
+
             <ElevatedView
               elevation={6}
               style={{
@@ -2307,6 +2745,8 @@ class Main extends React.Component {
         style={{
           flexDirection: 'row',
           marginTop: AppUtils.isIphone ? hp(5) : hp(2),
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <View
@@ -2320,7 +2760,7 @@ class Main extends React.Component {
           }}
         >
           {/* <AntDesign name='logout' size={30} color={'red'}/> */}
-          <TouchableOpacity onPress={() => this.sureLogout()}>
+          {/* <TouchableOpacity onPress={() => this.sureLogout()}>
             <Image
               resizeMode={'contain'}
               style={{
@@ -2330,7 +2770,16 @@ class Main extends React.Component {
               }}
               source={require('../../../assets/images/logout_main.png')}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <Image
+            resizeMode={'contain'}
+            style={{
+              height: wp(12),
+              width: wp(12),
+              tintColor: AppColors.primaryColor,
+            }}
+            source={require('../../../assets/images/myclnq-homescreen.png')}
+          />
         </View>
         <View
           style={{
@@ -2341,6 +2790,37 @@ class Main extends React.Component {
             paddingRight: wp(7),
           }}
         >
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              Actions.Wallet({ userName: this.state.userName });
+            }}
+            style={{
+              backgroundColor: 'white',
+              borderRadius: 22,
+              flexDirection: 'row',
+              alignItems: 'center',
+              backgroundColor: 'white',
+              marginRight: 10,
+              height: wp(8),
+              paddingLeft: 5,
+              marginTop: 5,
+            }}
+          >
+            <Image
+              resizeMode={'contain'}
+              style={{
+                height: wp(5),
+                width: wp(5),
+                backgroundColor: '#FE4948',
+                borderRadius: 12,
+              }}
+              source={require('../../../assets/images/mainStar.png')}
+            />
+            <Text style={{ marginRight: 20, color: 'black', marginLeft: 5, fontSize: 12, lineHeight: 16, fontFamily: AppStyles.fontFamilyBold }}>
+              {this.state.walletResponse?.balance}
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.setState({ showLangModal: true })}
             style={{
@@ -2436,7 +2916,7 @@ class Main extends React.Component {
             )}
           </TouchableOpacity>
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => this.checkGoogleUser('settings')}
             style={{
               flexDirection: 'row',
@@ -2454,9 +2934,9 @@ class Main extends React.Component {
                 borderColor: AppColors.textGray,
                 alignSelf: 'center',
               }}
-            />
-            {/* <Feather name="settings" size={25} color={AppColors.blackColor} /> */}
-          </TouchableOpacity>
+            /> 
+          {/* <Feather name="settings" size={25} color={AppColors.blackColor} /> */}
+          {/* </TouchableOpacity> */}
         </View>
       </View>
     );

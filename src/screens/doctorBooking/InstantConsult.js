@@ -34,7 +34,7 @@ import CountryPicker, { FlagButton } from 'react-native-country-picker-modal';
 import { Switch } from 'react-native-switch';
 import { moderateScale, verticalScale } from '../../utils/Scaling';
 import { Validator } from '../../shared/Validator';
-import DatePicker from 'react-native-date-picker';
+//import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import ModalSelector from '../../shared/ModalSelector';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
@@ -124,8 +124,8 @@ export default class InstantConsult extends Component {
 
   componentDidMount() {
     this.setState({
-      countryCode: this.props.userCountryCode
-    })
+      countryCode: this.props.userCountryCode,
+    });
     this.getDepartments();
     this.getUserRelativeList();
     this.setInitialSymptoms();
@@ -133,10 +133,8 @@ export default class InstantConsult extends Component {
     this.getUserDetails();
   }
   async getUserDetails() {
-
     let userData = await AsyncStorage.getItem(AppStrings.contracts.LOGGED_IN_USER);
     let user = await JSON.parse(userData);
-
 
     const data = {
       country: user.country,
@@ -149,15 +147,12 @@ export default class InstantConsult extends Component {
         return { value: item.identificationType.toUpperCase() };
       });
 
-
       this.setState({ userIdTypes: dataIdentificationType });
     }
-
   }
 
-  
-  handleChange =  (value) => {
-    this.setState({ userId: value, showInput: true,userIdNum:'' });
+  handleChange = (value) => {
+    this.setState({ userId: value, showInput: true, userIdNum: '' });
   };
 
   async getDepartments() {
@@ -489,8 +484,7 @@ export default class InstantConsult extends Component {
               color: AppColors.instantVideoTheme,
               fontFamily: AppStyles.fontFamilyDemi,
               fontSize: hp(2.2),
-              textAlign: isRTL ? 'left' : 'auto'
-
+              textAlign: isRTL ? 'left' : 'auto',
             }}
           >
             {strings('common.waitingRoom.speciality')}
@@ -561,8 +555,7 @@ export default class InstantConsult extends Component {
               color: AppColors.instantVideoTheme,
               fontFamily: AppStyles.fontFamilyDemi,
               fontSize: hp(2.2),
-              textAlign: isRTL ? 'left' : 'auto'
-
+              textAlign: isRTL ? 'left' : 'auto',
             }}
           >
             {strings('doctor.text.selectPatient')}
@@ -663,7 +656,7 @@ export default class InstantConsult extends Component {
     let insuranceProviderIOS = this.state.insuranceProviders.map((d, i) => {
       return i == 0 ? { key: d._id, section: true, label: d.companyName } : { key: d._id, label: d.companyName };
     });
-    
+
     return (
       <View>
         {!this.state.isDataSet ? (
@@ -774,7 +767,6 @@ export default class InstantConsult extends Component {
                 onChangeText={(input) => this.setState({ userIdNum: input })}
               ></TextInput>
             )}
-
 
             {this.bmiView()}
             {Platform.OS === 'ios' ? (
@@ -989,7 +981,7 @@ export default class InstantConsult extends Component {
             color: AppColors.instantVideoTheme,
             fontFamily: AppStyles.fontFamilyDemi,
             fontSize: hp(2.2),
-            textAlign: isRTL ? 'left' : 'auto'
+            textAlign: isRTL ? 'left' : 'auto',
           }}
         >
           {strings('common.waitingRoom.selectSymptoms')}
@@ -1037,8 +1029,7 @@ export default class InstantConsult extends Component {
                 fontSize: 15,
                 color: AppColors.textGray,
                 fontFamily: AppStyles.fontFamilyRegular,
-                textAlign: isRTL ? 'left' : 'auto'
-
+                textAlign: isRTL ? 'left' : 'auto',
               }}
             >
               {strings('doctor.text.selectSymptoms')}
@@ -1131,8 +1122,7 @@ export default class InstantConsult extends Component {
             marginTop: Platform.OS === 'ios' ? hp(0.5) : 0,
             fontFamily: AppStyles.fontFamilyRegular,
             color: AppColors.whiteColor,
-            textAlign: isRTL ? 'left' : 'auto'
-
+            textAlign: isRTL ? 'left' : 'auto',
           }}
         >
           {item.item.name}
@@ -1252,7 +1242,9 @@ export default class InstantConsult extends Component {
     return (
       <View>
         <View style={bmiStyles.bmiRow}>
-          <Text style={bmiStyles.bmiHeader}>{strings('doctor.text.weight')} ({strings('doctor.text.optional')})</Text>
+          <Text style={bmiStyles.bmiHeader}>
+            {strings('doctor.text.weight')} ({strings('doctor.text.optional')})
+          </Text>
           <View style={{ flexDirection: 'row' }}>
             <TextInput
               placeholder="0"
@@ -1297,7 +1289,9 @@ export default class InstantConsult extends Component {
           </View>
         </View>
         <View style={bmiStyles.bmiRow}>
-          <Text style={bmiStyles.bmiHeader}>{strings('doctor.text.height')} ({strings('doctor.text.optional')})</Text>
+          <Text style={bmiStyles.bmiHeader}>
+            {strings('doctor.text.height')} ({strings('doctor.text.optional')})
+          </Text>
           <View style={{ flexDirection: 'row' }}>
             <TextInput
               placeholder="0"
@@ -1418,8 +1412,7 @@ export default class InstantConsult extends Component {
             marginTop: Platform.OS === 'ios' ? hp(0.5) : 0,
             fontFamily: AppStyles.fontFamilyMedium,
             color: item.item.isSelected ? AppColors.whiteColor : AppColors.textGray,
-            textAlign: isRTL ? 'left' : 'auto'
-
+            textAlign: isRTL ? 'left' : 'auto',
           }}
         >
           {item.item.name}
@@ -1555,11 +1548,9 @@ export default class InstantConsult extends Component {
             self.showAlert(strings('string.error_code.error_10021'), true);
           } else if (stat?.error_code == '10002') {
             self.showAlert(strings('string.error_code.error_10002'), true);
-          }
-          else if (stat?.error_code == '20001') {
+          } else if (stat?.error_code == '20001') {
             self.showAlert(strings('string.error_code.error_20001'), true);
-          } 
-          else if (stat && stat !== null) {
+          } else if (stat && stat !== null) {
             self.setState({
               userRelativeList: stat.relativeDetails,
               fName: '',

@@ -23,7 +23,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ProgressLoader from 'rn-progress-loader';
 import { SHApiConnector } from '../../../network/SHApiConnector';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import DatePicker from 'react-native-date-picker';
+//import DatePicker from 'react-native-date-picker';
 import moment from 'moment';
 import careGiverHomeScreenStyle from './caregiverHomeScreenStyle';
 import { Actions } from 'react-native-router-flux';
@@ -1000,50 +1000,49 @@ class caregiverHomeScreen extends Component {
                   }}
                 />
               </View>
-            ) : (
-              <DatePicker
-                date={
-                  new Date(
-                    this.state.isDate
-                      ? this.state.isSelectedStartDate
-                        ? this.state.selectedStartDate
-                        : this.state.selectedEndDate
-                      : this.state.isSelectedStartTime
-                      ? this.state.selectedStartTime
-                      : this.state.selectedEndTime
-                  )
-                }
-                mode={this.state.isDate ? 'date' : 'time'}
-                style={{
-                  backgroundColor: AppColors.whiteColor,
-                  width: width - 30,
-                }}
-                minuteInterval={30}
-                minimumDate={_dt}
-                onDateChange={(date) => {
-                  this.state.isDate
-                    ? this.state.isSelectedStartDate
-                      ? this.setState({
-                          selectedStartDate: date,
-                          sDate: false,
-                          selectEndDate: true,
-                          selectStartTime: true,
-                        })
-                      : this.setState({
-                          selectedEndDate: date,
-                          eDate: false,
-                          selectStartTime: true,
-                        })
-                    : this.state.isSelectedStartTime
-                    ? this.setState({
-                        selectedStartTime: date,
-                        sTime: false,
-                        selectedEndTime: true,
-                      })
-                    : this.setState({ selectedEndTime: date, eTime: false });
-                }}
-              />
-            )}
+            ) : // <DatePicker
+            //   date={
+            //     new Date(
+            //       this.state.isDate
+            //         ? this.state.isSelectedStartDate
+            //           ? this.state.selectedStartDate
+            //           : this.state.selectedEndDate
+            //         : this.state.isSelectedStartTime
+            //         ? this.state.selectedStartTime
+            //         : this.state.selectedEndTime
+            //     )
+            //   }
+            //   mode={this.state.isDate ? 'date' : 'time'}
+            //   style={{
+            //     backgroundColor: AppColors.whiteColor,
+            //     width: width - 30,
+            //   }}
+            //   minuteInterval={30}
+            //   minimumDate={_dt}
+            //   onDateChange={(date) => {
+            //     this.state.isDate
+            //       ? this.state.isSelectedStartDate
+            //         ? this.setState({
+            //             selectedStartDate: date,
+            //             sDate: false,
+            //             selectEndDate: true,
+            //             selectStartTime: true,
+            //           })
+            //         : this.setState({
+            //             selectedEndDate: date,
+            //             eDate: false,
+            //             selectStartTime: true,
+            //           })
+            //       : this.state.isSelectedStartTime
+            //       ? this.setState({
+            //           selectedStartTime: date,
+            //           sTime: false,
+            //           selectedEndTime: true,
+            //         })
+            //       : this.setState({ selectedEndTime: date, eTime: false });
+            //   }}
+            // />
+            null}
             <TouchableHighlight
               onPress={() => {
                 this.closeDateTimeSelector();
@@ -1788,21 +1787,14 @@ class caregiverHomeScreen extends Component {
     let diff = selectedDateTime.diff(AppUtils.currentDateTime());
 
     if (diff / (60 * 60000) <= 2) {
-      this.showAlert(
-        strings("string.alert.request_limit") +
-          "" +
-          moment(AppUtils.currentDateTime())
-            .add(2, "hours")
-            .format("MM/DD/YYYY HH:mm")
-      );
-    } else
-    {
-      if(Platform.OS === "ios")
-    {
-      this.state.selectedStartDate = selectedDateTime
+      this.showAlert(strings('string.alert.request_limit') + '' + moment(AppUtils.currentDateTime()).add(2, 'hours').format('MM/DD/YYYY HH:mm'));
+    } else {
+      if (Platform.OS === 'ios') {
+        this.state.selectedStartDate = selectedDateTime;
+      } else {
+      }
     }
-    else{}
-  }}
+  }
 
   getHrs(sDate, eDate) {
     AppUtils.console('xzcxzdszdcsvxfv', sDate, eDate, this.state.selectedEndDate);

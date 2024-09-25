@@ -39,6 +39,8 @@ target 'smartHelpRequester' do
 
   pod 'react-native-restart', :path => '../node_modules/react-native-restart'
 
+  pod 'react-native-bluetooth-classic', :path => '../node_modules/react-native-bluetooth-classic'
+
   post_install do |installer|
     react_native_post_install(installer)
     Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
